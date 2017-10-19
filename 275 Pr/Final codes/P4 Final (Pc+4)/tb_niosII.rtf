@@ -1,0 +1,151 @@
+{\rtf1\ansi\deff0\deftab240
+
+{\fonttbl
+{\f000 Courier New;}
+{\f001 Courier New;}
+{\f002 Courier New;}
+{\f003 Courier New;}
+{\f004 Courier New;}
+{\f005 Courier New;}
+{\f006 Courier New;}
+{\f007 Courier New;}
+}
+
+{\colortbl
+\red000\green000\blue000;
+\red255\green255\blue255;
+\red255\green128\blue000;
+\red255\green255\blue255;
+\red000\green000\blue255;
+\red255\green255\blue255;
+\red128\green128\blue128;
+\red255\green255\blue255;
+\red128\green000\blue255;
+\red255\green255\blue255;
+\red000\green000\blue128;
+\red255\green255\blue255;
+\red000\green000\blue000;
+\red255\green255\blue255;
+\red000\green000\blue000;
+\red255\green255\blue255;
+}
+
+\f7274573\fs20\cb15\cf14 \fs22\highlight5\cf4 module\highlight1\cf0  \highlight13\cf12 tb_niosII\highlight11\cf10\b ();\highlight1\cf0\b0 \par
+\highlight5\cf4 reg\highlight1\cf0  \highlight13\cf12 clk\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 rst\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\highlight5\cf4 reg\highlight1\cf0  \highlight11\cf10\b [\highlight3\cf2\b0 31\highlight11\cf10\b :\highlight3\cf2\b0 0\highlight11\cf10\b ]\highlight1\cf0\b0  \highlight13\cf12 PC\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\highlight5\cf4 integer\highlight1\cf0  \highlight13\cf12 i\highlight11\cf10\b ,\highlight13\cf12\b0 j\highlight11\cf10\b ,\highlight13\cf12\b0 f\highlight11\cf10\b ,\highlight13\cf12\b0 k\highlight11\cf10\b ,\highlight13\cf12\b0 result\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\highlight5\cf4 reg\highlight1\cf0  \highlight11\cf10\b [\highlight3\cf2\b0 31\highlight11\cf10\b :\highlight3\cf2\b0 0\highlight11\cf10\b ]\highlight1\cf0\b0  \highlight13\cf12 dot_product\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\highlight5\cf4 reg\highlight1\cf0  \highlight11\cf10\b [\highlight3\cf2\b0 31\highlight11\cf10\b :\highlight3\cf2\b0 0\highlight11\cf10\b ]\highlight1\cf0\b0  \highlight13\cf12 r2\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r3\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r4\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r5\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r6\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r7\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r8\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 product\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 sum\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\par
+\highlight13\cf12 niosII\highlight1\cf0  \highlight13\cf12 dut\highlight1\cf0  \highlight11\cf10\b (\highlight13\cf12\b0 clk\highlight11\cf10\b ,\highlight13\cf12\b0 rst\highlight11\cf10\b );\highlight1\cf0\b0 \par
+\par
+\highlight5\cf4 always\highlight1\cf0  \highlight11\cf10\b #\highlight3\cf2\b0 5\highlight1\cf0  \highlight13\cf12 clk\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight11\cf10\b ~\highlight13\cf12\b0 clk\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\par
+\highlight5\cf4 initial\highlight1\cf0  \highlight5\cf4 begin\highlight1\cf0 \par
+  \highlight13\cf12 f\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight9\cf8 $fopen\highlight11\cf10\b (\highlight7\cf6\b0\i0 "output.txt"\highlight11\cf10\b\i0 ,\highlight7\cf6\b0\i0 "w"\highlight11\cf10\b\i0 );\highlight1\cf0\b0 \par
+  \highlight9\cf8 $fwrite\highlight11\cf10\b (\highlight13\cf12\b0 f\highlight11\cf10\b ,\highlight7\cf6\b0\i0 "status   Processor cycles   PC     Instruction            R2         R3        R4         R5         R6         R7         R8 dotproduct_summation N \\n"\highlight11\cf10\b\i0 );\highlight1\cf0\b0 \par
+  \highlight13\cf12 clk\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight3\cf2 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+  \highlight13\cf12 rst\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight3\cf2 1\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+  \highlight13\cf12 i\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight3\cf2 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+  \highlight13\cf12 j\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight3\cf2 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+  \highlight13\cf12 sum\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight3\cf2 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+  \highlight13\cf12 product\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight3\cf2 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+  \highlight13\cf12 dot_product\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight3\cf2 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+  \highlight13\cf12 result\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight3\cf2 580\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+  \highlight11\cf10\b #\highlight3\cf2\b0 104\highlight1\cf0 \par
+  \highlight13\cf12 rst\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight3\cf2 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\highlight5\cf4 end\highlight1\cf0 \par
+\par
+\highlight5\cf4 always\highlight1\cf0  \highlight11\cf10\b @(\highlight5\cf4\b0 posedge\highlight1\cf0  \highlight13\cf12 clk\highlight1\cf0  \highlight5\cf4 or\highlight1\cf0  \highlight5\cf4 posedge\highlight1\cf0  \highlight13\cf12 rst\highlight11\cf10\b )\highlight1\cf0\b0  \highlight5\cf4 begin\highlight1\cf0 \par
+     \highlight5\cf4 if\highlight1\cf0  \highlight11\cf10\b (\highlight13\cf12\b0 rst\highlight11\cf10\b )\highlight1\cf0\b0  \highlight5\cf4 begin\highlight1\cf0 \par
+       \highlight13\cf12 i\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight3\cf2 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+     \highlight5\cf4 end\highlight1\cf0 \par
+     \highlight5\cf4 else\highlight1\cf0  \highlight5\cf4 begin\highlight1\cf0 \par
+     \highlight13\cf12 PC\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 dut\highlight11\cf10\b .\highlight13\cf12\b0 fetch_dec_PC\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+     \highlight13\cf12 r2\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 dut\highlight11\cf10\b .\highlight13\cf12\b0 dec_unit\highlight11\cf10\b .\highlight13\cf12\b0 register_unit\highlight11\cf10\b .\highlight13\cf12\b0 register_file\highlight11\cf10\b [\highlight3\cf2\b0 2\highlight11\cf10\b ];\highlight1\cf0\b0 \par
+     \highlight13\cf12 r3\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 dut\highlight11\cf10\b .\highlight13\cf12\b0 dec_unit\highlight11\cf10\b .\highlight13\cf12\b0 register_unit\highlight11\cf10\b .\highlight13\cf12\b0 register_file\highlight11\cf10\b [\highlight3\cf2\b0 3\highlight11\cf10\b ];\highlight1\cf0\b0 \par
+     \highlight13\cf12 r4\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 dut\highlight11\cf10\b .\highlight13\cf12\b0 dec_unit\highlight11\cf10\b .\highlight13\cf12\b0 register_unit\highlight11\cf10\b .\highlight13\cf12\b0 register_file\highlight11\cf10\b [\highlight3\cf2\b0 4\highlight11\cf10\b ];\highlight1\cf0\b0 \par
+     \highlight13\cf12 r5\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 dut\highlight11\cf10\b .\highlight13\cf12\b0 dec_unit\highlight11\cf10\b .\highlight13\cf12\b0 register_unit\highlight11\cf10\b .\highlight13\cf12\b0 register_file\highlight11\cf10\b [\highlight3\cf2\b0 5\highlight11\cf10\b ];\highlight1\cf0\b0 \par
+     \highlight13\cf12 r6\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 dut\highlight11\cf10\b .\highlight13\cf12\b0 dec_unit\highlight11\cf10\b .\highlight13\cf12\b0 register_unit\highlight11\cf10\b .\highlight13\cf12\b0 register_file\highlight11\cf10\b [\highlight3\cf2\b0 6\highlight11\cf10\b ];\highlight1\cf0\b0 \par
+     \highlight13\cf12 r7\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 dut\highlight11\cf10\b .\highlight13\cf12\b0 dec_unit\highlight11\cf10\b .\highlight13\cf12\b0 register_unit\highlight11\cf10\b .\highlight13\cf12\b0 register_file\highlight11\cf10\b [\highlight3\cf2\b0 7\highlight11\cf10\b ];\highlight1\cf0\b0 \par
+     \highlight13\cf12 r8\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 dut\highlight11\cf10\b .\highlight13\cf12\b0 dec_unit\highlight11\cf10\b .\highlight13\cf12\b0 register_unit\highlight11\cf10\b .\highlight13\cf12\b0 register_file\highlight11\cf10\b [\highlight3\cf2\b0 8\highlight11\cf10\b ];\highlight1\cf0\b0 \par
+     \highlight13\cf12 i\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 i\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight3\cf2 1\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+     \highlight5\cf4 case\highlight11\cf10\b (\highlight13\cf12\b0 PC\highlight11\cf10\b )\highlight1\cf0\b0 \par
+       \highlight3\cf2 0\highlight1\cf0  \highlight11\cf10\b :\highlight1\cf0\b0  \highlight5\cf4 begin\highlight1\cf0  \par
+            \highlight9\cf8 $fwrite\highlight11\cf10\b (\highlight13\cf12\b0 f\highlight11\cf10\b ,\highlight7\cf6\b0\i0 "running %d %d   orhi r2, r0,(0) %d %d %d %d %d %d %d \\n"\highlight11\cf10\b\i0 ,\highlight13\cf12\b0 i\highlight11\cf10\b ,\highlight13\cf12\b0 PC\highlight11\cf10\b ,\highlight13\cf12\b0 r2\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r3\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r4\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r5\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r6\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r7\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r8\highlight11\cf10\b );\highlight1\cf0\b0 \par
+           \highlight5\cf4 end\highlight1\cf0 \par
+       \highlight3\cf2 4\highlight11\cf10\b :\highlight1\cf0\b0  \highlight5\cf4 begin\highlight1\cf0 \par
+            \highlight9\cf8 $fwrite\highlight11\cf10\b (\highlight13\cf12\b0 f\highlight11\cf10\b ,\highlight7\cf6\b0\i0 "running %d %d   ori r2, r2,(8)  %d %d %d %d %d %d %d \\n"\highlight11\cf10\b\i0 ,\highlight13\cf12\b0 i\highlight11\cf10\b ,\highlight13\cf12\b0 PC\highlight11\cf10\b ,\highlight13\cf12\b0 r2\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r3\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r4\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r5\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r6\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r7\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r8\highlight11\cf10\b );\highlight1\cf0\b0 \par
+          \highlight5\cf4 end\highlight1\cf0 \par
+       \highlight3\cf2 8\highlight11\cf10\b :\highlight1\cf0\b0  \highlight5\cf4 begin\highlight1\cf0 \par
+            \highlight9\cf8 $fwrite\highlight11\cf10\b (\highlight13\cf12\b0 f\highlight11\cf10\b ,\highlight7\cf6\b0\i0 "running %d %d   orhi r3, r0,(0) %d %d %d %d %d %d %d \\n"\highlight11\cf10\b\i0 ,\highlight13\cf12\b0 i\highlight11\cf10\b ,\highlight13\cf12\b0 PC\highlight11\cf10\b ,\highlight13\cf12\b0 r2\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r3\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r4\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r5\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r6\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r7\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r8\highlight11\cf10\b );\highlight1\cf0\b0 \par
+         \highlight5\cf4 end\highlight1\cf0 \par
+       \highlight3\cf2 12\highlight11\cf10\b :\highlight1\cf0\b0  \highlight5\cf4 begin\highlight1\cf0 \par
+            \highlight9\cf8 $fwrite\highlight11\cf10\b (\highlight13\cf12\b0 f\highlight11\cf10\b ,\highlight7\cf6\b0\i0 "running %d %d   ori r3, r3,(32) %d %d %d %d %d %d %d \\n"\highlight11\cf10\b\i0 ,\highlight13\cf12\b0 i\highlight11\cf10\b ,\highlight13\cf12\b0 PC\highlight11\cf10\b ,\highlight13\cf12\b0 r2\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r3\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r4\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r5\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r6\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r7\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r8\highlight11\cf10\b );\highlight1\cf0\b0 \par
+           \highlight5\cf4 end\highlight1\cf0 \par
+       \highlight3\cf2 16\highlight11\cf10\b :\highlight1\cf0\b0  \highlight5\cf4 begin\highlight1\cf0 \par
+            \highlight9\cf8 $fwrite\highlight11\cf10\b (\highlight13\cf12\b0 f\highlight11\cf10\b ,\highlight7\cf6\b0\i0 "running %d %d   orhi r4, r0,(0) %d %d %d %d %d %d %d \\n"\highlight11\cf10\b\i0 ,\highlight13\cf12\b0 i\highlight11\cf10\b ,\highlight13\cf12\b0 PC\highlight11\cf10\b ,\highlight13\cf12\b0 r2\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r3\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r4\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r5\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r6\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r7\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r8\highlight11\cf10\b );\highlight1\cf0\b0 \par
+           \highlight5\cf4 end\highlight1\cf0 \par
+       \highlight3\cf2 20\highlight11\cf10\b :\highlight1\cf0\b0  \highlight5\cf4 begin\highlight1\cf0 \par
+            \highlight9\cf8 $fwrite\highlight11\cf10\b (\highlight13\cf12\b0 f\highlight11\cf10\b ,\highlight7\cf6\b0\i0 "running %d %d   ori r4, r0,(6)  %d %d %d %d %d %d %d \\n"\highlight11\cf10\b\i0 ,\highlight13\cf12\b0 i\highlight11\cf10\b ,\highlight13\cf12\b0 PC\highlight11\cf10\b ,\highlight13\cf12\b0 r2\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r3\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r4\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r5\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r6\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r7\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r8\highlight11\cf10\b );\highlight1\cf0\b0 \par
+           \highlight5\cf4 end\highlight1\cf0 \par
+       \highlight3\cf2 24\highlight11\cf10\b :\highlight1\cf0\b0  \highlight5\cf4 begin\highlight1\cf0 \par
+            \highlight9\cf8 $fwrite\highlight11\cf10\b (\highlight13\cf12\b0 f\highlight11\cf10\b ,\highlight7\cf6\b0\i0 "running %d %d   ldw r4, 0(r4)   %d %d %d %d %d %d %d \\n"\highlight11\cf10\b\i0 ,\highlight13\cf12\b0 i\highlight11\cf10\b ,\highlight13\cf12\b0 PC\highlight11\cf10\b ,\highlight13\cf12\b0 r2\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r3\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r4\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r5\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r6\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r7\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r8\highlight11\cf10\b );\highlight1\cf0\b0 \par
+           \highlight5\cf4 end\highlight1\cf0 \par
+       \highlight3\cf2 28\highlight11\cf10\b :\highlight1\cf0\b0  \highlight5\cf4 begin\highlight1\cf0 \par
+            \highlight9\cf8 $fwrite\highlight11\cf10\b (\highlight13\cf12\b0 f\highlight11\cf10\b ,\highlight7\cf6\b0\i0 "running %d %d   add r5, r0, r0  %d %d %d %d %d %d %d \\n"\highlight11\cf10\b\i0 ,\highlight13\cf12\b0 i\highlight11\cf10\b ,\highlight13\cf12\b0 PC\highlight11\cf10\b ,\highlight13\cf12\b0 r2\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r3\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r4\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r5\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r6\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r7\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r8\highlight11\cf10\b );\highlight1\cf0\b0 \par
+           \highlight5\cf4 end\highlight1\cf0 \par
+       \highlight3\cf2 32\highlight11\cf10\b :\highlight1\cf0\b0  \highlight5\cf4 begin\highlight1\cf0 \par
+            \highlight9\cf8 $fwrite\highlight11\cf10\b (\highlight13\cf12\b0 f\highlight11\cf10\b ,\highlight7\cf6\b0\i0 "running %d %d Loop:ldw r6, 0(r2)%d %d %d %d %d %d %d \\n"\highlight11\cf10\b\i0 ,\highlight13\cf12\b0 i\highlight11\cf10\b ,\highlight13\cf12\b0 PC\highlight11\cf10\b ,\highlight13\cf12\b0 r2\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r3\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r4\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r5\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r6\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r7\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r8\highlight11\cf10\b );\highlight1\cf0\b0 \par
+           \highlight5\cf4 end\highlight1\cf0 \par
+       \highlight3\cf2 36\highlight11\cf10\b :\highlight1\cf0\b0  \highlight5\cf4 begin\highlight1\cf0 \par
+            \highlight9\cf8 $fwrite\highlight11\cf10\b (\highlight13\cf12\b0 f\highlight11\cf10\b ,\highlight7\cf6\b0\i0 "running %d %d   ldw r7, 0(r3))  %d %d %d %d %d %d %d \\n"\highlight11\cf10\b\i0 ,\highlight13\cf12\b0 i\highlight11\cf10\b ,\highlight13\cf12\b0 PC\highlight11\cf10\b ,\highlight13\cf12\b0 r2\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r3\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r4\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r5\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r6\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r7\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r8\highlight11\cf10\b );\highlight1\cf0\b0 \par
+          \highlight5\cf4 end\highlight1\cf0 \par
+      \highlight3\cf2 40\highlight11\cf10\b :\highlight1\cf0\b0  \highlight5\cf4 begin\highlight1\cf0 \par
+         \highlight9\cf8 $fwrite\highlight11\cf10\b (\highlight13\cf12\b0 f\highlight11\cf10\b ,\highlight7\cf6\b0\i0 "running %d %d  mul r8, r6, r7   %d %d %d %d %d %d %d \\n"\highlight11\cf10\b\i0 ,\highlight13\cf12\b0 i\highlight11\cf10\b ,\highlight13\cf12\b0 PC\highlight11\cf10\b ,\highlight13\cf12\b0 r2\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r3\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r4\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r5\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r6\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r7\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r8\highlight11\cf10\b );\highlight1\cf0\b0 \par
+          \highlight5\cf4 end\highlight1\cf0 \par
+      \highlight3\cf2 44\highlight11\cf10\b :\highlight1\cf0\b0  \highlight5\cf4 begin\highlight1\cf0 \par
+          \highlight9\cf8 $fwrite\highlight11\cf10\b (\highlight13\cf12\b0 f\highlight11\cf10\b ,\highlight7\cf6\b0\i0 "running %d %d  add r5, r5, r8   %d %d %d %d %d %d %d \\n"\highlight11\cf10\b\i0 ,\highlight13\cf12\b0 i\highlight11\cf10\b ,\highlight13\cf12\b0 PC\highlight11\cf10\b ,\highlight13\cf12\b0 r2\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r3\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r4\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r5\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r6\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r7\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r8\highlight11\cf10\b );\highlight1\cf0\b0 \par
+          \highlight5\cf4 end\highlight1\cf0 \par
+      \highlight3\cf2 48\highlight11\cf10\b :\highlight1\cf0\b0  \highlight5\cf4 begin\highlight1\cf0 \par
+          \highlight9\cf8 $fwrite\highlight11\cf10\b (\highlight13\cf12\b0 f\highlight11\cf10\b ,\highlight7\cf6\b0\i0 "running %d %d  addi r2, r2, 4   %d %d %d %d %d %d %d\\n"\highlight11\cf10\b\i0 ,\highlight13\cf12\b0 i\highlight11\cf10\b ,\highlight13\cf12\b0 PC\highlight11\cf10\b ,\highlight13\cf12\b0 r2\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r3\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r4\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r5\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r6\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r7\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r8\highlight11\cf10\b );\highlight1\cf0\b0 \par
+          \highlight5\cf4 end\highlight1\cf0 \par
+      \highlight3\cf2 52\highlight11\cf10\b :\highlight1\cf0\b0  \highlight5\cf4 begin\highlight1\cf0 \par
+          \highlight9\cf8 $fwrite\highlight11\cf10\b (\highlight13\cf12\b0 f\highlight11\cf10\b ,\highlight7\cf6\b0\i0 "running %d %d  addi r3, r3, 4   %d %d %d %d %d %d %d\\n"\highlight11\cf10\b\i0 ,\highlight13\cf12\b0 i\highlight11\cf10\b ,\highlight13\cf12\b0 PC\highlight11\cf10\b ,\highlight13\cf12\b0 r2\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r3\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r4\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r5\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r6\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r7\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r8\highlight11\cf10\b );\highlight1\cf0\b0 \par
+          \highlight13\cf12 sum\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 r5\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+          \highlight5\cf4 end\highlight1\cf0 \par
+      \highlight3\cf2 56\highlight11\cf10\b :\highlight1\cf0\b0  \highlight5\cf4 begin\highlight1\cf0 \par
+          \highlight9\cf8 $fwrite\highlight11\cf10\b (\highlight13\cf12\b0 f\highlight11\cf10\b ,\highlight7\cf6\b0\i0 "running %d %d  addi r4, r4, -1  %d %d %d %d %d %d %d \\n"\highlight11\cf10\b\i0 ,\highlight13\cf12\b0 i\highlight11\cf10\b ,\highlight13\cf12\b0 PC\highlight11\cf10\b ,\highlight13\cf12\b0 r2\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r3\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r4\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r5\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r6\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r7\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r8\highlight11\cf10\b );\highlight1\cf0\b0 \par
+          \highlight5\cf4 end\highlight1\cf0 \par
+      \highlight3\cf2 60\highlight11\cf10\b :\highlight1\cf0\b0  \highlight5\cf4 begin\highlight1\cf0 \par
+          \highlight13\cf12 product\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 sum\highlight1\cf0  \highlight11\cf10\b +\highlight1\cf0\b0  \highlight13\cf12 r6\highlight1\cf0  \highlight11\cf10\b *\highlight1\cf0\b0  \highlight13\cf12 r7\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+          \highlight9\cf8 $fwrite\highlight11\cf10\b (\highlight13\cf12\b0 f\highlight11\cf10\b ,\highlight7\cf6\b0\i0 "running %d %d  blt r0, r4, Loop %d %d %d %d %d %d %d %d %d\\n"\highlight11\cf10\b\i0 ,\highlight13\cf12\b0 i\highlight11\cf10\b ,\highlight13\cf12\b0 PC\highlight11\cf10\b ,\highlight13\cf12\b0 r2\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r3\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r4\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r5\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r6\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r7\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r8\highlight11\cf10\b ,\highlight13\cf12\b0 product\highlight11\cf10\b ,\highlight13\cf12\b0 dut\highlight11\cf10\b .\highlight13\cf12\b0 exe_dec_reslt_data\highlight11\cf10\b );\highlight1\cf0\b0 \par
+          \highlight5\cf4 end\highlight1\cf0 \par
+      \highlight3\cf2 64\highlight11\cf10\b :\highlight1\cf0\b0  \highlight5\cf4 begin\highlight1\cf0 \par
+          \highlight9\cf8 $fwrite\highlight11\cf10\b (\highlight13\cf12\b0 f\highlight11\cf10\b ,\highlight7\cf6\b0\i0 "running %d %d  stw r5, 0(r0)    %d %d %d %d %d %d %d \\n"\highlight11\cf10\b\i0 ,\highlight13\cf12\b0 i\highlight11\cf10\b ,\highlight13\cf12\b0 PC\highlight11\cf10\b ,\highlight13\cf12\b0 r2\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r3\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r4\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r5\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r6\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r7\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r8\highlight11\cf10\b );\highlight1\cf0\b0 \par
+          \highlight5\cf4 end\highlight1\cf0 \par
+      \highlight3\cf2 68\highlight11\cf10\b :\highlight1\cf0\b0  \highlight5\cf4 begin\highlight1\cf0 \par
+          \highlight9\cf8 $fwrite\highlight11\cf10\b (\highlight13\cf12\b0 f\highlight11\cf10\b ,\highlight7\cf6\b0\i0 "running %d %d  stop: br stop    %d %d %d %d %d %d %d \\n"\highlight11\cf10\b\i0 ,\highlight13\cf12\b0 i\highlight11\cf10\b ,\highlight13\cf12\b0 PC\highlight11\cf10\b ,\highlight13\cf12\b0 r2\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r3\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r4\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r5\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r6\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r7\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 r8\highlight11\cf10\b );\highlight1\cf0\b0 \par
+          \highlight5\cf4 end\highlight1\cf0 \par
+      \highlight5\cf4 default\highlight11\cf10\b :\highlight1\cf0\b0  \highlight9\cf8 $display\highlight11\cf10\b (\highlight7\cf6\b0\i0 "Reset -> system off"\highlight11\cf10\b\i0 );\highlight1\cf0\b0 \par
+    \highlight5\cf4 endcase\highlight1\cf0 \par
+    \highlight5\cf4 if\highlight1\cf0  \highlight11\cf10\b (\highlight13\cf12\b0 PC\highlight1\cf0  \highlight11\cf10\b >=\highlight1\cf0\b0  \highlight3\cf2 68\highlight1\cf0  \highlight11\cf10\b &&\highlight1\cf0\b0  \highlight13\cf12 dut\highlight11\cf10\b .\highlight13\cf12\b0 dec_unit\highlight11\cf10\b .\highlight13\cf12\b0 register_unit\highlight11\cf10\b .\highlight13\cf12\b0 register_file\highlight11\cf10\b [\highlight3\cf2\b0 4\highlight11\cf10\b ]==\highlight3\cf2\b0 0\highlight11\cf10\b )\highlight1\cf0\b0  \highlight5\cf4 begin\highlight1\cf0 \par
+       \highlight13\cf12 dot_product\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 dut\highlight11\cf10\b .\highlight13\cf12\b0 dec_unit\highlight11\cf10\b .\highlight13\cf12\b0 register_unit\highlight11\cf10\b .\highlight13\cf12\b0 register_file\highlight11\cf10\b [\highlight3\cf2\b0 5\highlight11\cf10\b ];\highlight1\cf0\b0 \par
+       \highlight5\cf4 if\highlight11\cf10\b (\highlight13\cf12\b0 dot_product\highlight1\cf0  \highlight11\cf10\b ==\highlight1\cf0\b0  \highlight13\cf12 result\highlight11\cf10\b )\highlight1\cf0\b0  \highlight5\cf4 begin\highlight1\cf0 \par
+         \highlight9\cf8 $display\highlight11\cf10\b (\highlight7\cf6\b0\i0 " Correct!!"\highlight11\cf10\b\i0 );\highlight1\cf0\b0 \par
+         \highlight9\cf8 $display\highlight11\cf10\b (\highlight7\cf6\b0\i0 "dot product = %d "\highlight11\cf10\b\i0 ,\highlight13\cf12\b0 dut\highlight11\cf10\b .\highlight13\cf12\b0 dec_unit\highlight11\cf10\b .\highlight13\cf12\b0 register_unit\highlight11\cf10\b .\highlight13\cf12\b0 register_file\highlight11\cf10\b [\highlight3\cf2\b0 5\highlight11\cf10\b ]);\highlight1\cf0\b0 \par
+         \highlight9\cf8 $display\highlight11\cf10\b (\highlight7\cf6\b0\i0 "your processor working correctly"\highlight11\cf10\b\i0 );\highlight1\cf0\b0 \par
+         \highlight9\cf8 $display\highlight11\cf10\b (\highlight7\cf6\b0\i0 "simulation finished"\highlight11\cf10\b\i0 );\highlight1\cf0\b0 \par
+         \highlight9\cf8 $fwrite\highlight11\cf10\b (\highlight13\cf12\b0 f\highlight11\cf10\b ,\highlight7\cf6\b0\i0 " Correct !! \\n dot product = %d \\n Your processor is working correctly \\n Simulation finished \\n"\highlight11\cf10\b\i0 ,\highlight13\cf12\b0 dut\highlight11\cf10\b .\highlight13\cf12\b0 dec_unit\highlight11\cf10\b .\highlight13\cf12\b0 register_unit\highlight11\cf10\b .\highlight13\cf12\b0 register_file\highlight11\cf10\b [\highlight3\cf2\b0 5\highlight11\cf10\b ]);\highlight1\cf0\b0 \par
+         \highlight9\cf8 $fclose\highlight11\cf10\b (\highlight7\cf6\b0\i0 "output.txt"\highlight11\cf10\b\i0 );\highlight1\cf0\b0 \par
+       \highlight5\cf4 end\highlight1\cf0  \highlight5\cf4 else\highlight1\cf0  \highlight5\cf4 begin\highlight1\cf0 \par
+         \highlight9\cf8 $display\highlight11\cf10\b (\highlight7\cf6\b0\i0 " Error!!!!!"\highlight11\cf10\b\i0 );\highlight1\cf0\b0 \par
+         \highlight9\cf8 $display\highlight11\cf10\b (\highlight7\cf6\b0\i0 " Expecting = %d got = %d"\highlight11\cf10\b\i0 ,\highlight13\cf12\b0 result\highlight11\cf10\b ,\highlight13\cf12\b0 dut\highlight11\cf10\b .\highlight13\cf12\b0 dec_unit\highlight11\cf10\b .\highlight13\cf12\b0 register_unit\highlight11\cf10\b .\highlight13\cf12\b0 register_file\highlight11\cf10\b [\highlight3\cf2\b0 5\highlight11\cf10\b ]);\highlight1\cf0\b0 \par
+         \highlight9\cf8 $fwrite\highlight11\cf10\b (\highlight13\cf12\b0 f\highlight11\cf10\b ,\highlight7\cf6\b0\i0 " Error!!! \\n Expecting = %d got = %d"\highlight11\cf10\b\i0 ,\highlight13\cf12\b0 result\highlight11\cf10\b ,\highlight13\cf12\b0 dut\highlight11\cf10\b .\highlight13\cf12\b0 dec_unit\highlight11\cf10\b .\highlight13\cf12\b0 register_unit\highlight11\cf10\b .\highlight13\cf12\b0 register_file\highlight11\cf10\b [\highlight3\cf2\b0 5\highlight11\cf10\b ]);\highlight1\cf0\b0 \par
+        \highlight5\cf4 end\highlight1\cf0 \par
+      \highlight9\cf8 $finish\highlight11\cf10\b ();\highlight1\cf0\b0 \par
+    \highlight5\cf4 end\highlight1\cf0 \par
+\highlight5\cf4 end\highlight1\cf0 \par
+\highlight5\cf4 end\highlight1\cf0 \par
+\highlight5\cf4 endmodule\highlight1\cf0 \par
+}

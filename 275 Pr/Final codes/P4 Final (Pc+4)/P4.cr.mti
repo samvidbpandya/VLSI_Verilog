@@ -1,0 +1,92 @@
+{D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/code/P4/tb_niosII.v} {1 {vlog -work work -stats=none {D:\SJSU DOCUMENTS\Study\Summer 2015\EE 275 Summer 2015\Project\code\P4\tb_niosII.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module tb_niosII
+
+Top level modules:
+	tb_niosII
+
+} {} {}} {D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/code/P4 Final (Pc+4)/niosII.v} {1 {vlog -work work -stats=none {D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/code/P4 Final (Pc+4)/niosII.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module niosII
+
+Top level modules:
+	niosII
+
+} {} {}} {D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/code/P4 Final (Pc+4)/decode.v} {1 {vlog -work work -stats=none {D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/code/P4 Final (Pc+4)/decode.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module decode
+
+Top level modules:
+	decode
+
+} {} {}} {D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/code/P4 Final (Pc+4)/memory_stage.v} {1 {vlog -work work -stats=none {D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/code/P4 Final (Pc+4)/memory_stage.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module memory_stage
+
+Top level modules:
+	memory_stage
+
+} {} {}} {D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/code/P4 Final (Pc+4)/register_file.v} {1 {vlog -work work -stats=none {D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/code/P4 Final (Pc+4)/register_file.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module register_file
+
+Top level modules:
+	register_file
+
+} {} {}} {D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/code/P4/register_file.v} {1 {vlog -work work -stats=none {D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/code/P4/register_file.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module register_file
+
+Top level modules:
+	register_file
+
+} {} {}} {D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/code/P4 Final (Pc+4)/fetch.v} {1 {vlog -work work -stats=none {D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/code/P4 Final (Pc+4)/fetch.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module fetch
+
+Top level modules:
+	fetch
+
+} {} {}} {D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/code/P4 Final (Pc+4)/execute.v} {1 {vlog -work work -stats=none {D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/code/P4 Final (Pc+4)/execute.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module execute
+
+Top level modules:
+	execute
+
+} {} {}} {D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/code/P4/fetch.v} {1 {vlog -work work -stats=none {D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/code/P4/fetch.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module fetch
+
+Top level modules:
+	fetch
+
+} {} {}} {D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/code/P4/execute.v} {1 {vlog -work work -stats=none {D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/code/P4/execute.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module execute
+
+Top level modules:
+	execute
+
+} {} {}} {D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/code/P4/memory_stage.v} {1 {vlog -work work -stats=none {D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/code/P4/memory_stage.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module memory_stage
+
+Top level modules:
+	memory_stage
+
+} {} {}} {D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/code/P4/decode.v} {1 {vlog -work work -stats=none {D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/code/P4/decode.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module decode
+
+Top level modules:
+	decode
+
+} {} {}} {D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/code/P4 Final (Pc+4)/tb_niosII.v} {1 {vlog -work work -stats=none {D:\SJSU DOCUMENTS\Study\Summer 2015\EE 275 Summer 2015\Project\code\P4 Final (Pc+4)\tb_niosII.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module tb_niosII
+
+Top level modules:
+	tb_niosII
+
+} {} {}}

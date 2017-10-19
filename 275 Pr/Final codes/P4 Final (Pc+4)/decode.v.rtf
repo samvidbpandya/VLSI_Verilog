@@ -1,0 +1,266 @@
+{\rtf1\ansi\deff0\deftab240
+
+{\fonttbl
+{\f000 Courier New;}
+{\f001 Courier New;}
+{\f002 Courier New;}
+{\f003 Courier New;}
+{\f004 Courier New;}
+{\f005 Courier New;}
+{\f006 Courier New;}
+{\f007 Courier New;}
+}
+
+{\colortbl
+\red000\green000\blue000;
+\red255\green255\blue255;
+\red000\green128\blue000;
+\red255\green255\blue255;
+\red000\green128\blue000;
+\red255\green255\blue255;
+\red255\green128\blue000;
+\red255\green255\blue255;
+\red000\green000\blue255;
+\red255\green255\blue255;
+\red000\green000\blue128;
+\red255\green255\blue255;
+\red000\green000\blue000;
+\red255\green255\blue255;
+\red000\green000\blue000;
+\red255\green255\blue255;
+}
+
+\f0\fs20\cb15\cf14 \fs22\highlight9\cf8 module\highlight1\cf0  \highlight13\cf12 decode\highlight1\cf0  \highlight11\cf10\b (\highlight3\cf2\b0\i0 /*----------output ports------------*/\highlight1\cf0\i0 \par
+               \highlight5\cf4 // to execution unit (passed through DFF)\par
+\highlight1\cf0                \highlight13\cf12 branch_taken\highlight11\cf10\b ,\highlight1\cf0\b0 \par
+               \highlight13\cf12 dec_fetch_br_PC\highlight11\cf10\b ,\highlight1\cf0\b0 \par
+               \highlight13\cf12 dec_exe_mux1_hctrl\highlight11\cf10\b ,\highlight1\cf0\b0 \par
+               \highlight13\cf12 dec_exe_mux2_hctrl\highlight11\cf10\b ,\highlight1\cf0\b0 \par
+               \highlight13\cf12 dec_exe_ctrl_sgs\highlight11\cf10\b ,\highlight1\cf0\b0   \highlight5\cf4 //reg_wr-mem_wr-mem_rd-alu_ctrl\par
+\highlight1\cf0                \highlight13\cf12 dec_exe_reg_data\highlight11\cf10\b ,\highlight1\cf0\b0   \highlight5\cf4 //64bit data1 and data2\par
+\highlight1\cf0                \highlight13\cf12 dec_exe_mem_wr_data\highlight11\cf10\b ,\highlight1\cf0\b0 \par
+               \highlight13\cf12 dec_exe_reg_wr_add\highlight11\cf10\b ,\highlight1\cf0\b0   \highlight5\cf4 // 5 bit\par
+\highlight1\cf0                \highlight13\cf12 dec_exe_wb_reg_wr_data\highlight11\cf10\b ,\highlight1\cf0\b0 \par
+               \highlight5\cf4 // for hazard unit\par
+\highlight1\cf0                \highlight13\cf12 exe_reg_add\highlight11\cf10\b ,\highlight1\cf0\b0 \par
+               \highlight13\cf12 mem_reg_add\highlight11\cf10\b ,\highlight1\cf0\b0 \par
+               \highlight3\cf2\i0 /*----input ports----*/\highlight1\cf0\i0 \par
+               \highlight13\cf12 clk\highlight11\cf10\b ,\highlight1\cf0\b0 \par
+               \highlight13\cf12 rst\highlight11\cf10\b ,\highlight1\cf0\b0 \par
+               \highlight13\cf12 fetch_dec_instruction\highlight11\cf10\b ,\highlight1\cf0\b0 \par
+               \highlight13\cf12 wb_dec_reg_wr_en\highlight11\cf10\b ,\highlight1\cf0\b0 \par
+               \highlight13\cf12 wb_dec_reg_wr_add\highlight11\cf10\b ,\highlight1\cf0\b0 \par
+               \highlight13\cf12 wb_dec_reg_wr_data\highlight11\cf10\b ,\highlight1\cf0\b0 \par
+               \highlight13\cf12 exe_dec_reslt_data\highlight1\cf0 \par
+               \highlight11\cf10\b );\highlight1\cf0\b0 \par
+\highlight9\cf8 output\highlight1\cf0  \highlight9\cf8 reg\highlight1\cf0  \highlight11\cf10\b [\highlight7\cf6\b0 4\highlight11\cf10\b :\highlight7\cf6\b0 0\highlight11\cf10\b ]\highlight1\cf0\b0  \highlight13\cf12 dec_exe_ctrl_sgs\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 dec_exe_reg_wr_add\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8 output\highlight1\cf0  \highlight9\cf8 reg\highlight1\cf0  \highlight11\cf10\b [\highlight7\cf6\b0 63\highlight11\cf10\b :\highlight7\cf6\b0 0\highlight11\cf10\b ]\highlight1\cf0\b0  \highlight13\cf12 dec_exe_reg_data\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8 output\highlight1\cf0  \highlight9\cf8 reg\highlight1\cf0  \highlight11\cf10\b [\highlight7\cf6\b0 31\highlight11\cf10\b :\highlight7\cf6\b0 0\highlight11\cf10\b ]\highlight1\cf0\b0  \highlight13\cf12 dec_exe_mem_wr_data\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 dec_exe_wb_reg_wr_data\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 dec_fetch_br_PC\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8 output\highlight1\cf0  \highlight9\cf8 reg\highlight1\cf0  \highlight11\cf10\b [\highlight7\cf6\b0 1\highlight11\cf10\b :\highlight7\cf6\b0 0\highlight11\cf10\b ]\highlight1\cf0\b0  \highlight13\cf12 dec_exe_mux2_hctrl\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 dec_exe_mux1_hctrl\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8 output\highlight1\cf0  \highlight9\cf8 reg\highlight1\cf0  \highlight13\cf12 branch_taken\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8 input\highlight1\cf0  \highlight13\cf12 rst\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 clk\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 wb_dec_reg_wr_en\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8 input\highlight1\cf0  \highlight11\cf10\b [\highlight7\cf6\b0 31\highlight11\cf10\b :\highlight7\cf6\b0 0\highlight11\cf10\b ]\highlight1\cf0\b0  \highlight13\cf12 fetch_dec_instruction\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 wb_dec_reg_wr_data\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 exe_dec_reslt_data\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8 input\highlight1\cf0  \highlight11\cf10\b [\highlight7\cf6\b0 4\highlight11\cf10\b :\highlight7\cf6\b0 0\highlight11\cf10\b ]\highlight1\cf0\b0  \highlight13\cf12 wb_dec_reg_wr_add\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8 input\highlight1\cf0  \highlight11\cf10\b [\highlight7\cf6\b0 4\highlight11\cf10\b :\highlight7\cf6\b0 0\highlight11\cf10\b ]\highlight1\cf0\b0  \highlight13\cf12 exe_reg_add\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 mem_reg_add\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8 reg\highlight1\cf0  \highlight11\cf10\b [\highlight7\cf6\b0 4\highlight11\cf10\b :\highlight7\cf6\b0 0\highlight11\cf10\b ]\highlight1\cf0\b0  \highlight13\cf12 _dec_exe_ctrl_sgs\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 _dec_exe_reg_wr_add\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 rA\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 rB\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 rC\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 reg_wr_add\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8 reg\highlight1\cf0  \highlight11\cf10\b [\highlight7\cf6\b0 63\highlight11\cf10\b :\highlight7\cf6\b0 0\highlight11\cf10\b ]\highlight1\cf0\b0  \highlight13\cf12 _dec_exe_reg_data\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8 reg\highlight1\cf0  \highlight11\cf10\b [\highlight7\cf6\b0 31\highlight11\cf10\b :\highlight7\cf6\b0 0\highlight11\cf10\b ]\highlight1\cf0\b0  \highlight13\cf12 _dec_exe_mem_wr_data\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 data1\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 data2\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 mem_wr_data\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 PC_br\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8 reg\highlight1\cf0  \highlight11\cf10\b [\highlight7\cf6\b0 5\highlight11\cf10\b :\highlight7\cf6\b0 0\highlight11\cf10\b ]\highlight1\cf0\b0  \highlight13\cf12 opcode\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8 reg\highlight1\cf0  \highlight11\cf10\b [\highlight7\cf6\b0 15\highlight11\cf10\b :\highlight7\cf6\b0 0\highlight11\cf10\b ]\highlight1\cf0\b0  \highlight13\cf12 imm16\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8 reg\highlight1\cf0  \highlight11\cf10\b [\highlight7\cf6\b0 10\highlight11\cf10\b :\highlight7\cf6\b0 0\highlight11\cf10\b ]\highlight1\cf0\b0  \highlight13\cf12 opx\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8 reg\highlight1\cf0  \highlight13\cf12 reg_wr\highlight11\cf10\b ,\highlight13\cf12\b0 mem_wr\highlight11\cf10\b ,\highlight13\cf12\b0 mem_rd\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8 reg\highlight1\cf0  \highlight11\cf10\b [\highlight7\cf6\b0 1\highlight11\cf10\b :\highlight7\cf6\b0 0\highlight11\cf10\b ]\highlight1\cf0\b0  \highlight13\cf12 alu_ctrl\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 exe_mux2_hctrl\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 exe_mux1_hctrl\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8 reg\highlight1\cf0  \highlight11\cf10\b [\highlight7\cf6\b0 7\highlight11\cf10\b :\highlight7\cf6\b0 0\highlight11\cf10\b ]\highlight1\cf0\b0  \highlight13\cf12 memory_rd_add\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 memory_wr_add\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8 wire\highlight1\cf0  \highlight11\cf10\b [\highlight7\cf6\b0 31\highlight11\cf10\b :\highlight7\cf6\b0 0\highlight11\cf10\b ]\highlight1\cf0\b0  \highlight13\cf12 reg_rd_data1\highlight11\cf10\b ,\highlight13\cf12\b0 reg_rd_data2\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8 reg\highlight1\cf0  \highlight13\cf12 Itype\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 Jtype\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 Rtype\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8 parameter\highlight1\cf0  \highlight13\cf12 ADD\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 2'b00\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8 parameter\highlight1\cf0  \highlight13\cf12 OR\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 2'b01\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8 parameter\highlight1\cf0  \highlight13\cf12 MUL\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 2'b10\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8 parameter\highlight1\cf0   \highlight13\cf12 PASS_DATA\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 2'b11\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\par
+\highlight9\cf8 always\highlight1\cf0  \highlight11\cf10\b @(\highlight9\cf8\b0 posedge\highlight1\cf0  \highlight13\cf12 clk\highlight1\cf0  \highlight9\cf8 or\highlight1\cf0  \highlight9\cf8 posedge\highlight1\cf0  \highlight13\cf12 rst\highlight11\cf10\b )\highlight1\cf0\b0  \highlight9\cf8 begin\highlight1\cf0  \highlight11\cf10\b :\highlight1\cf0\b0  \highlight13\cf12 decode_stage_flipflop\highlight1\cf0 \par
+  \highlight9\cf8 if\highlight1\cf0  \highlight11\cf10\b (\highlight13\cf12\b0 rst\highlight11\cf10\b )\highlight1\cf0\b0  \highlight9\cf8 begin\highlight1\cf0 \par
+    \highlight13\cf12 dec_exe_ctrl_sgs\highlight1\cf0     \highlight11\cf10\b <=\highlight1\cf0\b0  \highlight11\cf10\b #\highlight7\cf6\b0 1\highlight1\cf0  \highlight7\cf6 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+    \highlight13\cf12 dec_exe_reg_data\highlight1\cf0     \highlight11\cf10\b <=\highlight1\cf0\b0  \highlight11\cf10\b #\highlight7\cf6\b0 1\highlight1\cf0  \highlight7\cf6 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+    \highlight13\cf12 dec_exe_mem_wr_data\highlight1\cf0  \highlight11\cf10\b <=\highlight1\cf0\b0  \highlight11\cf10\b #\highlight7\cf6\b0 1\highlight1\cf0  \highlight7\cf6 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+    \highlight13\cf12 dec_exe_reg_wr_add\highlight1\cf0   \highlight11\cf10\b <=\highlight1\cf0\b0  \highlight11\cf10\b #\highlight7\cf6\b0 1\highlight1\cf0  \highlight7\cf6 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+    \highlight13\cf12 dec_exe_mux2_hctrl\highlight1\cf0   \highlight11\cf10\b <=\highlight1\cf0\b0  \highlight11\cf10\b #\highlight7\cf6\b0 1\highlight1\cf0  \highlight7\cf6 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+    \highlight13\cf12 dec_exe_wb_reg_wr_data\highlight1\cf0  \highlight11\cf10\b <=\highlight1\cf0\b0  \highlight11\cf10\b #\highlight7\cf6\b0 1\highlight1\cf0  \highlight7\cf6 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+    \highlight13\cf12 dec_exe_mux1_hctrl\highlight1\cf0  \highlight11\cf10\b <=\highlight1\cf0\b0  \highlight11\cf10\b #\highlight7\cf6\b0 1\highlight1\cf0  \highlight7\cf6 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+  \highlight9\cf8 end\highlight1\cf0  \highlight9\cf8 else\highlight1\cf0  \highlight9\cf8 begin\highlight1\cf0 \par
+    \highlight13\cf12 dec_exe_ctrl_sgs\highlight1\cf0     \highlight11\cf10\b <=\highlight1\cf0\b0  \highlight11\cf10\b #\highlight7\cf6\b0 1\highlight1\cf0  \highlight13\cf12 _dec_exe_ctrl_sgs\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+    \highlight13\cf12 dec_exe_reg_data\highlight1\cf0     \highlight11\cf10\b <=\highlight1\cf0\b0  \highlight11\cf10\b #\highlight7\cf6\b0 1\highlight1\cf0  \highlight13\cf12 _dec_exe_reg_data\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+    \highlight13\cf12 dec_exe_mem_wr_data\highlight1\cf0  \highlight11\cf10\b <=\highlight1\cf0\b0  \highlight11\cf10\b #\highlight7\cf6\b0 1\highlight1\cf0  \highlight13\cf12 _dec_exe_mem_wr_data\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+    \highlight13\cf12 dec_exe_reg_wr_add\highlight1\cf0   \highlight11\cf10\b <=\highlight1\cf0\b0  \highlight11\cf10\b #\highlight7\cf6\b0 1\highlight1\cf0  \highlight13\cf12 _dec_exe_reg_wr_add\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+    \highlight13\cf12 dec_exe_mux2_hctrl\highlight1\cf0   \highlight11\cf10\b <=\highlight1\cf0\b0  \highlight11\cf10\b #\highlight7\cf6\b0 1\highlight1\cf0  \highlight13\cf12 exe_mux2_hctrl\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+    \highlight13\cf12 dec_exe_wb_reg_wr_data\highlight1\cf0  \highlight11\cf10\b <=\highlight1\cf0\b0  \highlight11\cf10\b #\highlight7\cf6\b0 1\highlight1\cf0  \highlight13\cf12 wb_dec_reg_wr_data\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+    \highlight13\cf12 dec_exe_mux1_hctrl\highlight1\cf0  \highlight11\cf10\b <=\highlight1\cf0\b0  \highlight11\cf10\b #\highlight7\cf6\b0 1\highlight1\cf0  \highlight13\cf12 exe_mux1_hctrl\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+  \highlight9\cf8 end\highlight1\cf0 \par
+\highlight9\cf8 end\highlight1\cf0 \par
+\par
+\highlight13\cf12 register_file\highlight1\cf0  \highlight13\cf12 register_unit\highlight1\cf0  \highlight11\cf10\b (\highlight13\cf12\b0 reg_rd_data1\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 reg_rd_data2\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 clk\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 rst\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 wb_dec_reg_wr_en\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 wb_dec_reg_wr_add\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 wb_dec_reg_wr_data\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 rB\highlight11\cf10\b ,\highlight1\cf0\b0  \highlight13\cf12 rA\highlight11\cf10\b );\highlight1\cf0\b0 \par
+\par
+\highlight9\cf8 always\highlight1\cf0  \highlight11\cf10\b @(*)\highlight1\cf0\b0  \highlight9\cf8 begin\highlight1\cf0  \highlight11\cf10\b :\highlight1\cf0\b0  \highlight13\cf12 decode_stage_signals\highlight1\cf0 \par
+  \highlight13\cf12 opcode\highlight1\cf0                   \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 fetch_dec_instruction\highlight11\cf10\b [\highlight7\cf6\b0 5\highlight11\cf10\b :\highlight7\cf6\b0 0\highlight11\cf10\b ];\highlight1\cf0\b0 \par
+  \highlight13\cf12 rA\highlight1\cf0                       \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 fetch_dec_instruction\highlight11\cf10\b [\highlight7\cf6\b0 31\highlight11\cf10\b :\highlight7\cf6\b0 27\highlight11\cf10\b ];\highlight1\cf0\b0 \par
+  \highlight13\cf12 rB\highlight1\cf0                       \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 fetch_dec_instruction\highlight11\cf10\b [\highlight7\cf6\b0 26\highlight11\cf10\b :\highlight7\cf6\b0 22\highlight11\cf10\b ];\highlight1\cf0\b0 \par
+  \highlight13\cf12 rC\highlight1\cf0                       \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 fetch_dec_instruction\highlight11\cf10\b [\highlight7\cf6\b0 21\highlight11\cf10\b :\highlight7\cf6\b0 17\highlight11\cf10\b ];\highlight1\cf0\b0 \par
+  \highlight13\cf12 imm16\highlight1\cf0                    \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 fetch_dec_instruction\highlight11\cf10\b [\highlight7\cf6\b0 21\highlight11\cf10\b :\highlight7\cf6\b0 6\highlight11\cf10\b ];\highlight1\cf0\b0 \par
+  \highlight13\cf12 opx\highlight1\cf0                      \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 fetch_dec_instruction\highlight11\cf10\b [\highlight7\cf6\b0 16\highlight11\cf10\b :\highlight7\cf6\b0 6\highlight11\cf10\b ];\highlight1\cf0\b0 \par
+  \highlight13\cf12 _dec_exe_reg_data\highlight1\cf0         \highlight11\cf10\b =\highlight1\cf0\b0  \highlight11\cf10\b \{\highlight13\cf12\b0 data1\highlight11\cf10\b ,\highlight13\cf12\b0 data2\highlight11\cf10\b \};\highlight1\cf0\b0 \par
+  \highlight13\cf12 _dec_exe_ctrl_sgs\highlight1\cf0         \highlight11\cf10\b =\highlight1\cf0\b0  \highlight11\cf10\b \{\highlight13\cf12\b0 reg_wr\highlight11\cf10\b ,\highlight13\cf12\b0 mem_wr\highlight11\cf10\b ,\highlight13\cf12\b0 mem_rd\highlight11\cf10\b ,\highlight13\cf12\b0 alu_ctrl\highlight11\cf10\b \};\highlight1\cf0\b0 \par
+  \highlight13\cf12 _dec_exe_reg_wr_add\highlight1\cf0       \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 reg_wr_add\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+  \highlight13\cf12 dec_fetch_br_PC\highlight1\cf0           \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 PC_br\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+\highlight9\cf8 end\highlight1\cf0 \par
+\par
+\highlight9\cf8 always\highlight1\cf0  \highlight11\cf10\b @(*)\highlight1\cf0\b0  \highlight9\cf8 begin\highlight1\cf0  \highlight11\cf10\b :\highlight1\cf0\b0  \highlight13\cf12 decode_control_logic\highlight1\cf0 \par
+  \highlight13\cf12 Itype\highlight1\cf0        \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+  \highlight13\cf12 Jtype\highlight1\cf0        \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+  \highlight13\cf12 Rtype\highlight1\cf0        \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+  \highlight13\cf12 data2\highlight1\cf0        \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+  \highlight13\cf12 data1\highlight1\cf0        \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+  \highlight13\cf12 reg_wr_add\highlight1\cf0   \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+  \highlight13\cf12 alu_ctrl\highlight1\cf0     \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+  \highlight13\cf12 reg_wr\highlight1\cf0       \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+  \highlight13\cf12 mem_wr\highlight1\cf0       \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+  \highlight13\cf12 mem_rd\highlight1\cf0       \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+  \highlight13\cf12 mem_wr_data\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+  \highlight13\cf12 PC_br\highlight1\cf0        \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+  \highlight13\cf12 branch_taken\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+  \highlight9\cf8 case\highlight11\cf10\b (\highlight13\cf12\b0 opcode\highlight11\cf10\b )\highlight1\cf0\b0 \par
+    \highlight7\cf6 4\highlight1\cf0   \highlight11\cf10\b :\highlight1\cf0\b0  \highlight9\cf8 begin\highlight1\cf0  \highlight5\cf4 //addi\par
+\highlight1\cf0            \highlight13\cf12 data2\highlight1\cf0          \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 reg_rd_data2\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+           \highlight13\cf12 data1\highlight1\cf0          \highlight11\cf10\b =\highlight1\cf0\b0  \highlight11\cf10\b \{\{\highlight7\cf6\b0 16\highlight11\cf10\b \{\highlight13\cf12\b0 imm16\highlight11\cf10\b [\highlight7\cf6\b0 15\highlight11\cf10\b ]\}\},\highlight13\cf12\b0 imm16\highlight11\cf10\b \};\highlight1\cf0\b0 \par
+           \highlight13\cf12 reg_wr_add\highlight1\cf0     \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 rB\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+           \highlight13\cf12 reg_wr\highlight1\cf0         \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 1\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+           \highlight13\cf12 alu_ctrl\highlight1\cf0       \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 ADD\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+           \highlight13\cf12 Itype\highlight1\cf0          \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 1\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+         \highlight9\cf8 end\highlight1\cf0 \par
+    \highlight7\cf6 6\highlight1\cf0   \highlight11\cf10\b :\highlight1\cf0\b0  \highlight9\cf8 begin\highlight1\cf0  \highlight5\cf4 //br\par
+\highlight1\cf0            \highlight13\cf12 PC_br\highlight1\cf0   \highlight11\cf10\b =\highlight1\cf0\b0  \highlight11\cf10\b \{\{\highlight7\cf6\b0 32\highlight11\cf10\b \{\highlight13\cf12\b0 imm16\highlight11\cf10\b [\highlight7\cf6\b0 15\highlight11\cf10\b ]\}\},\highlight13\cf12\b0 imm16\highlight11\cf10\b \};\highlight1\cf0\b0 \par
+           \highlight13\cf12 branch_taken\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 1\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+         \highlight9\cf8 end\highlight1\cf0 \par
+    \highlight7\cf6 14\highlight1\cf0  \highlight11\cf10\b :\highlight1\cf0\b0  \highlight9\cf8 begin\highlight1\cf0  \highlight5\cf4 //ori\par
+\highlight1\cf0            \highlight13\cf12 data2\highlight1\cf0          \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 reg_rd_data2\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+           \highlight13\cf12 data1\highlight1\cf0          \highlight11\cf10\b =\highlight1\cf0\b0  \highlight11\cf10\b \{\{\highlight7\cf6\b0 16\highlight11\cf10\b \{\highlight7\cf6\b0 1'b0\highlight11\cf10\b \}\},\highlight13\cf12\b0 imm16\highlight11\cf10\b \};\highlight1\cf0\b0 \par
+           \highlight13\cf12 reg_wr_add\highlight1\cf0     \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 rB\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+           \highlight13\cf12 alu_ctrl\highlight1\cf0       \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 OR\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+           \highlight13\cf12 reg_wr\highlight1\cf0         \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 1\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+           \highlight13\cf12 Itype\highlight1\cf0          \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 1\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+         \highlight9\cf8 end\highlight1\cf0 \par
+    \highlight7\cf6 21\highlight1\cf0  \highlight11\cf10\b :\highlight1\cf0\b0  \highlight9\cf8 begin\highlight1\cf0  \highlight5\cf4 //stw   //use eparate data path for memory data write (to avoid adder to calculate effective address)\par
+\highlight1\cf0            \highlight13\cf12 data2\highlight1\cf0          \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 reg_rd_data2\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+           \highlight13\cf12 data1\highlight1\cf0          \highlight11\cf10\b =\highlight1\cf0\b0  \highlight11\cf10\b \{\{\highlight7\cf6\b0 16\highlight11\cf10\b \{\highlight13\cf12\b0 imm16\highlight11\cf10\b [\highlight7\cf6\b0 15\highlight11\cf10\b ]\}\},\highlight13\cf12\b0 imm16\highlight11\cf10\b \};\highlight1\cf0\b0 \par
+           \highlight13\cf12 reg_wr_add\highlight1\cf0     \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 rB\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+           \highlight13\cf12 alu_ctrl\highlight1\cf0       \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 ADD\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+           \highlight13\cf12 mem_wr\highlight1\cf0         \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 1\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+           \highlight13\cf12 mem_wr_data\highlight1\cf0    \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 reg_rd_data1\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+           \highlight13\cf12 Itype\highlight1\cf0        \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 1\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+         \highlight9\cf8 end\highlight1\cf0 \par
+    \highlight7\cf6 22\highlight1\cf0  \highlight11\cf10\b :\highlight1\cf0\b0  \highlight9\cf8 begin\highlight1\cf0  \highlight5\cf4 //blt\par
+\highlight1\cf0            \highlight13\cf12 PC_br\highlight1\cf0   \highlight11\cf10\b =\highlight1\cf0\b0  \highlight11\cf10\b \{\{\highlight7\cf6\b0 32\highlight11\cf10\b \{\highlight13\cf12\b0 imm16\highlight11\cf10\b [\highlight7\cf6\b0 15\highlight11\cf10\b ]\}\},\highlight13\cf12\b0 imm16\highlight11\cf10\b \};\highlight1\cf0\b0 \par
+           \highlight5\cf4 //if (reg_rd_data2 < reg_rd_data1)\par
+\highlight1\cf0            \highlight9\cf8 if\highlight1\cf0  \highlight11\cf10\b (\highlight13\cf12\b0 reg_rd_data2\highlight1\cf0  \highlight11\cf10\b <\highlight1\cf0\b0  \highlight13\cf12 exe_dec_reslt_data\highlight11\cf10\b )\highlight1\cf0\b0 \par
+             \highlight13\cf12 branch_taken\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 1\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+           \highlight9\cf8 else\highlight1\cf0 \par
+             \highlight13\cf12 branch_taken\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+         \highlight9\cf8 end\highlight1\cf0 \par
+    \highlight7\cf6 23\highlight1\cf0  \highlight11\cf10\b :\highlight1\cf0\b0  \highlight9\cf8 begin\highlight1\cf0  \highlight5\cf4 // ldw\par
+\highlight1\cf0            \highlight13\cf12 data2\highlight1\cf0          \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 reg_rd_data2\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+           \highlight13\cf12 data1\highlight1\cf0          \highlight11\cf10\b =\highlight1\cf0\b0  \highlight11\cf10\b \{\{\highlight7\cf6\b0 16\highlight11\cf10\b \{\highlight13\cf12\b0 imm16\highlight11\cf10\b [\highlight7\cf6\b0 15\highlight11\cf10\b ]\}\},\highlight13\cf12\b0 imm16\highlight11\cf10\b \};\highlight1\cf0\b0 \par
+           \highlight13\cf12 reg_wr_add\highlight1\cf0     \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 rB\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+           \highlight13\cf12 alu_ctrl\highlight1\cf0       \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 ADD\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+           \highlight13\cf12 reg_wr\highlight1\cf0         \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 1\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+           \highlight13\cf12 mem_rd\highlight1\cf0         \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 1\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+           \highlight13\cf12 Itype\highlight1\cf0        \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 1\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+         \highlight9\cf8 end\highlight1\cf0    \par
+    \highlight7\cf6 34\highlight1\cf0  \highlight11\cf10\b :\highlight1\cf0\b0  \highlight9\cf8 begin\highlight1\cf0  \highlight5\cf4 //orhi\par
+\highlight1\cf0            \highlight13\cf12 data2\highlight1\cf0          \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 reg_rd_data2\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+           \highlight13\cf12 data1\highlight1\cf0          \highlight11\cf10\b =\highlight1\cf0\b0  \highlight11\cf10\b \{\highlight13\cf12\b0 imm16\highlight11\cf10\b ,\{\highlight7\cf6\b0 16\highlight11\cf10\b \{\highlight7\cf6\b0 1'b0\highlight11\cf10\b \}\}\};\highlight1\cf0\b0 \par
+           \highlight13\cf12 reg_wr_add\highlight1\cf0     \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 rB\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+           \highlight13\cf12 alu_ctrl\highlight1\cf0       \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 OR\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+           \highlight13\cf12 reg_wr\highlight1\cf0         \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 1\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+           \highlight13\cf12 Itype\highlight1\cf0          \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 1\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+         \highlight9\cf8 end\highlight1\cf0 \par
+    \highlight7\cf6 58\highlight1\cf0  \highlight11\cf10\b :\highlight1\cf0\b0  \highlight9\cf8 begin\highlight1\cf0 \par
+           \highlight9\cf8 if\highlight11\cf10\b (\highlight13\cf12\b0 opx\highlight1\cf0  \highlight11\cf10\b ==\highlight1\cf0\b0  \highlight7\cf6 49\highlight11\cf10\b )\highlight1\cf0\b0  \highlight9\cf8 begin\highlight1\cf0 \par
+             \highlight13\cf12 data1\highlight1\cf0          \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 reg_rd_data1\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+             \highlight13\cf12 data2\highlight1\cf0          \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 reg_rd_data2\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+             \highlight13\cf12 reg_wr_add\highlight1\cf0     \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 rC\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+             \highlight13\cf12 alu_ctrl\highlight1\cf0       \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 ADD\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+             \highlight13\cf12 reg_wr\highlight1\cf0         \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 1\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+             \highlight13\cf12 mem_rd\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+             \highlight13\cf12 Jtype\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 1\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+           \highlight9\cf8 end\highlight1\cf0  \highlight9\cf8 else\highlight1\cf0  \highlight9\cf8 begin\highlight1\cf0  \par
+             \highlight9\cf8 if\highlight1\cf0  \highlight11\cf10\b (\highlight13\cf12\b0 opx\highlight1\cf0  \highlight11\cf10\b ==\highlight1\cf0\b0  \highlight7\cf6 39\highlight11\cf10\b )\highlight1\cf0\b0  \highlight9\cf8 begin\highlight1\cf0 \par
+               \highlight13\cf12 data1\highlight1\cf0          \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 reg_rd_data1\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+               \highlight13\cf12 data2\highlight1\cf0          \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 reg_rd_data2\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+               \highlight13\cf12 reg_wr_add\highlight1\cf0     \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 rC\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+               \highlight13\cf12 alu_ctrl\highlight1\cf0       \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 MUL\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+               \highlight13\cf12 reg_wr\highlight1\cf0         \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 1\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+               \highlight13\cf12 Jtype\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 1\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+             \highlight9\cf8 end\highlight1\cf0 \par
+           \highlight9\cf8 end\highlight1\cf0 \par
+         \highlight9\cf8 end\highlight1\cf0 \par
+    \highlight9\cf8 default\highlight1\cf0  \highlight11\cf10\b :\highlight1\cf0\b0  \highlight9\cf8 begin\highlight1\cf0 \par
+                \highlight13\cf12 Itype\highlight1\cf0        \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+                \highlight13\cf12 Jtype\highlight1\cf0        \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+                \highlight13\cf12 Rtype\highlight1\cf0        \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+                \highlight13\cf12 data2\highlight1\cf0        \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+                \highlight13\cf12 data1\highlight1\cf0        \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+                \highlight13\cf12 reg_wr_add\highlight1\cf0   \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+                \highlight13\cf12 alu_ctrl\highlight1\cf0     \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+                \highlight13\cf12 reg_wr\highlight1\cf0       \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+                \highlight13\cf12 mem_wr\highlight1\cf0       \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+                \highlight13\cf12 mem_rd\highlight1\cf0       \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+                \highlight13\cf12 mem_wr_data\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+                \highlight13\cf12 PC_br\highlight1\cf0        \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+                \highlight13\cf12 branch_taken\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+              \highlight9\cf8 end\highlight1\cf0 \par
+    \highlight9\cf8 endcase\highlight1\cf0 \par
+    \highlight13\cf12 _dec_exe_mem_wr_data\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight13\cf12 mem_wr_data\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+ \highlight9\cf8 end\highlight1\cf0 \par
+\par
+\highlight9\cf8 always\highlight1\cf0  \highlight11\cf10\b @(*)\highlight1\cf0\b0  \highlight9\cf8 begin\highlight1\cf0  \highlight11\cf10\b :\highlight1\cf0\b0  \highlight13\cf12 decode_hazard_logic\highlight1\cf0 \par
+  \highlight13\cf12 exe_mux2_hctrl\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+  \highlight13\cf12 exe_mux1_hctrl\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+  \highlight9\cf8 case\highlight11\cf10\b (\{\highlight13\cf12\b0 Jtype\highlight11\cf10\b ,\highlight13\cf12\b0 Itype\highlight11\cf10\b \})\highlight1\cf0\b0 \par
+    \highlight7\cf6 0\highlight11\cf10\b :\highlight1\cf0\b0  \highlight13\cf12 exe_mux2_hctrl\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+    \highlight7\cf6 1\highlight11\cf10\b :\highlight1\cf0\b0  \highlight9\cf8 begin\highlight1\cf0  \highlight5\cf4 //Itype\par
+\highlight1\cf0          \highlight9\cf8 if\highlight1\cf0  \highlight11\cf10\b (\highlight13\cf12\b0 exe_reg_add\highlight1\cf0  \highlight11\cf10\b ==\highlight1\cf0\b0  \highlight13\cf12 rA\highlight11\cf10\b )\highlight1\cf0\b0 \par
+           \highlight13\cf12 exe_mux2_hctrl\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 1\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+         \highlight9\cf8 else\highlight1\cf0  \highlight9\cf8 if\highlight1\cf0  \highlight11\cf10\b (\highlight13\cf12\b0 mem_reg_add\highlight1\cf0  \highlight11\cf10\b ==\highlight1\cf0\b0  \highlight13\cf12 rA\highlight11\cf10\b )\highlight1\cf0\b0 \par
+           \highlight13\cf12 exe_mux2_hctrl\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 2\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+         \highlight9\cf8 else\highlight1\cf0  \highlight9\cf8 if\highlight1\cf0  \highlight11\cf10\b (\highlight13\cf12\b0 wb_dec_reg_wr_add\highlight1\cf0  \highlight11\cf10\b ==\highlight1\cf0\b0  \highlight13\cf12 rA\highlight11\cf10\b )\highlight1\cf0\b0 \par
+           \highlight13\cf12 exe_mux2_hctrl\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 3\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+         \highlight9\cf8 else\highlight1\cf0 \par
+           \highlight13\cf12 exe_mux2_hctrl\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+       \highlight9\cf8 end\highlight1\cf0 \par
+    \highlight7\cf6 2\highlight11\cf10\b :\highlight1\cf0\b0  \highlight9\cf8 begin\highlight1\cf0  \highlight5\cf4 // Jtype\par
+\highlight1\cf0          \highlight9\cf8 if\highlight1\cf0  \highlight11\cf10\b (\highlight13\cf12\b0 exe_reg_add\highlight1\cf0  \highlight11\cf10\b ==\highlight1\cf0\b0  \highlight13\cf12 rA\highlight11\cf10\b )\highlight1\cf0\b0 \par
+           \highlight13\cf12 exe_mux2_hctrl\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 1\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+         \highlight9\cf8 else\highlight1\cf0  \highlight9\cf8 if\highlight1\cf0  \highlight11\cf10\b (\highlight13\cf12\b0 mem_reg_add\highlight1\cf0  \highlight11\cf10\b ==\highlight1\cf0\b0  \highlight13\cf12 rA\highlight11\cf10\b )\highlight1\cf0\b0 \par
+           \highlight13\cf12 exe_mux2_hctrl\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 2\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+         \highlight9\cf8 else\highlight1\cf0  \highlight9\cf8 if\highlight1\cf0  \highlight11\cf10\b (\highlight13\cf12\b0 wb_dec_reg_wr_add\highlight1\cf0  \highlight11\cf10\b ==\highlight1\cf0\b0  \highlight13\cf12 rA\highlight11\cf10\b )\highlight1\cf0\b0 \par
+           \highlight13\cf12 exe_mux2_hctrl\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 3\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+         \highlight9\cf8 else\highlight1\cf0 \par
+           \highlight13\cf12 exe_mux2_hctrl\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+         \highlight9\cf8 if\highlight1\cf0  \highlight11\cf10\b (\highlight13\cf12\b0 exe_reg_add\highlight1\cf0  \highlight11\cf10\b ==\highlight1\cf0\b0  \highlight13\cf12 rB\highlight11\cf10\b )\highlight1\cf0\b0 \par
+           \highlight13\cf12 exe_mux1_hctrl\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 1\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+         \highlight9\cf8 else\highlight1\cf0  \highlight9\cf8 if\highlight1\cf0  \highlight11\cf10\b (\highlight13\cf12\b0 mem_reg_add\highlight1\cf0  \highlight11\cf10\b ==\highlight1\cf0\b0  \highlight13\cf12 rB\highlight11\cf10\b )\highlight1\cf0\b0 \par
+           \highlight13\cf12 exe_mux1_hctrl\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 2\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+         \highlight9\cf8 else\highlight1\cf0  \highlight9\cf8 if\highlight1\cf0  \highlight11\cf10\b (\highlight13\cf12\b0 wb_dec_reg_wr_add\highlight1\cf0  \highlight11\cf10\b ==\highlight1\cf0\b0  \highlight13\cf12 rB\highlight11\cf10\b )\highlight1\cf0\b0 \par
+           \highlight13\cf12 exe_mux1_hctrl\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 3\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+         \highlight9\cf8 else\highlight1\cf0 \par
+           \highlight13\cf12 exe_mux1_hctrl\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+       \highlight9\cf8 end\highlight1\cf0 \par
+    \highlight9\cf8 default\highlight11\cf10\b :\highlight1\cf0\b0  \highlight9\cf8 begin\highlight1\cf0  \par
+               \highlight13\cf12 exe_mux2_hctrl\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+               \highlight13\cf12 exe_mux1_hctrl\highlight1\cf0  \highlight11\cf10\b =\highlight1\cf0\b0  \highlight7\cf6 0\highlight11\cf10\b ;\highlight1\cf0\b0 \par
+             \highlight9\cf8 end\highlight1\cf0 \par
+  \highlight9\cf8 endcase\highlight1\cf0 \par
+\highlight9\cf8 end\highlight1\cf0 \par
+\par
+\highlight9\cf8 endmodule\highlight1\cf0 \par
+ \par
+}

@@ -1,0 +1,16 @@
+vendor_name = ModelSim
+source_file = 1, D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/Final codes/P4 Final (Pc+4)/tb_niosII.v
+source_file = 1, D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/Final codes/P4 Final (Pc+4)/writeback.v
+source_file = 1, D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/Final codes/P4 Final (Pc+4)/register_file.v
+source_file = 1, D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/Final codes/P4 Final (Pc+4)/niosII.v
+source_file = 1, D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/Final codes/P4 Final (Pc+4)/memory_stage.v
+source_file = 1, D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/Final codes/P4 Final (Pc+4)/fetch.v
+source_file = 1, D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/Final codes/P4 Final (Pc+4)/execute.v
+source_file = 1, D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/Final codes/P4 Final (Pc+4)/decode.v
+source_file = 1, /sjsu documents/study/summer 2015/ee 275 summer 2015/project/final codes/p4 final (pc+4)/main_memory.txt
+source_file = 1, main_memory.txt
+source_file = 1, D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/Final codes/P4 Final (Pc+4)/niosII/db/niosII.cbx.xml
+design_name = niosII
+instance = comp, \clk~input , clk~input, niosII, 1
+instance = comp, \rst~input , rst~input, niosII, 1
+instance = comp, \~QUARTUS_CREATED_GND~I , ~QUARTUS_CREATED_GND~I, niosII, 1

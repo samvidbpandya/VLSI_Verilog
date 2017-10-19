@@ -1,0 +1,1018 @@
+
+                        DC Professional (TM)
+                           DC Expert (TM)
+                            DC Ultra (TM)
+                       FloorPlan Manager (TM)
+                          HDL Compiler (TM)
+                         VHDL Compiler (TM)
+                        Library Compiler (TM)
+                      DesignWare Developer (TM)
+                          DFT Compiler (TM)
+                            BSD Compiler
+                         Power Compiler (TM)
+
+           Version C-2009.06-SP5 for linux -- Jan 15, 2010
+              Copyright (c) 1988-2009 by Synopsys, Inc.
+                         ALL RIGHTS RESERVED
+
+This software and the associated documentation are confidential and 
+proprietary to Synopsys, Inc. Your use or disclosure of this software 
+is subject to the terms and conditions of a written license agreement 
+between you, or your company, and Synopsys, Inc.
+
+The above trademark notice does not imply that you are licensed to use 
+all of the listed products. You are licensed to use only those products 
+for which you have lawfully obtained a valid license key.
+
+Initializing...
+set link_library {/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_WCCOM25}
+/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_WCCOM25
+set target_library {/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_WCCOM25 }
+/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_WCCOM25 
+#/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_BCCOM25}
+set symbol_library {/apps/toshiba/sjsu/synopsys/tc240c/tc240c.workview.sdb}
+/apps/toshiba/sjsu/synopsys/tc240c/tc240c.workview.sdb
+set synthetic_library {dw_foundation.sldb standard.sldb} 
+dw_foundation.sldb standard.sldb
+#set_min_library /apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_WCCOM25 -min_version /apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_BCCOM25
+read_verilog {CLA4.v,CLA4_2.v,CLA16.v,CLA16_2.v,CLA_64.v}
+Loading db file '/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_WCCOM25'
+Loading db file '/apps/synopsys/SYNTH/libraries/syn/gtech.db'
+Loading db file '/apps/synopsys/SYNTH/libraries/syn/standard.sldb'
+  Loading link library 'tc240c'
+Warning: Function '=' leaked 1 allocations for 16 bytes. (EQN-21)
+  Loading link library 'gtech'
+Loading verilog files: '/home/pa/pand2610/Desktop/Project/CLA64/CLA4.v' '/home/pa/pand2610/Desktop/Project/CLA64/CLA4_2.v' '/home/pa/pand2610/Desktop/Project/CLA64/CLA16.v' '/home/pa/pand2610/Desktop/Project/CLA64/CLA16_2.v' '/home/pa/pand2610/Desktop/Project/CLA64/CLA_64.v' 
+Detecting input file type automatically (-rtl or -netlist).
+Running DC verilog reader
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Loading db file '/apps/synopsys/SYNTH/libraries/syn/dw_foundation.sldb'
+Warning: The following synthetic libraries should be added to 
+	the list of link libraries: 
+	'dw_foundation.sldb'. (UISN-26)
+Compiling source file /home/pa/pand2610/Desktop/Project/CLA64/CLA4.v
+Compiling source file /home/pa/pand2610/Desktop/Project/CLA64/CLA4_2.v
+Compiling source file /home/pa/pand2610/Desktop/Project/CLA64/CLA16.v
+Compiling source file /home/pa/pand2610/Desktop/Project/CLA64/CLA16_2.v
+Compiling source file /home/pa/pand2610/Desktop/Project/CLA64/CLA_64.v
+
+Inferred memory devices in process
+	in routine CLA_64 line 21 in file
+		'/home/pa/pand2610/Desktop/Project/CLA64/CLA_64.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       sum_reg       | Flip-flop |  64   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      crout_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      op1_f_reg      | Flip-flop |  64   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      op2_f_reg      | Flip-flop |  64   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/home/pa/pand2610/Desktop/Project/CLA64/CLA4.db:CLA4'
+Loaded 5 designs.
+Current design is 'CLA4'.
+CLA4 CLA4_2 CLA16 CLA16_2 CLA_64
+current_design CLA_64 
+Current design is 'CLA_64'.
+{CLA_64}
+link
+
+  Linking design 'CLA_64'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  tc240c (library)            /apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_WCCOM25
+
+1
+check_design 
+Warning: In design 'CLA_64', net 'A1/P[0]' driven by pin 'A1/C1/P1' has no loads. (LINT-2)
+Information: Design 'CLA_64' has multiply instantiated designs. Use the '-multiple_designs' switch for more information. (LINT-78)
+1
+create_clock clock -name clock -period 6
+1
+set_propagated_clock clock
+Information: set_input_delay values are added to the propagated clock skew. (TIM-113)
+1
+set_clock_uncertainty .25 clock
+1
+#set_fix_hold [get_clocks clock]
+#set_max_delay 0.39 -from [all_inputs]
+#set_max_delay 0.39 -to [all_outputs]
+compile -map_effort medium -incremental_mapping 
+Warning: The following synthetic libraries should be added to 
+	the list of link libraries: 
+	'dw_foundation.sldb'. (UISN-26)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library       |      Version       | Available |
+============================================================================
+| Basic DW Building Blocks                | C-2009.06-DWBB_0912 |    *     |
+| Licensed DW Building Blocks             | C-2009.06-DWBB_0912 |          |
+============================================================================
+
+
+Information: There are 1 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+Warning: Operating condition WCCOM25 set on design CLA_64 has different process,
+voltage and temperatures parameters than the parameters at which target library 
+tc240c is characterized. Delays may be inaccurate as a result. (OPT-998)
+
+  Beginning Pass 1 Mapping  (Incremental)
+  ------------------------
+  Processing 'CLA4_2_0'
+  Processing 'CLA16_2_0'
+  Processing 'CLA4'
+  Processing 'CLA16'
+  Processing 'CLA_64'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: Input delay ('fall') on clock port 'clock' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clock' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('fall') on clock port 'clock' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clock' will be added to the clock's propagated skew. (TIM-112)
+
+  Beginning Mapping Optimizations  (Medium effort)  (Incremental)
+  -------------------------------
+
+  Beginning Incremental Implementation Selection
+  ----------------------------------------------
+Information: Input delay ('fall') on clock port 'clock' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clock' will be added to the clock's propagated skew. (TIM-112)
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+   ELAPSED            WORST NEG TOTAL NEG  DESIGN                            
+    TIME      AREA      SLACK     SLACK   RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:01    1981.0      2.61      25.8    1890.1                          
+    0:00:01    2252.5      0.58       4.3       0.0 sum_reg[63]/D            
+    0:00:02    2305.5      0.26       1.5       0.0 sum_reg[63]/D            
+    0:00:02    2301.0      0.14       0.5       0.0 sum_reg[63]/D            
+    0:00:03    2308.5      0.12       0.5       0.0 sum_reg[63]/D            
+    0:00:03    2294.0      0.10       0.5       0.0 sum_reg[63]/D            
+    0:00:04    2257.0      0.00       0.0      27.2                          
+
+
+  Beginning Design Rule Fixing  (max_capacitance)
+  ----------------------------
+
+   ELAPSED            WORST NEG TOTAL NEG  DESIGN                            
+    TIME      AREA      SLACK     SLACK   RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:04    2257.0      0.00       0.0      27.2                          
+    0:00:04    2221.5      0.00       0.0       0.0                          
+Loading db file '/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_WCCOM25'
+
+  Optimization Complete
+  ---------------------
+1
+update_timing 
+Information: Updating design information... (UID-85)
+Information: Input delay ('fall') on clock port 'clock' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clock' will be added to the clock's propagated skew. (TIM-112)
+1
+#set_max_area 10
+report_timing -max_paths 10 
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 10
+Design : CLA_64
+Version: C-2009.06-SP5
+Date   : Mon Nov 30 15:30:40 2015
+****************************************
+
+Operating Conditions: WCCOM25   Library: tc240c
+Wire Load Model Mode: top
+
+  Startpoint: op2_f_reg[1]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: sum_reg[56]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clock (rise edge)                  0.00       0.00
+  clock network delay (propagated)         0.00       0.00
+  op2_f_reg[1]/CP (CFD2QX1)                0.00       0.00 r
+  op2_f_reg[1]/Q (CFD2QX1)                 0.45       0.45 r
+  A1/op2_4[1] (CLA16)                      0.00       0.45 r
+  A1/C1/op2[1] (CLA4)                      0.00       0.45 r
+  A1/C1/U5/Z (CIVX2)                       0.08       0.53 f
+  A1/C1/U4/Z (CND2X1)                      0.11       0.64 r
+  A1/C1/U26/Z (CND2X2)                     0.11       0.75 f
+  A1/C1/U9/Z (CND2X2)                      0.07       0.83 r
+  A1/C1/U25/Z (CND2X2)                     0.09       0.92 f
+  A1/C1/U22/Z (CND2X2)                     0.07       0.99 r
+  A1/C1/U23/Z (CND2X2)                     0.09       1.08 f
+  A1/C1/U2/Z (CND2IX2)                     0.07       1.15 r
+  A1/C1/U16/Z (CND2IX2)                    0.08       1.23 f
+  A1/C1/G1 (CLA4)                          0.00       1.23 f
+  A1/U3/Z (COND4CX1)                       0.17       1.40 r
+  A1/U1/Z (CND2IX1)                        0.16       1.56 f
+  A1/U2/Z (CND2X2)                         0.07       1.63 r
+  A1/U5/Z (CND2X2)                         0.08       1.72 f
+  A1/crout (CLA16)                         0.00       1.72 f
+  A2/Cin (CLA16_2_0)                       0.00       1.72 f
+  A2/U4/Z (COND4CX1)                       0.17       1.89 r
+  A2/U3/Z (CND2IX1)                        0.13       2.02 f
+  A2/U2/Z (COND4CX1)                       0.21       2.23 r
+  A2/U5/Z (CND2IX2)                        0.14       2.37 f
+  A2/crout_16 (CLA16_2_0)                  0.00       2.37 f
+  A3/Cin (CLA16_2_2)                       0.00       2.37 f
+  A3/U1/Z (COND4CX1)                       0.17       2.54 r
+  A3/U3/Z (CND2IX1)                        0.13       2.68 f
+  A3/U2/Z (COND4CX1)                       0.21       2.88 r
+  A3/U4/Z (CND2IX2)                        0.16       3.04 f
+  A3/crout_16 (CLA16_2_2)                  0.00       3.04 f
+  A4/Cin (CLA16_2_1)                       0.00       3.04 f
+  A4/A1/Cin (CLA4_2_4)                     0.00       3.04 f
+  A4/A1/U25/Z (CND2X2)                     0.07       3.11 r
+  A4/A1/U8/Z (COND1X2)                     0.09       3.20 f
+  A4/A1/U5/Z (CANR2X1)                     0.26       3.47 r
+  A4/A1/U27/Z (COND2X2)                    0.19       3.66 f
+  A4/A1/crout (CLA4_2_4)                   0.00       3.66 f
+  A4/A2/Cin (CLA4_2_3)                     0.00       3.66 f
+  A4/A2/U34/Z (CND2X2)                     0.08       3.74 r
+  A4/A2/U6/Z (COND1X2)                     0.10       3.84 f
+  A4/A2/U10/Z (CND2X2)                     0.08       3.92 r
+  A4/A2/U1/Z (CND2IX2)                     0.09       4.01 f
+  A4/A2/U5/Z (CIVX2)                       0.06       4.07 r
+  A4/A2/U36/Z (COND2X2)                    0.13       4.20 f
+  A4/A2/crout (CLA4_2_3)                   0.00       4.20 f
+  A4/A3/Cin (CLA4_2_2)                     0.00       4.20 f
+  A4/A3/U8/Z (CDLY1XL)                     0.65       4.85 f
+  A4/A3/U26/Z (CIVXL)                      0.11       4.96 r
+  A4/A3/U10/Z (CIVX1)                      0.08       5.05 f
+  A4/A3/U31/Z (CEOXL)                      0.33       5.38 f
+  A4/A3/sum[0] (CLA4_2_2)                  0.00       5.38 f
+  A4/sum_16[8] (CLA16_2_1)                 0.00       5.38 f
+  sum_reg[56]/D (CFD2QXL)                  0.00       5.38 f
+  data arrival time                                   5.38
+
+  clock clock (rise edge)                  6.00       6.00
+  clock network delay (propagated)         0.00       6.00
+  clock uncertainty                       -0.25       5.75
+  sum_reg[56]/CP (CFD2QXL)                 0.00       5.75 r
+  library setup time                      -0.37       5.38
+  data required time                                  5.38
+  -----------------------------------------------------------
+  data required time                                  5.38
+  data arrival time                                  -5.38
+  -----------------------------------------------------------
+  slack (MET)                                         0.00
+
+
+  Startpoint: op2_f_reg[1]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: sum_reg[57]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clock (rise edge)                  0.00       0.00
+  clock network delay (propagated)         0.00       0.00
+  op2_f_reg[1]/CP (CFD2QX1)                0.00       0.00 r
+  op2_f_reg[1]/Q (CFD2QX1)                 0.45       0.45 r
+  A1/op2_4[1] (CLA16)                      0.00       0.45 r
+  A1/C1/op2[1] (CLA4)                      0.00       0.45 r
+  A1/C1/U5/Z (CIVX2)                       0.08       0.53 f
+  A1/C1/U4/Z (CND2X1)                      0.11       0.64 r
+  A1/C1/U26/Z (CND2X2)                     0.11       0.75 f
+  A1/C1/U9/Z (CND2X2)                      0.07       0.83 r
+  A1/C1/U25/Z (CND2X2)                     0.09       0.92 f
+  A1/C1/U22/Z (CND2X2)                     0.07       0.99 r
+  A1/C1/U23/Z (CND2X2)                     0.09       1.08 f
+  A1/C1/U2/Z (CND2IX2)                     0.07       1.15 r
+  A1/C1/U16/Z (CND2IX2)                    0.08       1.23 f
+  A1/C1/G1 (CLA4)                          0.00       1.23 f
+  A1/U3/Z (COND4CX1)                       0.17       1.40 r
+  A1/U1/Z (CND2IX1)                        0.16       1.56 f
+  A1/U2/Z (CND2X2)                         0.07       1.63 r
+  A1/U5/Z (CND2X2)                         0.08       1.72 f
+  A1/crout (CLA16)                         0.00       1.72 f
+  A2/Cin (CLA16_2_0)                       0.00       1.72 f
+  A2/U4/Z (COND4CX1)                       0.17       1.89 r
+  A2/U3/Z (CND2IX1)                        0.13       2.02 f
+  A2/U2/Z (COND4CX1)                       0.21       2.23 r
+  A2/U5/Z (CND2IX2)                        0.14       2.37 f
+  A2/crout_16 (CLA16_2_0)                  0.00       2.37 f
+  A3/Cin (CLA16_2_2)                       0.00       2.37 f
+  A3/U1/Z (COND4CX1)                       0.17       2.54 r
+  A3/U3/Z (CND2IX1)                        0.13       2.68 f
+  A3/U2/Z (COND4CX1)                       0.21       2.88 r
+  A3/U4/Z (CND2IX2)                        0.16       3.04 f
+  A3/crout_16 (CLA16_2_2)                  0.00       3.04 f
+  A4/Cin (CLA16_2_1)                       0.00       3.04 f
+  A4/A1/Cin (CLA4_2_4)                     0.00       3.04 f
+  A4/A1/U25/Z (CND2X2)                     0.07       3.11 r
+  A4/A1/U8/Z (COND1X2)                     0.09       3.20 f
+  A4/A1/U5/Z (CANR2X1)                     0.26       3.47 r
+  A4/A1/U27/Z (COND2X2)                    0.19       3.66 f
+  A4/A1/crout (CLA4_2_4)                   0.00       3.66 f
+  A4/A2/Cin (CLA4_2_3)                     0.00       3.66 f
+  A4/A2/U34/Z (CND2X2)                     0.08       3.74 r
+  A4/A2/U6/Z (COND1X2)                     0.10       3.84 f
+  A4/A2/U10/Z (CND2X2)                     0.08       3.92 r
+  A4/A2/U1/Z (CND2IX2)                     0.09       4.01 f
+  A4/A2/U5/Z (CIVX2)                       0.06       4.07 r
+  A4/A2/U36/Z (COND2X2)                    0.13       4.20 f
+  A4/A2/crout (CLA4_2_3)                   0.00       4.20 f
+  A4/A3/Cin (CLA4_2_2)                     0.00       4.20 f
+  A4/A3/U24/Z (CND2X2)                     0.08       4.28 r
+  A4/A3/U7/Z (CDLY1X2)                     0.61       4.90 r
+  A4/A3/U28/Z (CND2XL)                     0.18       5.08 f
+  A4/A3/U3/Z (CEOX1)                       0.30       5.37 f
+  A4/A3/sum[1] (CLA4_2_2)                  0.00       5.37 f
+  A4/sum_16[9] (CLA16_2_1)                 0.00       5.37 f
+  sum_reg[57]/D (CFD2QXL)                  0.00       5.37 f
+  data arrival time                                   5.37
+
+  clock clock (rise edge)                  6.00       6.00
+  clock network delay (propagated)         0.00       6.00
+  clock uncertainty                       -0.25       5.75
+  sum_reg[57]/CP (CFD2QXL)                 0.00       5.75 r
+  library setup time                      -0.37       5.38
+  data required time                                  5.38
+  -----------------------------------------------------------
+  data required time                                  5.38
+  data arrival time                                  -5.37
+  -----------------------------------------------------------
+  slack (MET)                                         0.01
+
+
+  Startpoint: op2_f_reg[1]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: sum_reg[58]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clock (rise edge)                  0.00       0.00
+  clock network delay (propagated)         0.00       0.00
+  op2_f_reg[1]/CP (CFD2QX1)                0.00       0.00 r
+  op2_f_reg[1]/Q (CFD2QX1)                 0.45       0.45 f
+  A1/op2_4[1] (CLA16)                      0.00       0.45 f
+  A1/C1/op2[1] (CLA4)                      0.00       0.45 f
+  A1/C1/U5/Z (CIVX2)                       0.06       0.51 r
+  A1/C1/U4/Z (CND2X1)                      0.13       0.64 f
+  A1/C1/U26/Z (CND2X2)                     0.09       0.73 r
+  A1/C1/U9/Z (CND2X2)                      0.10       0.83 f
+  A1/C1/U25/Z (CND2X2)                     0.07       0.90 r
+  A1/C1/U22/Z (CND2X2)                     0.09       0.99 f
+  A1/C1/U23/Z (CND2X2)                     0.07       1.06 r
+  A1/C1/U2/Z (CND2IX2)                     0.09       1.15 f
+  A1/C1/U16/Z (CND2IX2)                    0.06       1.21 r
+  A1/C1/G1 (CLA4)                          0.00       1.21 r
+  A1/U3/Z (COND4CX1)                       0.16       1.37 f
+  A1/U1/Z (CND2IX1)                        0.11       1.48 r
+  A1/U2/Z (CND2X2)                         0.11       1.58 f
+  A1/U5/Z (CND2X2)                         0.06       1.65 r
+  A1/crout (CLA16)                         0.00       1.65 r
+  A2/Cin (CLA16_2_0)                       0.00       1.65 r
+  A2/U4/Z (COND4CX1)                       0.16       1.81 f
+  A2/U3/Z (CND2IX1)                        0.09       1.89 r
+  A2/U2/Z (COND4CX1)                       0.20       2.09 f
+  A2/U5/Z (CND2IX2)                        0.09       2.18 r
+  A2/crout_16 (CLA16_2_0)                  0.00       2.18 r
+  A3/Cin (CLA16_2_2)                       0.00       2.18 r
+  A3/U1/Z (COND4CX1)                       0.17       2.35 f
+  A3/U3/Z (CND2IX1)                        0.09       2.44 r
+  A3/U2/Z (COND4CX1)                       0.20       2.63 f
+  A3/U4/Z (CND2IX2)                        0.10       2.74 r
+  A3/crout_16 (CLA16_2_2)                  0.00       2.74 r
+  A4/Cin (CLA16_2_1)                       0.00       2.74 r
+  A4/A1/Cin (CLA4_2_4)                     0.00       2.74 r
+  A4/A1/U25/Z (CND2X2)                     0.10       2.84 f
+  A4/A1/U8/Z (COND1X2)                     0.12       2.96 r
+  A4/A1/U5/Z (CANR2X1)                     0.20       3.16 f
+  A4/A1/U27/Z (COND2X2)                    0.15       3.31 r
+  A4/A1/crout (CLA4_2_4)                   0.00       3.31 r
+  A4/A2/Cin (CLA4_2_3)                     0.00       3.31 r
+  A4/A2/U34/Z (CND2X2)                     0.14       3.45 f
+  A4/A2/U6/Z (COND1X2)                     0.14       3.58 r
+  A4/A2/U10/Z (CND2X2)                     0.13       3.71 f
+  A4/A2/U1/Z (CND2IX2)                     0.07       3.78 r
+  A4/A2/U5/Z (CIVX2)                       0.07       3.85 f
+  A4/A2/U36/Z (COND2X2)                    0.14       3.99 r
+  A4/A2/crout (CLA4_2_3)                   0.00       3.99 r
+  A4/A3/Cin (CLA4_2_2)                     0.00       3.99 r
+  A4/A3/U24/Z (CND2X2)                     0.14       4.13 f
+  A4/A3/U7/Z (CDLY1X2)                     0.68       4.81 f
+  A4/A3/U9/Z (COND1XL)                     0.21       5.02 r
+  A4/A3/U30/Z (CEOXL)                      0.33       5.35 r
+  A4/A3/sum[2] (CLA4_2_2)                  0.00       5.35 r
+  A4/sum_16[10] (CLA16_2_1)                0.00       5.35 r
+  sum_reg[58]/D (CFD2QXL)                  0.00       5.35 r
+  data arrival time                                   5.35
+
+  clock clock (rise edge)                  6.00       6.00
+  clock network delay (propagated)         0.00       6.00
+  clock uncertainty                       -0.25       5.75
+  sum_reg[58]/CP (CFD2QXL)                 0.00       5.75 r
+  library setup time                      -0.38       5.37
+  data required time                                  5.37
+  -----------------------------------------------------------
+  data required time                                  5.37
+  data arrival time                                  -5.35
+  -----------------------------------------------------------
+  slack (MET)                                         0.01
+
+
+  Startpoint: op2_f_reg[1]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: sum_reg[63]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clock (rise edge)                  0.00       0.00
+  clock network delay (propagated)         0.00       0.00
+  op2_f_reg[1]/CP (CFD2QX1)                0.00       0.00 r
+  op2_f_reg[1]/Q (CFD2QX1)                 0.45       0.45 r
+  A1/op2_4[1] (CLA16)                      0.00       0.45 r
+  A1/C1/op2[1] (CLA4)                      0.00       0.45 r
+  A1/C1/U5/Z (CIVX2)                       0.08       0.53 f
+  A1/C1/U4/Z (CND2X1)                      0.11       0.64 r
+  A1/C1/U26/Z (CND2X2)                     0.11       0.75 f
+  A1/C1/U9/Z (CND2X2)                      0.07       0.83 r
+  A1/C1/U25/Z (CND2X2)                     0.09       0.92 f
+  A1/C1/U22/Z (CND2X2)                     0.07       0.99 r
+  A1/C1/U23/Z (CND2X2)                     0.09       1.08 f
+  A1/C1/U2/Z (CND2IX2)                     0.07       1.15 r
+  A1/C1/U16/Z (CND2IX2)                    0.08       1.23 f
+  A1/C1/G1 (CLA4)                          0.00       1.23 f
+  A1/U3/Z (COND4CX1)                       0.17       1.40 r
+  A1/U1/Z (CND2IX1)                        0.16       1.56 f
+  A1/U2/Z (CND2X2)                         0.07       1.63 r
+  A1/U5/Z (CND2X2)                         0.08       1.72 f
+  A1/crout (CLA16)                         0.00       1.72 f
+  A2/Cin (CLA16_2_0)                       0.00       1.72 f
+  A2/U4/Z (COND4CX1)                       0.17       1.89 r
+  A2/U3/Z (CND2IX1)                        0.13       2.02 f
+  A2/U2/Z (COND4CX1)                       0.21       2.23 r
+  A2/U5/Z (CND2IX2)                        0.14       2.37 f
+  A2/crout_16 (CLA16_2_0)                  0.00       2.37 f
+  A3/Cin (CLA16_2_2)                       0.00       2.37 f
+  A3/U1/Z (COND4CX1)                       0.17       2.54 r
+  A3/U3/Z (CND2IX1)                        0.13       2.68 f
+  A3/U2/Z (COND4CX1)                       0.21       2.88 r
+  A3/U4/Z (CND2IX2)                        0.16       3.04 f
+  A3/crout_16 (CLA16_2_2)                  0.00       3.04 f
+  A4/Cin (CLA16_2_1)                       0.00       3.04 f
+  A4/A1/Cin (CLA4_2_4)                     0.00       3.04 f
+  A4/A1/U25/Z (CND2X2)                     0.07       3.11 r
+  A4/A1/U8/Z (COND1X2)                     0.09       3.20 f
+  A4/A1/U5/Z (CANR2X1)                     0.26       3.47 r
+  A4/A1/U27/Z (COND2X2)                    0.19       3.66 f
+  A4/A1/crout (CLA4_2_4)                   0.00       3.66 f
+  A4/A2/Cin (CLA4_2_3)                     0.00       3.66 f
+  A4/A2/U34/Z (CND2X2)                     0.08       3.74 r
+  A4/A2/U6/Z (COND1X2)                     0.10       3.84 f
+  A4/A2/U10/Z (CND2X2)                     0.08       3.92 r
+  A4/A2/U1/Z (CND2IX2)                     0.09       4.01 f
+  A4/A2/U5/Z (CIVX2)                       0.06       4.07 r
+  A4/A2/U36/Z (COND2X2)                    0.13       4.20 f
+  A4/A2/crout (CLA4_2_3)                   0.00       4.20 f
+  A4/A3/Cin (CLA4_2_2)                     0.00       4.20 f
+  A4/A3/U24/Z (CND2X2)                     0.08       4.28 r
+  A4/A3/U4/Z (COND1X2)                     0.12       4.40 f
+  A4/A3/U1/Z (CANR1X1)                     0.17       4.57 r
+  A4/A3/U33/Z (COND2X2)                    0.19       4.76 f
+  A4/A3/crout (CLA4_2_2)                   0.00       4.76 f
+  A4/A4/Cin (CLA4_2_1)                     0.00       4.76 f
+  A4/A4/U9/Z (CND2X2)                      0.09       4.84 r
+  A4/A4/U7/Z (COND1X2)                     0.09       4.94 f
+  A4/A4/U5/Z (CANR1X1)                     0.18       5.12 r
+  A4/A4/U10/Z (CENX1)                      0.28       5.40 r
+  A4/A4/sum[3] (CLA4_2_1)                  0.00       5.40 r
+  A4/sum_16[15] (CLA16_2_1)                0.00       5.40 r
+  sum_reg[63]/D (CFD2X2)                   0.00       5.40 r
+  data arrival time                                   5.40
+
+  clock clock (rise edge)                  6.00       6.00
+  clock network delay (propagated)         0.00       6.00
+  clock uncertainty                       -0.25       5.75
+  sum_reg[63]/CP (CFD2X2)                  0.00       5.75 r
+  library setup time                      -0.32       5.43
+  data required time                                  5.43
+  -----------------------------------------------------------
+  data required time                                  5.43
+  data arrival time                                  -5.40
+  -----------------------------------------------------------
+  slack (MET)                                         0.02
+
+
+  Startpoint: op2_f_reg[1]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: sum_reg[31]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clock (rise edge)                  0.00       0.00
+  clock network delay (propagated)         0.00       0.00
+  op2_f_reg[1]/CP (CFD2QX1)                0.00       0.00 r
+  op2_f_reg[1]/Q (CFD2QX1)                 0.45       0.45 r
+  A1/op2_4[1] (CLA16)                      0.00       0.45 r
+  A1/C1/op2[1] (CLA4)                      0.00       0.45 r
+  A1/C1/U5/Z (CIVX2)                       0.08       0.53 f
+  A1/C1/U4/Z (CND2X1)                      0.11       0.64 r
+  A1/C1/U26/Z (CND2X2)                     0.11       0.75 f
+  A1/C1/U9/Z (CND2X2)                      0.07       0.83 r
+  A1/C1/U25/Z (CND2X2)                     0.09       0.92 f
+  A1/C1/U22/Z (CND2X2)                     0.07       0.99 r
+  A1/C1/U23/Z (CND2X2)                     0.09       1.08 f
+  A1/C1/U2/Z (CND2IX2)                     0.07       1.15 r
+  A1/C1/U16/Z (CND2IX2)                    0.08       1.23 f
+  A1/C1/G1 (CLA4)                          0.00       1.23 f
+  A1/U3/Z (COND4CX1)                       0.17       1.40 r
+  A1/U1/Z (CND2IX1)                        0.16       1.56 f
+  A1/U2/Z (CND2X2)                         0.07       1.63 r
+  A1/U5/Z (CND2X2)                         0.08       1.72 f
+  A1/crout (CLA16)                         0.00       1.72 f
+  A2/Cin (CLA16_2_0)                       0.00       1.72 f
+  A2/U1/Z (CIVXL)                          0.11       1.83 r
+  A2/U6/Z (CIVX1)                          0.11       1.94 f
+  A2/A1/Cin (CLA4_2_12)                    0.00       1.94 f
+  A2/A1/U2/Z (CND2X2)                      0.07       2.01 r
+  A2/A1/U9/Z (CIVX1)                       0.06       2.07 f
+  A2/A1/U8/Z (CAOR1X1)                     0.28       2.35 f
+  A2/A1/U7/Z (CANR2X2)                     0.28       2.62 r
+  A2/A1/U4/Z (COND2X2)                     0.20       2.82 f
+  A2/A1/crout (CLA4_2_12)                  0.00       2.82 f
+  A2/A2/Cin (CLA4_2_11)                    0.00       2.82 f
+  A2/A2/U24/Z (CND2X2)                     0.08       2.89 r
+  A2/A2/U9/Z (CIVX1)                       0.06       2.96 f
+  A2/A2/U8/Z (CAOR1X1)                     0.27       3.22 f
+  A2/A2/U5/Z (CIVX2)                       0.07       3.29 r
+  A2/A2/U1/Z (COND2X2)                     0.12       3.41 f
+  A2/A2/U7/Z (CIVX2)                       0.08       3.50 r
+  A2/A2/U28/Z (COND2X2)                    0.14       3.63 f
+  A2/A2/crout (CLA4_2_11)                  0.00       3.63 f
+  A2/A3/Cin (CLA4_2_10)                    0.00       3.63 f
+  A2/A3/U28/Z (CND2X2)                     0.08       3.71 r
+  A2/A3/U24/Z (CIVX2)                      0.06       3.77 f
+  A2/A3/U8/Z (CAOR1X1)                     0.27       4.03 f
+  A2/A3/U5/Z (CIVX2)                       0.07       4.10 r
+  A2/A3/U1/Z (COND2X2)                     0.12       4.22 f
+  A2/A3/U7/Z (CIVX2)                       0.08       4.31 r
+  A2/A3/U30/Z (COND2X2)                    0.14       4.44 f
+  A2/A3/crout (CLA4_2_10)                  0.00       4.44 f
+  A2/A4/Cin (CLA4_2_9)                     0.00       4.44 f
+  A2/A4/U9/Z (CND2X2)                      0.09       4.53 r
+  A2/A4/U6/Z (CIVX2)                       0.06       4.59 f
+  A2/A4/U8/Z (CAOR1X1)                     0.28       4.86 f
+  A2/A4/U25/Z (CANR2X2)                    0.26       5.13 r
+  A2/A4/U1/Z (CENX1)                       0.28       5.40 r
+  A2/A4/sum[3] (CLA4_2_9)                  0.00       5.40 r
+  A2/sum_16[15] (CLA16_2_0)                0.00       5.40 r
+  sum_reg[31]/D (CFD2QX4)                  0.00       5.40 r
+  data arrival time                                   5.40
+
+  clock clock (rise edge)                  6.00       6.00
+  clock network delay (propagated)         0.00       6.00
+  clock uncertainty                       -0.25       5.75
+  sum_reg[31]/CP (CFD2QX4)                 0.00       5.75 r
+  library setup time                      -0.32       5.43
+  data required time                                  5.43
+  -----------------------------------------------------------
+  data required time                                  5.43
+  data arrival time                                  -5.40
+  -----------------------------------------------------------
+  slack (MET)                                         0.03
+
+
+  Startpoint: op2_f_reg[1]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: sum_reg[47]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clock (rise edge)                  0.00       0.00
+  clock network delay (propagated)         0.00       0.00
+  op2_f_reg[1]/CP (CFD2QX1)                0.00       0.00 r
+  op2_f_reg[1]/Q (CFD2QX1)                 0.45       0.45 r
+  A1/op2_4[1] (CLA16)                      0.00       0.45 r
+  A1/C1/op2[1] (CLA4)                      0.00       0.45 r
+  A1/C1/U5/Z (CIVX2)                       0.08       0.53 f
+  A1/C1/U4/Z (CND2X1)                      0.11       0.64 r
+  A1/C1/U26/Z (CND2X2)                     0.11       0.75 f
+  A1/C1/U9/Z (CND2X2)                      0.07       0.83 r
+  A1/C1/U25/Z (CND2X2)                     0.09       0.92 f
+  A1/C1/U22/Z (CND2X2)                     0.07       0.99 r
+  A1/C1/U23/Z (CND2X2)                     0.09       1.08 f
+  A1/C1/U2/Z (CND2IX2)                     0.07       1.15 r
+  A1/C1/U16/Z (CND2IX2)                    0.08       1.23 f
+  A1/C1/G1 (CLA4)                          0.00       1.23 f
+  A1/U3/Z (COND4CX1)                       0.17       1.40 r
+  A1/U1/Z (CND2IX1)                        0.16       1.56 f
+  A1/U2/Z (CND2X2)                         0.07       1.63 r
+  A1/U5/Z (CND2X2)                         0.08       1.72 f
+  A1/crout (CLA16)                         0.00       1.72 f
+  A2/Cin (CLA16_2_0)                       0.00       1.72 f
+  A2/U4/Z (COND4CX1)                       0.17       1.89 r
+  A2/U3/Z (CND2IX1)                        0.13       2.02 f
+  A2/U2/Z (COND4CX1)                       0.21       2.23 r
+  A2/U5/Z (CND2IX2)                        0.14       2.37 f
+  A2/crout_16 (CLA16_2_0)                  0.00       2.37 f
+  A3/Cin (CLA16_2_2)                       0.00       2.37 f
+  A3/A1/Cin (CLA4_2_8)                     0.00       2.37 f
+  A3/A1/U2/Z (CND2X1)                      0.10       2.47 r
+  A3/A1/U6/Z (CND2X2)                      0.11       2.58 f
+  A3/A1/U1/Z (CND2X1)                      0.07       2.65 r
+  A3/A1/U10/Z (CAN2X2)                     0.23       2.88 r
+  A3/A1/U28/Z (COND2X2)                    0.16       3.04 f
+  A3/A1/crout (CLA4_2_8)                   0.00       3.04 f
+  A3/A2/Cin (CLA4_2_7)                     0.00       3.04 f
+  A3/A2/U1/Z (CANR11X2)                    0.18       3.22 r
+  A3/A2/U2/Z (CIVX2)                       0.12       3.34 f
+  A3/A2/U6/Z (CND2X2)                      0.07       3.41 r
+  A3/A2/U7/Z (CAN2X2)                      0.21       3.62 r
+  A3/A2/U26/Z (COND2X2)                    0.13       3.75 f
+  A3/A2/crout (CLA4_2_7)                   0.00       3.75 f
+  A3/A3/Cin (CLA4_2_6)                     0.00       3.75 f
+  A3/A3/U28/Z (CND2X2)                     0.08       3.82 r
+  A3/A3/U26/Z (CIVX2)                      0.07       3.90 f
+  A3/A3/U8/Z (CND2X2)                      0.08       3.98 r
+  A3/A3/U7/Z (CND2X2)                      0.10       4.08 f
+  A3/A3/U5/Z (CND2X2)                      0.07       4.15 r
+  A3/A3/U6/Z (CAN2X2)                      0.21       4.36 r
+  A3/A3/U31/Z (COND2X2)                    0.13       4.50 f
+  A3/A3/crout (CLA4_2_6)                   0.00       4.50 f
+  A3/A4/Cin (CLA4_2_5)                     0.00       4.50 f
+  A3/A4/U9/Z (CND2X2)                      0.08       4.58 r
+  A3/A4/U7/Z (CIVX2)                       0.06       4.64 f
+  A3/A4/U8/Z (CAOR1X1)                     0.25       4.89 f
+  A3/A4/U1/Z (CND2X1)                      0.08       4.96 r
+  A3/A4/U6/Z (CAN2X2)                      0.24       5.20 r
+  A3/A4/U2/Z (CEOX2)                       0.19       5.40 r
+  A3/A4/sum[3] (CLA4_2_5)                  0.00       5.40 r
+  A3/sum_16[15] (CLA16_2_2)                0.00       5.40 r
+  sum_reg[47]/D (CFD2QX4)                  0.00       5.40 r
+  data arrival time                                   5.40
+
+  clock clock (rise edge)                  6.00       6.00
+  clock network delay (propagated)         0.00       6.00
+  clock uncertainty                       -0.25       5.75
+  sum_reg[47]/CP (CFD2QX4)                 0.00       5.75 r
+  library setup time                      -0.32       5.43
+  data required time                                  5.43
+  -----------------------------------------------------------
+  data required time                                  5.43
+  data arrival time                                  -5.40
+  -----------------------------------------------------------
+  slack (MET)                                         0.04
+
+
+  Startpoint: op2_f_reg[1]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: sum_reg[61]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clock (rise edge)                  0.00       0.00
+  clock network delay (propagated)         0.00       0.00
+  op2_f_reg[1]/CP (CFD2QX1)                0.00       0.00 r
+  op2_f_reg[1]/Q (CFD2QX1)                 0.45       0.45 r
+  A1/op2_4[1] (CLA16)                      0.00       0.45 r
+  A1/C1/op2[1] (CLA4)                      0.00       0.45 r
+  A1/C1/U5/Z (CIVX2)                       0.08       0.53 f
+  A1/C1/U4/Z (CND2X1)                      0.11       0.64 r
+  A1/C1/U26/Z (CND2X2)                     0.11       0.75 f
+  A1/C1/U9/Z (CND2X2)                      0.07       0.83 r
+  A1/C1/U25/Z (CND2X2)                     0.09       0.92 f
+  A1/C1/U22/Z (CND2X2)                     0.07       0.99 r
+  A1/C1/U23/Z (CND2X2)                     0.09       1.08 f
+  A1/C1/U2/Z (CND2IX2)                     0.07       1.15 r
+  A1/C1/U16/Z (CND2IX2)                    0.08       1.23 f
+  A1/C1/G1 (CLA4)                          0.00       1.23 f
+  A1/U3/Z (COND4CX1)                       0.17       1.40 r
+  A1/U1/Z (CND2IX1)                        0.16       1.56 f
+  A1/U2/Z (CND2X2)                         0.07       1.63 r
+  A1/U5/Z (CND2X2)                         0.08       1.72 f
+  A1/crout (CLA16)                         0.00       1.72 f
+  A2/Cin (CLA16_2_0)                       0.00       1.72 f
+  A2/U4/Z (COND4CX1)                       0.17       1.89 r
+  A2/U3/Z (CND2IX1)                        0.13       2.02 f
+  A2/U2/Z (COND4CX1)                       0.21       2.23 r
+  A2/U5/Z (CND2IX2)                        0.14       2.37 f
+  A2/crout_16 (CLA16_2_0)                  0.00       2.37 f
+  A3/Cin (CLA16_2_2)                       0.00       2.37 f
+  A3/U1/Z (COND4CX1)                       0.17       2.54 r
+  A3/U3/Z (CND2IX1)                        0.13       2.68 f
+  A3/U2/Z (COND4CX1)                       0.21       2.88 r
+  A3/U4/Z (CND2IX2)                        0.16       3.04 f
+  A3/crout_16 (CLA16_2_2)                  0.00       3.04 f
+  A4/Cin (CLA16_2_1)                       0.00       3.04 f
+  A4/A1/Cin (CLA4_2_4)                     0.00       3.04 f
+  A4/A1/U25/Z (CND2X2)                     0.07       3.11 r
+  A4/A1/U8/Z (COND1X2)                     0.09       3.20 f
+  A4/A1/U5/Z (CANR2X1)                     0.26       3.47 r
+  A4/A1/U27/Z (COND2X2)                    0.19       3.66 f
+  A4/A1/crout (CLA4_2_4)                   0.00       3.66 f
+  A4/A2/Cin (CLA4_2_3)                     0.00       3.66 f
+  A4/A2/U34/Z (CND2X2)                     0.08       3.74 r
+  A4/A2/U6/Z (COND1X2)                     0.10       3.84 f
+  A4/A2/U10/Z (CND2X2)                     0.08       3.92 r
+  A4/A2/U1/Z (CND2IX2)                     0.09       4.01 f
+  A4/A2/U5/Z (CIVX2)                       0.06       4.07 r
+  A4/A2/U36/Z (COND2X2)                    0.13       4.20 f
+  A4/A2/crout (CLA4_2_3)                   0.00       4.20 f
+  A4/A3/Cin (CLA4_2_2)                     0.00       4.20 f
+  A4/A3/U24/Z (CND2X2)                     0.08       4.28 r
+  A4/A3/U4/Z (COND1X2)                     0.12       4.40 f
+  A4/A3/U1/Z (CANR1X1)                     0.17       4.57 r
+  A4/A3/U33/Z (COND2X2)                    0.19       4.76 f
+  A4/A3/crout (CLA4_2_2)                   0.00       4.76 f
+  A4/A4/Cin (CLA4_2_1)                     0.00       4.76 f
+  A4/A4/U9/Z (CND2X2)                      0.09       4.84 r
+  A4/A4/U27/Z (CND2XL)                     0.14       4.98 f
+  A4/A4/U8/Z (CEOXL)                       0.35       5.34 f
+  A4/A4/sum[1] (CLA4_2_1)                  0.00       5.34 f
+  A4/sum_16[13] (CLA16_2_1)                0.00       5.34 f
+  sum_reg[61]/D (CFD2QX1)                  0.00       5.34 f
+  data arrival time                                   5.34
+
+  clock clock (rise edge)                  6.00       6.00
+  clock network delay (propagated)         0.00       6.00
+  clock uncertainty                       -0.25       5.75
+  sum_reg[61]/CP (CFD2QX1)                 0.00       5.75 r
+  library setup time                      -0.36       5.39
+  data required time                                  5.39
+  -----------------------------------------------------------
+  data required time                                  5.39
+  data arrival time                                  -5.34
+  -----------------------------------------------------------
+  slack (MET)                                         0.05
+
+
+  Startpoint: op2_f_reg[1]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: sum_reg[52]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clock (rise edge)                  0.00       0.00
+  clock network delay (propagated)         0.00       0.00
+  op2_f_reg[1]/CP (CFD2QX1)                0.00       0.00 r
+  op2_f_reg[1]/Q (CFD2QX1)                 0.45       0.45 r
+  A1/op2_4[1] (CLA16)                      0.00       0.45 r
+  A1/C1/op2[1] (CLA4)                      0.00       0.45 r
+  A1/C1/U5/Z (CIVX2)                       0.08       0.53 f
+  A1/C1/U4/Z (CND2X1)                      0.11       0.64 r
+  A1/C1/U26/Z (CND2X2)                     0.11       0.75 f
+  A1/C1/U9/Z (CND2X2)                      0.07       0.83 r
+  A1/C1/U25/Z (CND2X2)                     0.09       0.92 f
+  A1/C1/U22/Z (CND2X2)                     0.07       0.99 r
+  A1/C1/U23/Z (CND2X2)                     0.09       1.08 f
+  A1/C1/U2/Z (CND2IX2)                     0.07       1.15 r
+  A1/C1/U16/Z (CND2IX2)                    0.08       1.23 f
+  A1/C1/G1 (CLA4)                          0.00       1.23 f
+  A1/U3/Z (COND4CX1)                       0.17       1.40 r
+  A1/U1/Z (CND2IX1)                        0.16       1.56 f
+  A1/U2/Z (CND2X2)                         0.07       1.63 r
+  A1/U5/Z (CND2X2)                         0.08       1.72 f
+  A1/crout (CLA16)                         0.00       1.72 f
+  A2/Cin (CLA16_2_0)                       0.00       1.72 f
+  A2/U4/Z (COND4CX1)                       0.17       1.89 r
+  A2/U3/Z (CND2IX1)                        0.13       2.02 f
+  A2/U2/Z (COND4CX1)                       0.21       2.23 r
+  A2/U5/Z (CND2IX2)                        0.14       2.37 f
+  A2/crout_16 (CLA16_2_0)                  0.00       2.37 f
+  A3/Cin (CLA16_2_2)                       0.00       2.37 f
+  A3/U1/Z (COND4CX1)                       0.17       2.54 r
+  A3/U3/Z (CND2IX1)                        0.13       2.68 f
+  A3/U2/Z (COND4CX1)                       0.21       2.88 r
+  A3/U4/Z (CND2IX2)                        0.16       3.04 f
+  A3/crout_16 (CLA16_2_2)                  0.00       3.04 f
+  A4/Cin (CLA16_2_1)                       0.00       3.04 f
+  A4/A1/Cin (CLA4_2_4)                     0.00       3.04 f
+  A4/A1/U25/Z (CND2X2)                     0.07       3.11 r
+  A4/A1/U8/Z (COND1X2)                     0.09       3.20 f
+  A4/A1/U5/Z (CANR2X1)                     0.26       3.47 r
+  A4/A1/U27/Z (COND2X2)                    0.19       3.66 f
+  A4/A1/crout (CLA4_2_4)                   0.00       3.66 f
+  A4/A2/Cin (CLA4_2_3)                     0.00       3.66 f
+  A4/A2/U9/Z (CDLY1XL)                     0.67       4.33 f
+  A4/A2/U27/Z (CDLY1XL)                    0.66       4.99 f
+  A4/A2/U33/Z (CEOXL)                      0.33       5.32 f
+  A4/A2/sum[0] (CLA4_2_3)                  0.00       5.32 f
+  A4/sum_16[4] (CLA16_2_1)                 0.00       5.32 f
+  sum_reg[52]/D (CFD2QX1)                  0.00       5.32 f
+  data arrival time                                   5.32
+
+  clock clock (rise edge)                  6.00       6.00
+  clock network delay (propagated)         0.00       6.00
+  clock uncertainty                       -0.25       5.75
+  sum_reg[52]/CP (CFD2QX1)                 0.00       5.75 r
+  library setup time                      -0.36       5.39
+  data required time                                  5.39
+  -----------------------------------------------------------
+  data required time                                  5.39
+  data arrival time                                  -5.32
+  -----------------------------------------------------------
+  slack (MET)                                         0.07
+
+
+  Startpoint: op2_f_reg[1]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: sum_reg[62]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clock (rise edge)                  0.00       0.00
+  clock network delay (propagated)         0.00       0.00
+  op2_f_reg[1]/CP (CFD2QX1)                0.00       0.00 r
+  op2_f_reg[1]/Q (CFD2QX1)                 0.45       0.45 f
+  A1/op2_4[1] (CLA16)                      0.00       0.45 f
+  A1/C1/op2[1] (CLA4)                      0.00       0.45 f
+  A1/C1/U5/Z (CIVX2)                       0.06       0.51 r
+  A1/C1/U4/Z (CND2X1)                      0.13       0.64 f
+  A1/C1/U26/Z (CND2X2)                     0.09       0.73 r
+  A1/C1/U9/Z (CND2X2)                      0.10       0.83 f
+  A1/C1/U25/Z (CND2X2)                     0.07       0.90 r
+  A1/C1/U22/Z (CND2X2)                     0.09       0.99 f
+  A1/C1/U23/Z (CND2X2)                     0.07       1.06 r
+  A1/C1/U2/Z (CND2IX2)                     0.09       1.15 f
+  A1/C1/U16/Z (CND2IX2)                    0.06       1.21 r
+  A1/C1/G1 (CLA4)                          0.00       1.21 r
+  A1/U3/Z (COND4CX1)                       0.16       1.37 f
+  A1/U1/Z (CND2IX1)                        0.11       1.48 r
+  A1/U2/Z (CND2X2)                         0.11       1.58 f
+  A1/U5/Z (CND2X2)                         0.06       1.65 r
+  A1/crout (CLA16)                         0.00       1.65 r
+  A2/Cin (CLA16_2_0)                       0.00       1.65 r
+  A2/U4/Z (COND4CX1)                       0.16       1.81 f
+  A2/U3/Z (CND2IX1)                        0.09       1.89 r
+  A2/U2/Z (COND4CX1)                       0.20       2.09 f
+  A2/U5/Z (CND2IX2)                        0.09       2.18 r
+  A2/crout_16 (CLA16_2_0)                  0.00       2.18 r
+  A3/Cin (CLA16_2_2)                       0.00       2.18 r
+  A3/U1/Z (COND4CX1)                       0.17       2.35 f
+  A3/U3/Z (CND2IX1)                        0.09       2.44 r
+  A3/U2/Z (COND4CX1)                       0.20       2.63 f
+  A3/U4/Z (CND2IX2)                        0.10       2.74 r
+  A3/crout_16 (CLA16_2_2)                  0.00       2.74 r
+  A4/Cin (CLA16_2_1)                       0.00       2.74 r
+  A4/A1/Cin (CLA4_2_4)                     0.00       2.74 r
+  A4/A1/U25/Z (CND2X2)                     0.10       2.84 f
+  A4/A1/U8/Z (COND1X2)                     0.12       2.96 r
+  A4/A1/U5/Z (CANR2X1)                     0.20       3.16 f
+  A4/A1/U27/Z (COND2X2)                    0.15       3.31 r
+  A4/A1/crout (CLA4_2_4)                   0.00       3.31 r
+  A4/A2/Cin (CLA4_2_3)                     0.00       3.31 r
+  A4/A2/U34/Z (CND2X2)                     0.14       3.45 f
+  A4/A2/U6/Z (COND1X2)                     0.14       3.58 r
+  A4/A2/U10/Z (CND2X2)                     0.13       3.71 f
+  A4/A2/U1/Z (CND2IX2)                     0.07       3.78 r
+  A4/A2/U5/Z (CIVX2)                       0.07       3.85 f
+  A4/A2/U36/Z (COND2X2)                    0.14       3.99 r
+  A4/A2/crout (CLA4_2_3)                   0.00       3.99 r
+  A4/A3/Cin (CLA4_2_2)                     0.00       3.99 r
+  A4/A3/U24/Z (CND2X2)                     0.14       4.13 f
+  A4/A3/U4/Z (COND1X2)                     0.16       4.29 r
+  A4/A3/U1/Z (CANR1X1)                     0.17       4.45 f
+  A4/A3/U33/Z (COND2X2)                    0.15       4.60 r
+  A4/A3/crout (CLA4_2_2)                   0.00       4.60 r
+  A4/A4/Cin (CLA4_2_1)                     0.00       4.60 r
+  A4/A4/U9/Z (CND2X2)                      0.15       4.75 f
+  A4/A4/U2/Z (COND1XL)                     0.21       4.96 r
+  A4/A4/U1/Z (CEO3XL)                      0.34       5.30 f
+  A4/A4/sum[2] (CLA4_2_1)                  0.00       5.30 f
+  A4/sum_16[14] (CLA16_2_1)                0.00       5.30 f
+  sum_reg[62]/D (CFD2QXL)                  0.00       5.30 f
+  data arrival time                                   5.30
+
+  clock clock (rise edge)                  6.00       6.00
+  clock network delay (propagated)         0.00       6.00
+  clock uncertainty                       -0.25       5.75
+  sum_reg[62]/CP (CFD2QXL)                 0.00       5.75 r
+  library setup time                      -0.37       5.38
+  data required time                                  5.38
+  -----------------------------------------------------------
+  data required time                                  5.38
+  data arrival time                                  -5.30
+  -----------------------------------------------------------
+  slack (MET)                                         0.08
+
+
+  Startpoint: op2_f_reg[1]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: sum_reg[60]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clock (rise edge)                  0.00       0.00
+  clock network delay (propagated)         0.00       0.00
+  op2_f_reg[1]/CP (CFD2QX1)                0.00       0.00 r
+  op2_f_reg[1]/Q (CFD2QX1)                 0.45       0.45 r
+  A1/op2_4[1] (CLA16)                      0.00       0.45 r
+  A1/C1/op2[1] (CLA4)                      0.00       0.45 r
+  A1/C1/U5/Z (CIVX2)                       0.08       0.53 f
+  A1/C1/U4/Z (CND2X1)                      0.11       0.64 r
+  A1/C1/U26/Z (CND2X2)                     0.11       0.75 f
+  A1/C1/U9/Z (CND2X2)                      0.07       0.83 r
+  A1/C1/U25/Z (CND2X2)                     0.09       0.92 f
+  A1/C1/U22/Z (CND2X2)                     0.07       0.99 r
+  A1/C1/U23/Z (CND2X2)                     0.09       1.08 f
+  A1/C1/U2/Z (CND2IX2)                     0.07       1.15 r
+  A1/C1/U16/Z (CND2IX2)                    0.08       1.23 f
+  A1/C1/G1 (CLA4)                          0.00       1.23 f
+  A1/U3/Z (COND4CX1)                       0.17       1.40 r
+  A1/U1/Z (CND2IX1)                        0.16       1.56 f
+  A1/U2/Z (CND2X2)                         0.07       1.63 r
+  A1/U5/Z (CND2X2)                         0.08       1.72 f
+  A1/crout (CLA16)                         0.00       1.72 f
+  A2/Cin (CLA16_2_0)                       0.00       1.72 f
+  A2/U4/Z (COND4CX1)                       0.17       1.89 r
+  A2/U3/Z (CND2IX1)                        0.13       2.02 f
+  A2/U2/Z (COND4CX1)                       0.21       2.23 r
+  A2/U5/Z (CND2IX2)                        0.14       2.37 f
+  A2/crout_16 (CLA16_2_0)                  0.00       2.37 f
+  A3/Cin (CLA16_2_2)                       0.00       2.37 f
+  A3/U1/Z (COND4CX1)                       0.17       2.54 r
+  A3/U3/Z (CND2IX1)                        0.13       2.68 f
+  A3/U2/Z (COND4CX1)                       0.21       2.88 r
+  A3/U4/Z (CND2IX2)                        0.16       3.04 f
+  A3/crout_16 (CLA16_2_2)                  0.00       3.04 f
+  A4/Cin (CLA16_2_1)                       0.00       3.04 f
+  A4/A1/Cin (CLA4_2_4)                     0.00       3.04 f
+  A4/A1/U25/Z (CND2X2)                     0.07       3.11 r
+  A4/A1/U8/Z (COND1X2)                     0.09       3.20 f
+  A4/A1/U5/Z (CANR2X1)                     0.26       3.47 r
+  A4/A1/U27/Z (COND2X2)                    0.19       3.66 f
+  A4/A1/crout (CLA4_2_4)                   0.00       3.66 f
+  A4/A2/Cin (CLA4_2_3)                     0.00       3.66 f
+  A4/A2/U34/Z (CND2X2)                     0.08       3.74 r
+  A4/A2/U6/Z (COND1X2)                     0.10       3.84 f
+  A4/A2/U10/Z (CND2X2)                     0.08       3.92 r
+  A4/A2/U1/Z (CND2IX2)                     0.09       4.01 f
+  A4/A2/U5/Z (CIVX2)                       0.06       4.07 r
+  A4/A2/U36/Z (COND2X2)                    0.13       4.20 f
+  A4/A2/crout (CLA4_2_3)                   0.00       4.20 f
+  A4/A3/Cin (CLA4_2_2)                     0.00       4.20 f
+  A4/A3/U24/Z (CND2X2)                     0.08       4.28 r
+  A4/A3/U4/Z (COND1X2)                     0.12       4.40 f
+  A4/A3/U1/Z (CANR1X1)                     0.17       4.57 r
+  A4/A3/U33/Z (COND2X2)                    0.19       4.76 f
+  A4/A3/crout (CLA4_2_2)                   0.00       4.76 f
+  A4/A4/Cin (CLA4_2_1)                     0.00       4.76 f
+  A4/A4/U24/Z (CIVXL)                      0.09       4.85 r
+  A4/A4/U25/Z (CIVXL)                      0.09       4.94 f
+  A4/A4/U28/Z (CEOXL)                      0.33       5.27 f
+  A4/A4/sum[0] (CLA4_2_1)                  0.00       5.27 f
+  A4/sum_16[12] (CLA16_2_1)                0.00       5.27 f
+  sum_reg[60]/D (CFD2QXL)                  0.00       5.27 f
+  data arrival time                                   5.27
+
+  clock clock (rise edge)                  6.00       6.00
+  clock network delay (propagated)         0.00       6.00
+  clock uncertainty                       -0.25       5.75
+  sum_reg[60]/CP (CFD2QXL)                 0.00       5.75 r
+  library setup time                      -0.37       5.38
+  data required time                                  5.38
+  -----------------------------------------------------------
+  data required time                                  5.38
+  data arrival time                                  -5.27
+  -----------------------------------------------------------
+  slack (MET)                                         0.11
+
+
+1
+write -hierarchy -format verilog -output CLA64_netlist.v
+Writing verilog file '/home/pa/pand2610/Desktop/Project/CLA64/CLA64_netlist.v'.
+1
+1
+dc_shell> 

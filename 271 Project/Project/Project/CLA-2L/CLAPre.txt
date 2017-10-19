@@ -1,0 +1,81 @@
+Chronologic VCS simulator copyright 1991-2014
+Contains Synopsys proprietary information.
+Compiler version I-2014.03-2; Runtime version I-2014.03-2;  Dec  4 07:50 2015
+op1_f= 0000000000000000
+op2_f= 0000000000000000
+sumf= 0000000000000000
+croutf= 0
+op1_f= 0000000000000000
+op2_f= 0000000000000000
+sumf= 0000000000000000
+croutf= 0
+op1_f= 0000000000000000
+op2_f= 0000000000000000
+sumf= 0000000000000000
+croutf= 0
+op1_f= 0000000000000000
+op2_f= 0000000000000000
+sumf= 0000000000000000
+croutf= 0
+op1_f= 0000000000000000
+op2_f= 0000000000000000
+sumf= 0000000000000000
+croutf= 0
+op1_f= 0000000000000000
+op2_f= 0000000000000000
+sumf= 0000000000000000
+croutf= 0
+op1_f= f20fffffffffffff
+op2_f= ffffffffffffff50
+sumf= f20fffffffffff4f
+croutf= 1
+op1_f= 101010101199ffff
+op2_f= abcd11001100dddd
+sumf= bbdd2110229adddc
+croutf= 0
+op1_f= ffffffffffffffff
+op2_f= eeeeddddccccffff
+sumf= eeeeddddccccfffe
+croutf= 1
+op1_f= bbbbcdcdaaaa1111
+op2_f= ffffffffffffdddd
+sumf= bbbbcdcdaaa9eeee
+croutf= 1
+op1_f= 1234567890abcdef
+op2_f= 555555555555dddd
+sumf= 6789abcde601abcc
+croutf= 0
+op1_f= 1234ffffdfffeeee
+op2_f= dddddddddddddddd
+sumf= f012ddddbdddcccb
+croutf= 0
+op1_f= f20fffffffffffff
+op2_f= ffffffffffffff50
+sumf= f20fffffffffff4f
+croutf= 1
+op1_f= 101010101199ffff
+op2_f= abcd11001100dddd
+sumf= bbdd2110229adddc
+croutf= 0
+op1_f= ffffffffffffffff
+op2_f= eeeeddddccccffff
+sumf= eeeeddddccccfffe
+croutf= 1
+op1_f= bbbbcdcdaaaa1111
+op2_f= ffffffffffffdddd
+sumf= bbbbcdcdaaa9eeee
+croutf= 1
+op1_f= 1234567890abcdef
+op2_f= 555555555555dddd
+sumf= 6789abcde601abcc
+croutf= 0
+op1_f= 1234ffffdfffeeee
+op2_f= dddddddddddddddd
+sumf= f012ddddbdddcccb
+croutf= 0
+$finish called from file "CLA_64_tb.v", line 34.
+$finish at simulation time                 3000
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 30000 ps
+CPU Time:      0.270 seconds;       Data structure size:   0.0Mb
+Fri Dec  4 07:50:05 2015

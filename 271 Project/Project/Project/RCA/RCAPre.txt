@@ -1,0 +1,105 @@
+Chronologic VCS simulator copyright 1991-2014
+Contains Synopsys proprietary information.
+Compiler version I-2014.03-2; Runtime version I-2014.03-2;  Dec  4 07:44 2015
+op1f= 0000000000000000
+op2f= 0000000000000000
+sumf= 0000000000000000
+croutf= 0
+op1f= 0000000000000000
+op2f= 0000000000000000
+sumf= 0000000000000000
+croutf= 0
+op1f= 0000000000000000
+op2f= 0000000000000000
+sumf= 0000000000000000
+croutf= 0
+op1f= 0000000000000000
+op2f= 0000000000000000
+sumf= 0000000000000000
+croutf= 0
+op1f= 0000000000000000
+op2f= 0000000000000000
+sumf= 0000000000000000
+croutf= 0
+op1f= 0000000000000000
+op2f= 0000000000000000
+sumf= 0000000000000000
+croutf= 0
+op1f= f20fffffffffffff
+op2f= ffffffffffffff50
+sumf= f20fffffffffff4f
+croutf= 1
+op1f= 101010101199ffff
+op2f= abcd11001100dddd
+sumf= bbdd2110229adddc
+croutf= 0
+op1f= ffffffffffffffff
+op2f= eeeeddddccccffff
+sumf= eeeeddddccccfffe
+croutf= 1
+op1f= bbbbcdcdaaaa1111
+op2f= ffffffffffffdddd
+sumf= bbbbcdcdaaa9eeee
+croutf= 1
+op1f= 0000000012345678
+op2f= 0000000090abcdef
+sumf= 00000000a2e02467
+croutf= 0
+op1f= 1234ffffdfffeeee
+op2f= dddddddddddddddd
+sumf= f012ddddbdddcccb
+croutf= 0
+op1f= f20fffffffffffff
+op2f= ffffffffffffff50
+sumf= f20fffffffffff4f
+croutf= 1
+op1f= 101010101199ffff
+op2f= abcd11001100dddd
+sumf= bbdd2110229adddc
+croutf= 0
+op1f= ffffffffffffffff
+op2f= eeeeddddccccffff
+sumf= eeeeddddccccfffe
+croutf= 1
+op1f= bbbbcdcdaaaa1111
+op2f= ffffffffffffdddd
+sumf= bbbbcdcdaaa9eeee
+croutf= 1
+op1f= 0000000012345678
+op2f= 0000000090abcdef
+sumf= 00000000a2e02467
+croutf= 0
+op1f= 1234ffffdfffeeee
+op2f= dddddddddddddddd
+sumf= f012ddddbdddcccb
+croutf= 0
+op1f= f20fffffffffffff
+op2f= ffffffffffffff50
+sumf= f20fffffffffff4f
+croutf= 1
+op1f= 101010101199ffff
+op2f= abcd11001100dddd
+sumf= bbdd2110229adddc
+croutf= 0
+op1f= ffffffffffffffff
+op2f= eeeeddddccccffff
+sumf= eeeeddddccccfffe
+croutf= 1
+op1f= bbbbcdcdaaaa1111
+op2f= ffffffffffffdddd
+sumf= bbbbcdcdaaa9eeee
+croutf= 1
+op1f= 0000000012345678
+op2f= 0000000090abcdef
+sumf= 00000000a2e02467
+croutf= 0
+op1f= 1234ffffdfffeeee
+op2f= dddddddddddddddd
+sumf= f012ddddbdddcccb
+croutf= 0
+$finish called from file "RCA64_tb.v", line 37.
+$finish at simulation time                 3000
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 30000 ps
+CPU Time:      0.280 seconds;       Data structure size:   0.1Mb
+Fri Dec  4 07:44:22 2015

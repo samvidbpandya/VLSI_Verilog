@@ -1,0 +1,830 @@
+ncverilog: 14.10-p001: (c) Copyright 1995-2014 Cadence Design Systems, Inc.
+file: randist_gates.v
+	module worklib.sqrtln:v
+		errors: 0, warnings: 0
+	module worklib.sin_lookup:v
+		errors: 0, warnings: 0
+	module worklib.randist_DW02_mult_5_stage_J1_0:v
+		errors: 0, warnings: 0
+	module worklib.randist_DW02_mult_5_stage_J1_1:v
+		errors: 0, warnings: 0
+	module worklib.randist_DW02_mult_5_stage_J1_3:v
+		errors: 0, warnings: 0
+	module worklib.randist_DW02_mult_5_stage_J1_4:v
+		errors: 0, warnings: 0
+	module worklib.randist_DW02_mult_5_stage_J1_5:v
+		errors: 0, warnings: 0
+	module worklib.randist_DW02_mult_5_stage_J1_6:v
+		errors: 0, warnings: 0
+	module worklib.randist_DW02_mult_5_stage_J1_7:v
+		errors: 0, warnings: 0
+	module worklib.randist_DW02_mult_5_stage_J1_8:v
+		errors: 0, warnings: 0
+	module worklib.randist_DW02_mult_5_stage_J1_9:v
+		errors: 0, warnings: 0
+	module worklib.randist_DW02_mult_5_stage_J1_10:v
+		errors: 0, warnings: 0
+	module worklib.randist_DW02_mult_5_stage_J1_11:v
+		errors: 0, warnings: 0
+	module worklib.randist_DW02_mult_5_stage_J1_12:v
+		errors: 0, warnings: 0
+	module worklib.fpadd_1:v
+		errors: 0, warnings: 0
+	module worklib.fpadd_2:v
+		errors: 0, warnings: 0
+	module worklib.fpadd_3:v
+		errors: 0, warnings: 0
+	module worklib.fpadd_4:v
+		errors: 0, warnings: 0
+	module worklib.randist_DW02_mult_5_stage_J1_2:v
+		errors: 0, warnings: 0
+	module worklib.randist_DW02_mult_5_stage_J1_13:v
+		errors: 0, warnings: 0
+	module worklib.randist:v
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/COR2X4.tsbvlibp
+	module tc240c.COR2X4:tsbvlibp
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/CND8XL.tsbvlibp
+	module tc240c.CND8XL:tsbvlibp
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/COR4XL.tsbvlibp
+	module tc240c.COR4XL:tsbvlibp
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/CNR8XL.tsbvlibp
+	module tc240c.CNR8XL:tsbvlibp
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/COAN1X4.tsbvlibp
+	module tc240c.COAN1X4:tsbvlibp
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/CAN3X4.tsbvlibp
+	module tc240c.CAN3X4:tsbvlibp
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/CFD2X2.tsbvlibp
+	module tc240c.CFD2X2:tsbvlibp
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/TADDR2Sprim.tsbvlibp
+	primitive tc240c.TADDR2Sprim:tsbvlibp
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/TADDR2Cprim.tsbvlibp
+	primitive tc240c.TADDR2Cprim:tsbvlibp
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/TMUX21prim.tsbvlibp
+	primitive tc240c.TMUX21prim:tsbvlibp
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/TMUX21INVprim.tsbvlibp
+	primitive tc240c.TMUX21INVprim:tsbvlibp
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/tsbCFD2X2.tsbvlibp
+	module tc240c.tsbCFD2X2:tsbvlibp
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/tsbMUXXprim.tsbvlibp
+	primitive tc240c.tsbMUXXprim:tsbvlibp
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/TFDPNOprim.tsbvlibp
+	primitive tc240c.TFDPNOprim:tsbvlibp
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/TFDPRBNOprim.tsbvlibp
+	primitive tc240c.TFDPRBNOprim:tsbvlibp
+		errors: 0, warnings: 0
+file: /apps/toshiba/sjsu/verilog/tc240c/TFDPSBNOprim.tsbvlibp
+	primitive tc240c.TFDPSBNOprim:tsbvlibp
+		errors: 0, warnings: 0
+		Caching library 'tc240c' ....... Done
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+  CIVDXL U1324 ( .A(n6382), .Z1(n4330) );
+             |
+ncelab: *W,CUVWSP (./randist_gates.v,2634|13): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CIVDXL.tsbvlibp,12): Z0
+
+  CIVDX1 U1735 ( .A(n10533), .Z0(n5599) );
+             |
+ncelab: *W,CUVWSP (./randist_gates.v,3045|13): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CIVDX1.tsbvlibp,12): Z1
+
+  CIVDX1 U2692 ( .A(n1073), .Z0(n9731) );
+             |
+ncelab: *W,CUVWSP (./randist_gates.v,4002|13): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CIVDX1.tsbvlibp,12): Z1
+
+  CIVDXL U10402 ( .A(n8150), .Z1(n10791) );
+              |
+ncelab: *W,CUVWSP (./randist_gates.v,11713|14): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CIVDXL.tsbvlibp,12): Z0
+
+  CIVDX4 U32 ( .A(n9712), .Z0(n9641) );
+           |
+ncelab: *W,CUVWSP (./randist_gates.v,14501|11): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CIVDX4.tsbvlibp,12): Z1
+
+  CIVDX3 U1868 ( .A(n8286), .Z0(n768) );
+             |
+ncelab: *W,CUVWSP (./randist_gates.v,16409|13): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CIVDX3.tsbvlibp,12): Z1
+
+  CIVDX1 U1887 ( .A(n9134), .Z0(n776) );
+             |
+ncelab: *W,CUVWSP (./randist_gates.v,16428|13): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CIVDX1.tsbvlibp,12): Z1
+
+  CIVDX1 U2595 ( .A(n818), .Z0(n5595) );
+             |
+ncelab: *W,CUVWSP (./randist_gates.v,17137|13): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CIVDX1.tsbvlibp,12): Z1
+
+  CIVDX1 U5433 ( .A(n4808), .Z0(n5319) );
+             |
+ncelab: *W,CUVWSP (./randist_gates.v,20004|13): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CIVDX1.tsbvlibp,12): Z1
+
+  CIVDX2 U6 ( .A(n1564), .Z0(n1762) );
+          |
+ncelab: *W,CUVWSP (./randist_gates.v,107013|10): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CIVDX2.tsbvlibp,12): Z1
+
+  CIVDXL U499 ( .A(b[48]), .Z0(n2326) );
+            |
+ncelab: *W,CUVWSP (./randist_gates.v,99235|12): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CIVDXL.tsbvlibp,12): Z1
+
+  CIVDXL U6076 ( .A(n7978), .Z0(n8029) );
+             |
+ncelab: *W,CUVWSP (./randist_gates.v,32803|13): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CIVDXL.tsbvlibp,12): Z1
+
+  CIVDX1 U6176 ( .A(n7965), .Z0(n8027) );
+             |
+ncelab: *W,CUVWSP (./randist_gates.v,32905|13): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CIVDX1.tsbvlibp,12): Z1
+
+  CIVDX1 U6177 ( .A(n7966), .Z0(n8015) );
+             |
+ncelab: *W,CUVWSP (./randist_gates.v,32906|13): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CIVDX1.tsbvlibp,12): Z1
+
+  CIVDX1 U6211 ( .A(n7080), .Z0(n8024) );
+             |
+ncelab: *W,CUVWSP (./randist_gates.v,32942|13): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CIVDX1.tsbvlibp,12): Z1
+
+  CIVDX1 U4984 ( .A(n5304), .Z0(n6705) );
+             |
+ncelab: *W,CUVWSP (./randist_gates.v,42329|13): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CIVDX1.tsbvlibp,12): Z1
+
+  CIVDXL U5065 ( .A(A[44]), .Z0(n6661) );
+             |
+ncelab: *W,CUVWSP (./randist_gates.v,42415|13): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CIVDXL.tsbvlibp,12): Z1
+
+  CIVDXL U5285 ( .A(A[41]), .Z0(n6663) );
+             |
+ncelab: *W,CUVWSP (./randist_gates.v,42658|13): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CIVDXL.tsbvlibp,12): Z1
+
+  CIVDX1 U4413 ( .A(n6187), .Z0(n6167) );
+             |
+ncelab: *W,CUVWSP (./randist_gates.v,49699|13): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CIVDX1.tsbvlibp,12): Z1
+
+  CFD1QXL \mult_x_1/clk_r_REG644_S2  ( .D(\mult_x_1/n1696 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,53299|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG518_S2  ( .D(\mult_x_1/n1642 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,53300|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG680_S2  ( .D(\mult_x_1/n1707 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,53311|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG559_S2  ( .D(\mult_x_1/n1653 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,53312|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG729_S2  ( .D(\mult_x_1/n1303 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,53318|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG687_S2  ( .D(\mult_x_1/n1299 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,53319|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG645_S2  ( .D(\mult_x_1/n1297 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,53320|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG599_S2  ( .D(\mult_x_1/n1295 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,53321|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG566_S2  ( .D(\mult_x_1/n1291 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,53322|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG509_S2  ( .D(\mult_x_1/n1289 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,53323|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG521_S2  ( .D(\mult_x_1/n1287 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,53324|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG457_S2  ( .D(\mult_x_1/n1285 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,53325|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG844_S2  ( .D(\mult_x_1/n1796 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,53334|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG646_S2  ( .D(\mult_x_1/n1694 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,53337|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG519_S2  ( .D(\mult_x_1/n1640 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,53338|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG726_S2  ( .D(\mult_x_1/n1744 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,53346|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG681_S2  ( .D(\mult_x_1/n1715 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,53347|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG641_S2  ( .D(\mult_x_1/n1702 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,53348|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG563_S2  ( .D(\mult_x_1/n1661 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,53349|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG558_S2  ( .D(\mult_x_1/n1648 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,53350|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG453_S2  ( .D(\mult_x_1/n1619 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,53351|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG850_S2  ( .D(\mult_x_1/n1311 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,53352|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG647_S2  ( .D(\mult_x_1/n2273 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,53402|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG520_S2  ( .D(\mult_x_1/n2265 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,53403|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG638_S2  ( .D(\mult_x_1/n1697 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,53430|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG513_S2  ( .D(\mult_x_1/n1643 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,53431|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFA1XL U7278 ( .A(n8666), .B(n8866), .CI(n8747), .S(n7783) );
+             |
+ncelab: *W,CUVWSP (./randist_gates.v,62017|13): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFA1XL.tsbvlibp,12): CO
+
+  CFA1XL U7294 ( .A(n8866), .B(n8513), .CI(n8866), .S(n7283) );
+             |
+ncelab: *W,CUVWSP (./randist_gates.v,62033|13): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFA1XL.tsbvlibp,12): CO
+
+  CFA1XL U8467 ( .A(n4274), .B(n4274), .CI(n8098), .S(n8189) );
+             |
+ncelab: *W,CUVWSP (./randist_gates.v,63337|13): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFA1XL.tsbvlibp,12): CO
+
+  CFA1XL U8485 ( .A(n8636), .B(n8636), .CI(n8115), .S(n8368) );
+             |
+ncelab: *W,CUVWSP (./randist_gates.v,63356|13): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFA1XL.tsbvlibp,12): CO
+
+  CIVDX4 U80 ( .A(n6259), .Z0(n5566) );
+           |
+ncelab: *W,CUVWSP (./randist_gates.v,65867|11): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CIVDX4.tsbvlibp,12): Z1
+
+  CFD1QXL \mult_x_1/clk_r_REG632_S2  ( .D(\mult_x_1/n1722 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,78973|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG539_S2  ( .D(\mult_x_1/n1668 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,78974|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG637_S2  ( .D(\mult_x_1/n1711 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,79239|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG501_S2  ( .D(\mult_x_1/n1657 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,79240|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG714_S2  ( .D(\mult_x_1/n1764 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,79245|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG667_S2  ( .D(\mult_x_1/n1735 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,79246|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG540_S2  ( .D(\mult_x_1/n1681 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,79247|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG721_S2  ( .D(\mult_x_1/n1312 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,79250|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG626_S2  ( .D(\mult_x_1/n1308 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,79251|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG635_S2  ( .D(\mult_x_1/n1307 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,79252|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG638_S2  ( .D(\mult_x_1/n1306 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,79253|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG593_S2  ( .D(\mult_x_1/n1304 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,79254|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG547_S2  ( .D(\mult_x_1/n1300 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,79255|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG492_S2  ( .D(\mult_x_1/n1299 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,79256|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG502_S2  ( .D(\mult_x_1/n1298 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,79257|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG436_S2  ( .D(\mult_x_1/n1296 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,79258|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG445_S2  ( .D(\mult_x_1/n1295 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,79259|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG448_S2  ( .D(\mult_x_1/n1294 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,79260|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG830_S2  ( .D(\mult_x_1/n1811 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,79271|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG719_S2  ( .D(\mult_x_1/n1763 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,79274|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG673_S2  ( .D(\mult_x_1/n1734 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,79275|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG584_S2  ( .D(\mult_x_1/n1709 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,79276|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG545_S2  ( .D(\mult_x_1/n1680 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,79277|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG503_S2  ( .D(\mult_x_1/n1655 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,79278|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG629_S2  ( .D(\mult_x_1/n1717 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,79287|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG498_S2  ( .D(\mult_x_1/n1663 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,79288|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG439_S2  ( .D(\mult_x_1/n1634 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,79289|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG788_S2  ( .D(\mult_x_1/n1320 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,79294|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG720_S2  ( .D(\mult_x_1/n2300 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,79325|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG674_S2  ( .D(\mult_x_1/n2296 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,79326|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG592_S2  ( .D(\mult_x_1/n2292 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,79327|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG546_S2  ( .D(\mult_x_1/n2288 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,79328|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG504_S2  ( .D(\mult_x_1/n2284 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,79329|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG636_S2  ( .D(\mult_x_1/n1712 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,79351|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFD1QXL \mult_x_1/clk_r_REG495_S2  ( .D(\mult_x_1/n1658 ), .CP(CLK) );
+                                   |
+ncelab: *W,CUVWSP (./randist_gates.v,79352|35): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD1QXL.tsbvlibp,7): Q
+
+  CFA1X1 U7356 ( .A(n5097), .B(n5459), .CI(n14259), .S(n4412) );
+             |
+ncelab: *W,CUVWSP (./randist_gates.v,147429|13): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFA1X1.tsbvlibp,12): CO
+
+  CFA1X1 U8927 ( .A(n3539), .B(n3539), .CI(n14255), .S(n6316) );
+             |
+ncelab: *W,CUVWSP (./randist_gates.v,149003|13): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFA1X1.tsbvlibp,12): CO
+
+  CFA1X1 U8960 ( .A(n3540), .B(n3540), .CI(n14256), .S(n6654) );
+             |
+ncelab: *W,CUVWSP (./randist_gates.v,149036|13): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFA1X1.tsbvlibp,12): CO
+
+  CFA1X1 U9394 ( .A(n3542), .B(n3542), .CI(n14253), .S(n12230) );
+             |
+ncelab: *W,CUVWSP (./randist_gates.v,149470|13): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFA1X1.tsbvlibp,12): CO
+
+  CFA1X1 U9466 ( .A(n3545), .B(n3545), .CI(n14251), .S(n12532) );
+             |
+ncelab: *W,CUVWSP (./randist_gates.v,149542|13): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFA1X1.tsbvlibp,12): CO
+
+  CFA1X1 U9497 ( .A(n3544), .B(n3544), .CI(n14250), .S(n7107) );
+             |
+ncelab: *W,CUVWSP (./randist_gates.v,149573|13): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFA1X1.tsbvlibp,12): CO
+
+  CFA1X1 U9815 ( .A(n3547), .B(n3547), .CI(n14248), .S(n8001) );
+             |
+ncelab: *W,CUVWSP (./randist_gates.v,149891|13): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFA1X1.tsbvlibp,12): CO
+
+  CFA1X1 U10549 ( .A(n3535), .B(n3535), .CI(n14257), .S(n8848) );
+              |
+ncelab: *W,CUVWSP (./randist_gates.v,150635|14): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFA1X1.tsbvlibp,12): CO
+
+  CFA1X1 U12617 ( .A(n3541), .B(n3541), .CI(n14252), .S(n12297) );
+              |
+ncelab: *W,CUVWSP (./randist_gates.v,152903|14): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFA1X1.tsbvlibp,12): CO
+
+  CFD2XL \delta_sqrtln_r2_reg[44]  ( .D(delta_sqrtln[44]), .CP(clk), .CD(
+                                 |
+ncelab: *W,CUVWSP (./randist_gates.v,173601|33): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD2XL.tsbvlibp,7): QN
+
+  CFD4X2 \u1_r1_reg[53]  ( .D(n24354), .CP(clk), .SD(n24364), .QN(u1_r1[53])
+                       |
+ncelab: *W,CUVWSP (./randist_gates.v,173603|23): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD4X2.tsbvlibp,7): Q
+
+  CFD2X1 \delta_sine_r2_reg[34]  ( .D(delta_sine[34]), .CP(clk), .CD(n24364), 
+                               |
+ncelab: *W,CUVWSP (./randist_gates.v,173607|31): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD2X1.tsbvlibp,7): QN
+
+  CFD2X2 \delta_sine_r2_reg[31]  ( .D(delta_sine[31]), .CP(clk), .CD(n24364), 
+                               |
+ncelab: *W,CUVWSP (./randist_gates.v,173611|31): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD2X2.tsbvlibp,7): QN
+
+  CFD2X1 \inst_fpadd_Cd_D/fractR_add_ip_reg_reg[103]  ( .D(
+                                                    |
+ncelab: *W,CUVWSP (./randist_gates.v,173645|52): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CFD2X1.tsbvlibp,7): QN
+
+  CIVDX3 U10501 ( .A(delta_sine_r2[34]), .Z1(n9322) );
+              |
+ncelab: *W,CUVWSP (./randist_gates.v,181207|14): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CIVDX3.tsbvlibp,12): Z0
+
+  CIVDX1 U17591 ( .A(\inst_fpmul_Bd2/mres_p9[104] ), .Z0(n15176) );
+              |
+ncelab: *W,CUVWSP (./randist_gates.v,189307|14): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CIVDX1.tsbvlibp,12): Z1
+
+  CIVDXL U21728 ( .A(\inst_fpmul_d3/mres_p9[104] ), .Z0(n18570) );
+              |
+ncelab: *W,CUVWSP (./randist_gates.v,194504|14): 1 output port was not connected:
+ncelab: (/apps/toshiba/sjsu/verilog/tc240c/CIVDXL.tsbvlibp,12): Z1
+
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		tc240c.CANR11X1:tsbvlibp <0x328aefaf>
+			streams:   0, words:     0
+		tc240c.CANR11X2:tsbvlibp <0x67bd355a>
+			streams:   0, words:     0
+		tc240c.CANR11XL:tsbvlibp <0x4ed8483f>
+			streams:   0, words:     0
+		tc240c.CANR1X1:tsbvlibp <0x5bdf8fd4>
+			streams:   0, words:     0
+		tc240c.CANR1X2:tsbvlibp <0x197abfac>
+			streams:   0, words:     0
+		tc240c.CANR1X4:tsbvlibp <0x14b11f67>
+			streams:   0, words:     0
+		tc240c.CANR1XL:tsbvlibp <0x5b3d9c36>
+			streams:   0, words:     0
+		tc240c.CANR2X1:tsbvlibp <0x759f56f5>
+			streams:   0, words:     0
+		tc240c.CANR2X2:tsbvlibp <0x76721f04>
+			streams:   0, words:     0
+		tc240c.CANR2XL:tsbvlibp <0x0bda707f>
+			streams:   0, words:     0
+		tc240c.CANR3X1:tsbvlibp <0x0b313bd7>
+			streams:   0, words:     0
+		tc240c.CANR3X2:tsbvlibp <0x1c624e46>
+			streams:   0, words:     0
+		tc240c.CANR3XL:tsbvlibp <0x5b5e2d6b>
+			streams:   0, words:     0
+		tc240c.CANR4CX1:tsbvlibp <0x6390016a>
+			streams:   0, words:     0
+		tc240c.CANR4CXL:tsbvlibp <0x1be788c3>
+			streams:   0, words:     0
+		tc240c.CANR5CX1:tsbvlibp <0x66837380>
+			streams:   0, words:     0
+		tc240c.CANR5CX2:tsbvlibp <0x42fdc1e5>
+			streams:   0, words:     0
+		tc240c.CANR5CX4:tsbvlibp <0x7bf25eba>
+			streams:   0, words:     0
+		tc240c.CANR5CXL:tsbvlibp <0x2769b874>
+			streams:   0, words:     0
+		tc240c.CAOR1X1:tsbvlibp <0x108972c0>
+			streams:   0, words:     0
+		tc240c.CAOR1XL:tsbvlibp <0x0fe77f22>
+			streams:   0, words:     0
+		tc240c.CAOR2X1:tsbvlibp <0x638225ab>
+			streams:   0, words:     0
+		tc240c.CAOR2X2:tsbvlibp <0x6454edba>
+			streams:   0, words:     0
+		tc240c.CAOR2X4:tsbvlibp <0x65fa7dd8>
+			streams:   0, words:     0
+		tc240c.CAOR2XL:tsbvlibp <0x79bd3f40>
+			streams:   0, words:     0
+		tc240c.CEN3X1:tsbvlibp <0x7c0d9059>
+			streams:   0, words:     0
+		tc240c.CEN3X2:tsbvlibp <0x30792ba8>
+			streams:   0, words:     0
+		tc240c.CENX1:tsbvlibp <0x4a8c49cd>
+			streams:   0, words:     0
+		tc240c.CENX2:tsbvlibp <0x51dd4342>
+			streams:   0, words:     0
+		tc240c.CENX4:tsbvlibp <0x607f362c>
+			streams:   0, words:     0
+		tc240c.CENXL:tsbvlibp <0x1016990e>
+			streams:   0, words:     0
+		tc240c.CEO3X1:tsbvlibp <0x518c50fc>
+			streams:   0, words:     0
+		tc240c.CEO3X2:tsbvlibp <0x05f7ec4b>
+			streams:   0, words:     0
+		tc240c.CEO3XL:tsbvlibp <0x58e5b301>
+			streams:   0, words:     0
+		tc240c.CEOX1:tsbvlibp <0x4400a8d7>
+			streams:   0, words:     0
+		tc240c.CEOX2:tsbvlibp <0x4b51a24c>
+			streams:   0, words:     0
+		tc240c.CEOX4:tsbvlibp <0x59f39536>
+			streams:   0, words:     0
+		tc240c.CEOXL:tsbvlibp <0x098af818>
+			streams:   0, words:     0
+		tc240c.CFA1X1:tsbvlibp <0x2888916c>
+			streams:   0, words:     0
+		tc240c.CFA1X2:tsbvlibp <0x43fa3f12>
+			streams:   0, words:     0
+		tc240c.CFA1XL:tsbvlibp <0x0d85e1ac>
+			streams:   0, words:     0
+		tc240c.CHA1X1:tsbvlibp <0x30760590>
+			streams:   0, words:     0
+		tc240c.CHA1X2:tsbvlibp <0x2e8da2e5>
+			streams:   0, words:     0
+		tc240c.CHA1XL:tsbvlibp <0x29f3e5f3>
+			streams:   0, words:     0
+		tc240c.CMX2GX1:tsbvlibp <0x4a6ef328>
+			streams:   0, words:     0
+		tc240c.CMX2GX2:tsbvlibp <0x3af4dfa6>
+			streams:   0, words:     0
+		tc240c.CMX2X1:tsbvlibp <0x019f6b1a>
+			streams:   0, words:     0
+		tc240c.CMX2XL:tsbvlibp <0x35f23e13>
+			streams:   0, words:     0
+		tc240c.CMXI2X1:tsbvlibp <0x7939a5d1>
+			streams:   0, words:     0
+		tc240c.CMXI2XL:tsbvlibp <0x2d8c78bf>
+			streams:   0, words:     0
+		tc240c.COAN1X1:tsbvlibp <0x10590734>
+			streams:   0, words:     0
+		tc240c.COAN1X2:tsbvlibp <0x1cb00818>
+			streams:   0, words:     0
+		tc240c.COAN1X4:tsbvlibp <0x6a74aaaa>
+			streams:   0, words:     0
+		tc240c.COAN1XL:tsbvlibp <0x5d861f2a>
+			streams:   0, words:     0
+		tc240c.COND11X1:tsbvlibp <0x165630b3>
+			streams:   0, words:     0
+		tc240c.COND11X2:tsbvlibp <0x24d86cee>
+			streams:   0, words:     0
+		tc240c.COND11XL:tsbvlibp <0x1e128acb>
+			streams:   0, words:     0
+		tc240c.COND1X1:tsbvlibp <0x69c0ce76>
+			streams:   0, words:     0
+		tc240c.COND1X2:tsbvlibp <0x7617cf5a>
+			streams:   0, words:     0
+		tc240c.COND1X4:tsbvlibp <0x0ec5d117>
+			streams:   0, words:     0
+		tc240c.COND1XL:tsbvlibp <0x36ede661>
+			streams:   0, words:     0
+		tc240c.COND2X1:tsbvlibp <0x71b9bf6b>
+			streams:   0, words:     0
+		tc240c.COND2X2:tsbvlibp <0x30d8b661>
+			streams:   0, words:     0
+		tc240c.COND2X4:tsbvlibp <0x2f16a458>
+			streams:   0, words:     0
+		tc240c.COND2XL:tsbvlibp <0x19fdcbec>
+			streams:   0, words:     0
+		tc240c.COND3X1:tsbvlibp <0x3c28d710>
+			streams:   0, words:     0
+		tc240c.COND3X4:tsbvlibp <0x4e932518>
+			streams:   0, words:     0
+		tc240c.COND3XL:tsbvlibp <0x308d4adc>
+			streams:   0, words:     0
+		tc240c.COND4CX1:tsbvlibp <0x460c0bc5>
+			streams:   0, words:     0
+		tc240c.COND4CXL:tsbvlibp <0x77d314f6>
+			streams:   0, words:     0
+		tc240c.tsbCFD1QX1:tsbvlibp <0x3728f6fb>
+			streams:   0, words:     0
+		tc240c.tsbCFD1QX2:tsbvlibp <0x485a096a>
+			streams:   0, words:     0
+		tc240c.tsbCFD1QX4:tsbvlibp <0x6abc2e48>
+			streams:   0, words:     0
+		tc240c.tsbCFD1QXL:tsbvlibp <0x0755e884>
+			streams:   0, words:     0
+		tc240c.tsbCFD2QX1:tsbvlibp <0x58d94f92>
+			streams:   0, words:     0
+		tc240c.tsbCFD2QX2:tsbvlibp <0x4ad46b6a>
+			streams:   0, words:     0
+		tc240c.tsbCFD2QX4:tsbvlibp <0x2ecaa31a>
+			streams:   0, words:     0
+		tc240c.tsbCFD2QXL:tsbvlibp <0x10e84b23>
+			streams:   0, words:     0
+		tc240c.tsbCFD2QXL:tsbvlibp <0x5e553f7b>
+			streams:   0, words:     0
+		tc240c.tsbCFD2X1:tsbvlibp <0x14ea2638>
+			streams:   0, words:     0
+		tc240c.tsbCFD2X2:tsbvlibp <0x53ff7471>
+			streams:   0, words:     0
+		tc240c.tsbCFD2XL:tsbvlibp <0x6725408c>
+			streams:   0, words:     0
+		tc240c.tsbCFD4X1:tsbvlibp <0x09e3bab0>
+			streams:   0, words:     0
+		tc240c.tsbCFD4X2:tsbvlibp <0x44ff4443>
+			streams:   0, words:     0
+		tc240c.tsbCFD4XL:tsbvlibp <0x29a97ef2>
+			streams:   0, words:     0
+		worklib.fpadd_1:v <0x6b63731f>
+			streams:   0, words:     0
+		worklib.fpadd_2:v <0x6e0fee12>
+			streams:   0, words:     0
+		worklib.fpadd_3:v <0x0c521969>
+			streams:   0, words:     0
+		worklib.fpadd_4:v <0x34b936ff>
+			streams:   0, words:     0
+		worklib.randist:v <0x54023545>
+			streams:   0, words:     0
+		worklib.randist_DW02_mult_5_stage_J1_11:v <0x62fc55e0>
+			streams:   0, words:     0
+		worklib.randist_DW02_mult_5_stage_J1_13:v <0x30f6e75d>
+			streams:   0, words:     0
+		worklib.randist_DW02_mult_5_stage_J1_7:v <0x3064ff5d>
+			streams:   0, words:     0
+		worklib.sin_lookup:v <0x263531aa>
+			streams:   0, words:     0
+		worklib.sqrtln:v <0x731b1239>
+			streams:   0, words:     0
+		worklib.top:v <0x6255e9ce>
+			streams:  11, words: 17673
+	Loading native compiled code:     .................... Done
+	Building instance specific data structures.
+	Design hierarchy summary:
+		                    Instances  Unique
+		Modules:               178564     207
+		UDPs:                   37453       8
+		Primitives:            928462       9
+		Timing outputs:        167507     107
+		Registers:              20187      47
+		Scalar wires:          187865       -
+		Expanded wires:           128       2
+		Always blocks:              1       1
+		Initial blocks:             7       7
+		Cont. assignments:          0      39
+		Pseudo assignments:         1       1
+		Timing checks:         155682   62616
+		Simulation timescale:    10ps
+	Writing initial simulation snapshot: worklib.top:v
+Loading snapshot worklib.top:v .................... Done
+ncsim> source /apps/cadence/INCISIV141/tools/inca/files/ncsimrc
+ncsim> run
+
+
+
+The test was happy and you should be too!
+
+
+
+Simulation complete via $finish(1) at time 10110 NS + 0
+./trand.v:143   $finish();
+ncsim> exit

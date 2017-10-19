@@ -1,0 +1,33 @@
+set link_library {/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_WCCOM25 /apps/synopsys/SYNTH/libraries/syn/dw02.sldb /apps/synopsys/SYNTH/libraries/syn/dw01.sldb}
+set target_library {/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_WCCOM25}
+read_verilog RCA64.v
+current_design RCA64
+check_design
+set_drive 0 clock
+set_drive 0 reset
+set_dont_touch_network clock
+create_clock clock -name clock -period 21.00000
+set_propagated_clock clock
+set_clock_uncertainty 0.25 clock
+set_propagated_clock clock
+#set_output_delay 0.5 -clock clock [all_outputs]
+#set all_inputs_wo_rst_clk [remove_from_collection [remove_from_collection [all_inputs] [get_port clk]] [get_port rst]]
+#set_driving_cell -lib_cell CND2X1 $all_inputs_wo_rst_clk
+#set_input_delay 0.5 -clock clk $all_inputs_wo_rst_clk
+#set_max_delay 48.5 -to [all_outputs]
+#set_max_delay 48.5 -from $all_inputs_wo_rst_clk
+set_fix_hold [ get_clocks clock ]
+compile -map_effort medium -incremental_mapping 
+create_clock clk -name clock -period 21.000000
+set_propagated_clock clock
+set_clock_uncertainty 0.25 clock
+set_propagated_clock clock
+update_timing
+report -cell
+report_timing -max_paths 5
+
+report_area
+report_power
+
+write -hierarchy -format verilog -output RCA64_1_nl.v
+quit

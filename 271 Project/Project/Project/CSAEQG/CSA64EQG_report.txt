@@ -1,0 +1,1680 @@
+
+                        DC Professional (TM)
+                           DC Expert (TM)
+                            DC Ultra (TM)
+                       FloorPlan Manager (TM)
+                          HDL Compiler (TM)
+                         VHDL Compiler (TM)
+                        Library Compiler (TM)
+                      DesignWare Developer (TM)
+                          DFT Compiler (TM)
+                            BSD Compiler
+                         Power Compiler (TM)
+
+           Version C-2009.06-SP5 for linux -- Jan 15, 2010
+              Copyright (c) 1988-2009 by Synopsys, Inc.
+                         ALL RIGHTS RESERVED
+
+This software and the associated documentation are confidential and 
+proprietary to Synopsys, Inc. Your use or disclosure of this software 
+is subject to the terms and conditions of a written license agreement 
+between you, or your company, and Synopsys, Inc.
+
+The above trademark notice does not imply that you are licensed to use 
+all of the listed products. You are licensed to use only those products 
+for which you have lawfully obtained a valid license key.
+
+Initializing...
+set link_library {/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_WCCOM25}
+/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_WCCOM25
+set target_library {/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_WCCOM25 }
+/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_WCCOM25 
+#/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_BCCOM25}
+set symbol_library {/apps/toshiba/sjsu/synopsys/tc240c/tc240c.workview.sdb}
+/apps/toshiba/sjsu/synopsys/tc240c/tc240c.workview.sdb
+set synthetic_library {dw_foundation.sldb standard.sldb} 
+dw_foundation.sldb standard.sldb
+#set_min_library /apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_WCCOM25 -min_version /apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_BCCOM25
+read_verilog {mux_carry.v,mux_sum.v,CSA64EQG.v}
+Loading db file '/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_WCCOM25'
+Loading db file '/apps/synopsys/SYNTH/libraries/syn/gtech.db'
+Loading db file '/apps/synopsys/SYNTH/libraries/syn/standard.sldb'
+  Loading link library 'tc240c'
+Warning: Function '=' leaked 1 allocations for 16 bytes. (EQN-21)
+  Loading link library 'gtech'
+Loading verilog files: '/home/pa/pand2610/Desktop/Project/CSA64EQG/mux_carry.v' '/home/pa/pand2610/Desktop/Project/CSA64EQG/mux_sum.v' '/home/pa/pand2610/Desktop/Project/CSA64EQG/CSA64EQG.v' 
+Detecting input file type automatically (-rtl or -netlist).
+Running DC verilog reader
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Loading db file '/apps/synopsys/SYNTH/libraries/syn/dw_foundation.sldb'
+Warning: The following synthetic libraries should be added to 
+	the list of link libraries: 
+	'dw_foundation.sldb'. (UISN-26)
+Compiling source file /home/pa/pand2610/Desktop/Project/CSA64EQG/mux_carry.v
+Compiling source file /home/pa/pand2610/Desktop/Project/CSA64EQG/mux_sum.v
+Compiling source file /home/pa/pand2610/Desktop/Project/CSA64EQG/CSA64EQG.v
+Warning:  /home/pa/pand2610/Desktop/Project/CSA64EQG/CSA64EQG.v:56: the undeclared symbol 'CIN' assumed to have the default net type, which is 'wire'. (VER-936)
+
+Inferred memory devices in process
+	in routine CSA64EQG line 75 in file
+		'/home/pa/pand2610/Desktop/Project/CSA64EQG/CSA64EQG.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       sum_reg       | Flip-flop |  64   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      crout_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      op1f_reg       | Flip-flop |  64   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      op2f_reg       | Flip-flop |  64   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/home/pa/pand2610/Desktop/Project/CSA64EQG/mux_carry.db:mux_carry'
+Loaded 5 designs.
+Current design is 'mux_carry'.
+mux_carry mux_sum FA CSA4 CSA64EQG
+current_design CSA64EQG 
+Current design is 'CSA64EQG'.
+{CSA64EQG}
+link
+
+  Linking design 'CSA64EQG'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  tc240c (library)            /apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_WCCOM25
+
+1
+check_design
+Warning: In design 'CSA64EQG', a pin on submodule 's1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'cin_4' is connected to logic 0. 
+Warning: In design 'CSA4', a pin on submodule 'f1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'cin' is connected to logic 0. 
+Warning: In design 'CSA4', a pin on submodule 'f5' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'cin' is connected to logic 1. 
+Information: Design 'CSA64EQG' has multiply instantiated designs. Use the '-multiple_designs' switch for more information. (LINT-78)
+1
+create_clock clock -name clock -period 7.000000
+1
+set_propagated_clock clock
+Information: set_input_delay values are added to the propagated clock skew. (TIM-113)
+1
+set_clock_uncertainty .25 clock
+1
+#set_fix_hold [get_clocks clock]
+#set_max_delay 0.39 -from [all_inputs]
+#set_max_delay 0.39 -to [all_outputs]
+compile -map_effort medium -incremental_mapping 
+Warning: The following synthetic libraries should be added to 
+	the list of link libraries: 
+	'dw_foundation.sldb'. (UISN-26)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library       |      Version       | Available |
+============================================================================
+| Basic DW Building Blocks                | C-2009.06-DWBB_0912 |    *     |
+| Licensed DW Building Blocks             | C-2009.06-DWBB_0912 |          |
+============================================================================
+
+
+Information: There are 3 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+Warning: Operating condition WCCOM25 set on design CSA64EQG has different process,
+voltage and temperatures parameters than the parameters at which target library 
+tc240c is characterized. Delays may be inaccurate as a result. (OPT-998)
+
+  Beginning Pass 1 Mapping  (Incremental)
+  ------------------------
+  Processing 'mux_carry_0'
+  Processing 'mux_sum_0'
+  Processing 'FA_0'
+  Processing 'CSA64EQG'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: Input delay ('fall') on clock port 'clock' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clock' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('fall') on clock port 'clock' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clock' will be added to the clock's propagated skew. (TIM-112)
+
+  Beginning Mapping Optimizations  (Medium effort)  (Incremental)
+  -------------------------------
+
+  Beginning Incremental Implementation Selection
+  ----------------------------------------------
+Information: Input delay ('fall') on clock port 'clock' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clock' will be added to the clock's propagated skew. (TIM-112)
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+   ELAPSED            WORST NEG TOTAL NEG  DESIGN                            
+    TIME      AREA      SLACK     SLACK   RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:01    2416.0      3.92      79.5    1890.1                          
+    0:00:02    2681.5      1.77      30.1       0.0 sum_reg[63]/D            
+    0:00:03    2783.5      1.07      18.1       0.0 sum_reg[63]/D            
+    0:00:04    2814.5      0.84      16.2       0.0 sum_reg[63]/D            
+    0:00:04    2839.0      0.73      14.2       0.0 sum_reg[63]/D            
+    0:00:05    2912.0      0.38       5.9       0.0 sum_reg[63]/D            
+    0:00:05    2922.0      0.20       3.6       0.0 sum_reg[63]/D            
+    0:00:06    2958.0      0.05       0.5       0.0 sum_reg[63]/D            
+    0:00:06    2964.0      0.02       0.1       0.0 sum_reg[63]/D            
+    0:00:07    2924.0      0.02       0.1       0.0 sum_reg[63]/D            
+    0:00:08    2891.5      0.00       0.0       0.0                          
+Loading db file '/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_WCCOM25'
+
+  Optimization Complete
+  ---------------------
+1
+update_timing 
+Information: Updating design information... (UID-85)
+Information: Input delay ('fall') on clock port 'clock' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clock' will be added to the clock's propagated skew. (TIM-112)
+1
+#set_max_area 10
+report_timing -max_paths 10
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 10
+Design : CSA64EQG
+Version: C-2009.06-SP5
+Date   : Mon Nov 30 15:49:14 2015
+****************************************
+
+Operating Conditions: WCCOM25   Library: tc240c
+Wire Load Model Mode: top
+
+  Startpoint: op1f_reg[0]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: sum_reg[60]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clock (rise edge)                  0.00       0.00
+  clock network delay (propagated)         0.00       0.00
+  op1f_reg[0]/CP (CFD2QX2)                 0.00       0.00 r
+  op1f_reg[0]/Q (CFD2QX2)                  0.47       0.47 r
+  s1/op1_4[0] (CSA4_0)                     0.00       0.47 r
+  s1/f5/op1_fa (FA_124)                    0.00       0.47 r
+  s1/f5/U3/Z (CENX1)                       0.27       0.74 r
+  s1/f5/U5/Z (CND2X2)                      0.13       0.87 f
+  s1/f5/U1/Z (CND2IX2)                     0.09       0.96 r
+  s1/f5/cout_fa (FA_124)                   0.00       0.96 r
+  s1/f6/cin (FA_123)                       0.00       0.96 r
+  s1/f6/U5/Z (CIVX2)                       0.08       1.03 f
+  s1/f6/U1/Z (CND2IX2)                     0.07       1.11 r
+  s1/f6/U4/Z (CND2X2)                      0.10       1.21 f
+  s1/f6/U6/Z (CND2IX2)                     0.07       1.28 r
+  s1/f6/U9/Z (CND2X2)                      0.10       1.37 f
+  s1/f6/cout_fa (FA_123)                   0.00       1.37 f
+  s1/f7/cin (FA_122)                       0.00       1.37 f
+  s1/f7/U2/Z (CANR5CX1)                    0.26       1.63 r
+  s1/f7/U3/Z (CIVX2)                       0.14       1.77 f
+  s1/f7/cout_fa (FA_122)                   0.00       1.77 f
+  s1/f8/cin (FA_121)                       0.00       1.77 f
+  s1/f8/U7/Z (CIVX2)                       0.06       1.83 r
+  s1/f8/U5/Z (CND2X2)                      0.09       1.93 f
+  s1/f8/U6/Z (CND2X2)                      0.07       2.00 r
+  s1/f8/U11/Z (CND2X2)                     0.09       2.09 f
+  s1/f8/U9/Z (CND2X2)                      0.07       2.16 r
+  s1/f8/cout_fa (FA_121)                   0.00       2.16 r
+  s1/m2/cout1 (mux_carry_0)                0.00       2.16 r
+  s1/m2/U2/Z (CND2IX2)                     0.09       2.25 f
+  s1/m2/U4/Z (CND2X2)                      0.10       2.35 r
+  s1/m2/cout (mux_carry_0)                 0.00       2.35 r
+  s1/cout_4 (CSA4_0)                       0.00       2.35 r
+  s2/cin_4 (CSA4_15)                       0.00       2.35 r
+  s2/m2/Cin (mux_carry_15)                 0.00       2.35 r
+  s2/m2/U4/Z (CIVX2)                       0.07       2.42 f
+  s2/m2/U3/Z (CND2X2)                      0.07       2.49 r
+  s2/m2/U2/Z (CND2X2)                      0.10       2.60 f
+  s2/m2/cout (mux_carry_15)                0.00       2.60 f
+  s2/cout_4 (CSA4_15)                      0.00       2.60 f
+  s3/cin_4 (CSA4_14)                       0.00       2.60 f
+  s3/m2/Cin (mux_carry_14)                 0.00       2.60 f
+  s3/m2/U4/Z (CIVX2)                       0.07       2.66 r
+  s3/m2/U1/Z (CND2X2)                      0.09       2.75 f
+  s3/m2/U3/Z (CND2X2)                      0.08       2.83 r
+  s3/m2/cout (mux_carry_14)                0.00       2.83 r
+  s3/cout_4 (CSA4_14)                      0.00       2.83 r
+  s4/cin_4 (CSA4_13)                       0.00       2.83 r
+  s4/m2/Cin (mux_carry_13)                 0.00       2.83 r
+  s4/m2/U3/Z (CIVX2)                       0.07       2.91 f
+  s4/m2/U1/Z (CND2X2)                      0.07       2.98 r
+  s4/m2/U4/Z (CND2X2)                      0.10       3.07 f
+  s4/m2/cout (mux_carry_13)                0.00       3.07 f
+  s4/cout_4 (CSA4_13)                      0.00       3.07 f
+  s5/cin_4 (CSA4_12)                       0.00       3.07 f
+  s5/m2/Cin (mux_carry_12)                 0.00       3.07 f
+  s5/m2/U4/Z (COND2X1)                     0.27       3.34 r
+  s5/m2/cout (mux_carry_12)                0.00       3.34 r
+  s5/cout_4 (CSA4_12)                      0.00       3.34 r
+  s6/cin_4 (CSA4_11)                       0.00       3.34 r
+  s6/m2/Cin (mux_carry_11)                 0.00       3.34 r
+  s6/m2/U1/Z (CND2X1)                      0.20       3.54 f
+  s6/m2/U3/Z (CND2X2)                      0.10       3.64 r
+  s6/m2/cout (mux_carry_11)                0.00       3.64 r
+  s6/cout_4 (CSA4_11)                      0.00       3.64 r
+  s7/cin_4 (CSA4_10)                       0.00       3.64 r
+  s7/m2/Cin (mux_carry_10)                 0.00       3.64 r
+  s7/m2/U2/Z (CIVX2)                       0.07       3.71 f
+  s7/m2/U1/Z (CND2X2)                      0.07       3.78 r
+  s7/m2/U4/Z (CND2X2)                      0.10       3.88 f
+  s7/m2/cout (mux_carry_10)                0.00       3.88 f
+  s7/cout_4 (CSA4_10)                      0.00       3.88 f
+  s8/cin_4 (CSA4_9)                        0.00       3.88 f
+  s8/m2/Cin (mux_carry_9)                  0.00       3.88 f
+  s8/m2/U2/Z (COND2X1)                     0.27       4.15 r
+  s8/m2/cout (mux_carry_9)                 0.00       4.15 r
+  s8/cout_4 (CSA4_9)                       0.00       4.15 r
+  s9/cin_4 (CSA4_8)                        0.00       4.15 r
+  s9/m2/Cin (mux_carry_8)                  0.00       4.15 r
+  s9/m2/U2/Z (CIVX1)                       0.14       4.29 f
+  s9/m2/U3/Z (CND2X2)                      0.07       4.36 r
+  s9/m2/U4/Z (CND2X2)                      0.10       4.46 f
+  s9/m2/cout (mux_carry_8)                 0.00       4.46 f
+  s9/cout_4 (CSA4_8)                       0.00       4.46 f
+  s10/cin_4 (CSA4_7)                       0.00       4.46 f
+  s10/m2/Cin (mux_carry_7)                 0.00       4.46 f
+  s10/m2/U2/Z (CIVX2)                      0.07       4.53 r
+  s10/m2/U1/Z (CND2X2)                     0.09       4.62 f
+  s10/m2/U4/Z (CND2X2)                     0.08       4.70 r
+  s10/m2/cout (mux_carry_7)                0.00       4.70 r
+  s10/cout_4 (CSA4_7)                      0.00       4.70 r
+  s11/cin_4 (CSA4_6)                       0.00       4.70 r
+  s11/m2/Cin (mux_carry_6)                 0.00       4.70 r
+  s11/m2/U3/Z (CND2X1)                     0.14       4.84 f
+  s11/m2/U2/Z (CND2X2)                     0.10       4.94 r
+  s11/m2/cout (mux_carry_6)                0.00       4.94 r
+  s11/cout_4 (CSA4_6)                      0.00       4.94 r
+  s12/cin_4 (CSA4_5)                       0.00       4.94 r
+  s12/m2/Cin (mux_carry_5)                 0.00       4.94 r
+  s12/m2/U4/Z (CIVX2)                      0.07       5.01 f
+  s12/m2/U3/Z (CND2X2)                     0.07       5.08 r
+  s12/m2/U1/Z (CND2X2)                     0.10       5.18 f
+  s12/m2/cout (mux_carry_5)                0.00       5.18 f
+  s12/cout_4 (CSA4_5)                      0.00       5.18 f
+  s13/cin_4 (CSA4_4)                       0.00       5.18 f
+  s13/m2/Cin (mux_carry_4)                 0.00       5.18 f
+  s13/m2/U2/Z (COND2X1)                    0.27       5.44 r
+  s13/m2/cout (mux_carry_4)                0.00       5.44 r
+  s13/cout_4 (CSA4_4)                      0.00       5.44 r
+  s14/cin_4 (CSA4_3)                       0.00       5.44 r
+  s14/m2/Cin (mux_carry_3)                 0.00       5.44 r
+  s14/m2/U2/Z (CIVX1)                      0.14       5.58 f
+  s14/m2/U3/Z (CND2X2)                     0.07       5.66 r
+  s14/m2/U4/Z (CND2X2)                     0.11       5.77 f
+  s14/m2/cout (mux_carry_3)                0.00       5.77 f
+  s14/cout_4 (CSA4_3)                      0.00       5.77 f
+  s15/cin_4 (CSA4_2)                       0.00       5.77 f
+  s15/m2/Cin (mux_carry_2)                 0.00       5.77 f
+  s15/m2/U1/Z (CND2X1)                     0.16       5.93 r
+  s15/m2/U3/Z (CND2X4)                     0.15       6.07 f
+  s15/m2/cout (mux_carry_2)                0.00       6.07 f
+  s15/cout_4 (CSA4_2)                      0.00       6.07 f
+  s16/cin_4 (CSA4_1)                       0.00       6.07 f
+  s16/m1/Cin (mux_sum_1)                   0.00       6.07 f
+  s16/m1/U4/Z (CAOR2X1)                    0.34       6.41 f
+  s16/m1/sum[0] (mux_sum_1)                0.00       6.41 f
+  s16/sum_4[0] (CSA4_1)                    0.00       6.41 f
+  sum_reg[60]/D (CFD2X2)                   0.00       6.41 f
+  data arrival time                                   6.41
+
+  clock clock (rise edge)                  7.00       7.00
+  clock network delay (propagated)         0.00       7.00
+  clock uncertainty                       -0.25       6.75
+  sum_reg[60]/CP (CFD2X2)                  0.00       6.75 r
+  library setup time                      -0.34       6.41
+  data required time                                  6.41
+  -----------------------------------------------------------
+  data required time                                  6.41
+  data arrival time                                  -6.41
+  -----------------------------------------------------------
+  slack (MET)                                         0.00
+
+
+  Startpoint: op1f_reg[0]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: sum_reg[61]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clock (rise edge)                  0.00       0.00
+  clock network delay (propagated)         0.00       0.00
+  op1f_reg[0]/CP (CFD2QX2)                 0.00       0.00 r
+  op1f_reg[0]/Q (CFD2QX2)                  0.47       0.47 r
+  s1/op1_4[0] (CSA4_0)                     0.00       0.47 r
+  s1/f5/op1_fa (FA_124)                    0.00       0.47 r
+  s1/f5/U3/Z (CENX1)                       0.27       0.74 r
+  s1/f5/U5/Z (CND2X2)                      0.13       0.87 f
+  s1/f5/U1/Z (CND2IX2)                     0.09       0.96 r
+  s1/f5/cout_fa (FA_124)                   0.00       0.96 r
+  s1/f6/cin (FA_123)                       0.00       0.96 r
+  s1/f6/U5/Z (CIVX2)                       0.08       1.03 f
+  s1/f6/U1/Z (CND2IX2)                     0.07       1.11 r
+  s1/f6/U4/Z (CND2X2)                      0.10       1.21 f
+  s1/f6/U6/Z (CND2IX2)                     0.07       1.28 r
+  s1/f6/U9/Z (CND2X2)                      0.10       1.37 f
+  s1/f6/cout_fa (FA_123)                   0.00       1.37 f
+  s1/f7/cin (FA_122)                       0.00       1.37 f
+  s1/f7/U2/Z (CANR5CX1)                    0.26       1.63 r
+  s1/f7/U3/Z (CIVX2)                       0.14       1.77 f
+  s1/f7/cout_fa (FA_122)                   0.00       1.77 f
+  s1/f8/cin (FA_121)                       0.00       1.77 f
+  s1/f8/U7/Z (CIVX2)                       0.06       1.83 r
+  s1/f8/U5/Z (CND2X2)                      0.09       1.93 f
+  s1/f8/U6/Z (CND2X2)                      0.07       2.00 r
+  s1/f8/U11/Z (CND2X2)                     0.09       2.09 f
+  s1/f8/U9/Z (CND2X2)                      0.07       2.16 r
+  s1/f8/cout_fa (FA_121)                   0.00       2.16 r
+  s1/m2/cout1 (mux_carry_0)                0.00       2.16 r
+  s1/m2/U2/Z (CND2IX2)                     0.09       2.25 f
+  s1/m2/U4/Z (CND2X2)                      0.10       2.35 r
+  s1/m2/cout (mux_carry_0)                 0.00       2.35 r
+  s1/cout_4 (CSA4_0)                       0.00       2.35 r
+  s2/cin_4 (CSA4_15)                       0.00       2.35 r
+  s2/m2/Cin (mux_carry_15)                 0.00       2.35 r
+  s2/m2/U4/Z (CIVX2)                       0.07       2.42 f
+  s2/m2/U3/Z (CND2X2)                      0.07       2.49 r
+  s2/m2/U2/Z (CND2X2)                      0.10       2.60 f
+  s2/m2/cout (mux_carry_15)                0.00       2.60 f
+  s2/cout_4 (CSA4_15)                      0.00       2.60 f
+  s3/cin_4 (CSA4_14)                       0.00       2.60 f
+  s3/m2/Cin (mux_carry_14)                 0.00       2.60 f
+  s3/m2/U4/Z (CIVX2)                       0.07       2.66 r
+  s3/m2/U1/Z (CND2X2)                      0.09       2.75 f
+  s3/m2/U3/Z (CND2X2)                      0.08       2.83 r
+  s3/m2/cout (mux_carry_14)                0.00       2.83 r
+  s3/cout_4 (CSA4_14)                      0.00       2.83 r
+  s4/cin_4 (CSA4_13)                       0.00       2.83 r
+  s4/m2/Cin (mux_carry_13)                 0.00       2.83 r
+  s4/m2/U3/Z (CIVX2)                       0.07       2.91 f
+  s4/m2/U1/Z (CND2X2)                      0.07       2.98 r
+  s4/m2/U4/Z (CND2X2)                      0.10       3.07 f
+  s4/m2/cout (mux_carry_13)                0.00       3.07 f
+  s4/cout_4 (CSA4_13)                      0.00       3.07 f
+  s5/cin_4 (CSA4_12)                       0.00       3.07 f
+  s5/m2/Cin (mux_carry_12)                 0.00       3.07 f
+  s5/m2/U4/Z (COND2X1)                     0.27       3.34 r
+  s5/m2/cout (mux_carry_12)                0.00       3.34 r
+  s5/cout_4 (CSA4_12)                      0.00       3.34 r
+  s6/cin_4 (CSA4_11)                       0.00       3.34 r
+  s6/m2/Cin (mux_carry_11)                 0.00       3.34 r
+  s6/m2/U1/Z (CND2X1)                      0.20       3.54 f
+  s6/m2/U3/Z (CND2X2)                      0.10       3.64 r
+  s6/m2/cout (mux_carry_11)                0.00       3.64 r
+  s6/cout_4 (CSA4_11)                      0.00       3.64 r
+  s7/cin_4 (CSA4_10)                       0.00       3.64 r
+  s7/m2/Cin (mux_carry_10)                 0.00       3.64 r
+  s7/m2/U2/Z (CIVX2)                       0.07       3.71 f
+  s7/m2/U1/Z (CND2X2)                      0.07       3.78 r
+  s7/m2/U4/Z (CND2X2)                      0.10       3.88 f
+  s7/m2/cout (mux_carry_10)                0.00       3.88 f
+  s7/cout_4 (CSA4_10)                      0.00       3.88 f
+  s8/cin_4 (CSA4_9)                        0.00       3.88 f
+  s8/m2/Cin (mux_carry_9)                  0.00       3.88 f
+  s8/m2/U2/Z (COND2X1)                     0.27       4.15 r
+  s8/m2/cout (mux_carry_9)                 0.00       4.15 r
+  s8/cout_4 (CSA4_9)                       0.00       4.15 r
+  s9/cin_4 (CSA4_8)                        0.00       4.15 r
+  s9/m2/Cin (mux_carry_8)                  0.00       4.15 r
+  s9/m2/U2/Z (CIVX1)                       0.14       4.29 f
+  s9/m2/U3/Z (CND2X2)                      0.07       4.36 r
+  s9/m2/U4/Z (CND2X2)                      0.10       4.46 f
+  s9/m2/cout (mux_carry_8)                 0.00       4.46 f
+  s9/cout_4 (CSA4_8)                       0.00       4.46 f
+  s10/cin_4 (CSA4_7)                       0.00       4.46 f
+  s10/m2/Cin (mux_carry_7)                 0.00       4.46 f
+  s10/m2/U2/Z (CIVX2)                      0.07       4.53 r
+  s10/m2/U1/Z (CND2X2)                     0.09       4.62 f
+  s10/m2/U4/Z (CND2X2)                     0.08       4.70 r
+  s10/m2/cout (mux_carry_7)                0.00       4.70 r
+  s10/cout_4 (CSA4_7)                      0.00       4.70 r
+  s11/cin_4 (CSA4_6)                       0.00       4.70 r
+  s11/m2/Cin (mux_carry_6)                 0.00       4.70 r
+  s11/m2/U3/Z (CND2X1)                     0.14       4.84 f
+  s11/m2/U2/Z (CND2X2)                     0.10       4.94 r
+  s11/m2/cout (mux_carry_6)                0.00       4.94 r
+  s11/cout_4 (CSA4_6)                      0.00       4.94 r
+  s12/cin_4 (CSA4_5)                       0.00       4.94 r
+  s12/m2/Cin (mux_carry_5)                 0.00       4.94 r
+  s12/m2/U4/Z (CIVX2)                      0.07       5.01 f
+  s12/m2/U3/Z (CND2X2)                     0.07       5.08 r
+  s12/m2/U1/Z (CND2X2)                     0.10       5.18 f
+  s12/m2/cout (mux_carry_5)                0.00       5.18 f
+  s12/cout_4 (CSA4_5)                      0.00       5.18 f
+  s13/cin_4 (CSA4_4)                       0.00       5.18 f
+  s13/m2/Cin (mux_carry_4)                 0.00       5.18 f
+  s13/m2/U2/Z (COND2X1)                    0.27       5.44 r
+  s13/m2/cout (mux_carry_4)                0.00       5.44 r
+  s13/cout_4 (CSA4_4)                      0.00       5.44 r
+  s14/cin_4 (CSA4_3)                       0.00       5.44 r
+  s14/m2/Cin (mux_carry_3)                 0.00       5.44 r
+  s14/m2/U2/Z (CIVX1)                      0.14       5.58 f
+  s14/m2/U3/Z (CND2X2)                     0.07       5.66 r
+  s14/m2/U4/Z (CND2X2)                     0.11       5.77 f
+  s14/m2/cout (mux_carry_3)                0.00       5.77 f
+  s14/cout_4 (CSA4_3)                      0.00       5.77 f
+  s15/cin_4 (CSA4_2)                       0.00       5.77 f
+  s15/m2/Cin (mux_carry_2)                 0.00       5.77 f
+  s15/m2/U1/Z (CND2X1)                     0.16       5.93 r
+  s15/m2/U3/Z (CND2X4)                     0.15       6.07 f
+  s15/m2/cout (mux_carry_2)                0.00       6.07 f
+  s15/cout_4 (CSA4_2)                      0.00       6.07 f
+  s16/cin_4 (CSA4_1)                       0.00       6.07 f
+  s16/m1/Cin (mux_sum_1)                   0.00       6.07 f
+  s16/m1/U3/Z (CAOR2X1)                    0.34       6.41 f
+  s16/m1/sum[1] (mux_sum_1)                0.00       6.41 f
+  s16/sum_4[1] (CSA4_1)                    0.00       6.41 f
+  sum_reg[61]/D (CFD2X2)                   0.00       6.41 f
+  data arrival time                                   6.41
+
+  clock clock (rise edge)                  7.00       7.00
+  clock network delay (propagated)         0.00       7.00
+  clock uncertainty                       -0.25       6.75
+  sum_reg[61]/CP (CFD2X2)                  0.00       6.75 r
+  library setup time                      -0.34       6.41
+  data required time                                  6.41
+  -----------------------------------------------------------
+  data required time                                  6.41
+  data arrival time                                  -6.41
+  -----------------------------------------------------------
+  slack (MET)                                         0.00
+
+
+  Startpoint: op1f_reg[0]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: sum_reg[62]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clock (rise edge)                  0.00       0.00
+  clock network delay (propagated)         0.00       0.00
+  op1f_reg[0]/CP (CFD2QX2)                 0.00       0.00 r
+  op1f_reg[0]/Q (CFD2QX2)                  0.47       0.47 r
+  s1/op1_4[0] (CSA4_0)                     0.00       0.47 r
+  s1/f5/op1_fa (FA_124)                    0.00       0.47 r
+  s1/f5/U3/Z (CENX1)                       0.27       0.74 r
+  s1/f5/U5/Z (CND2X2)                      0.13       0.87 f
+  s1/f5/U1/Z (CND2IX2)                     0.09       0.96 r
+  s1/f5/cout_fa (FA_124)                   0.00       0.96 r
+  s1/f6/cin (FA_123)                       0.00       0.96 r
+  s1/f6/U5/Z (CIVX2)                       0.08       1.03 f
+  s1/f6/U1/Z (CND2IX2)                     0.07       1.11 r
+  s1/f6/U4/Z (CND2X2)                      0.10       1.21 f
+  s1/f6/U6/Z (CND2IX2)                     0.07       1.28 r
+  s1/f6/U9/Z (CND2X2)                      0.10       1.37 f
+  s1/f6/cout_fa (FA_123)                   0.00       1.37 f
+  s1/f7/cin (FA_122)                       0.00       1.37 f
+  s1/f7/U2/Z (CANR5CX1)                    0.26       1.63 r
+  s1/f7/U3/Z (CIVX2)                       0.14       1.77 f
+  s1/f7/cout_fa (FA_122)                   0.00       1.77 f
+  s1/f8/cin (FA_121)                       0.00       1.77 f
+  s1/f8/U7/Z (CIVX2)                       0.06       1.83 r
+  s1/f8/U5/Z (CND2X2)                      0.09       1.93 f
+  s1/f8/U6/Z (CND2X2)                      0.07       2.00 r
+  s1/f8/U11/Z (CND2X2)                     0.09       2.09 f
+  s1/f8/U9/Z (CND2X2)                      0.07       2.16 r
+  s1/f8/cout_fa (FA_121)                   0.00       2.16 r
+  s1/m2/cout1 (mux_carry_0)                0.00       2.16 r
+  s1/m2/U2/Z (CND2IX2)                     0.09       2.25 f
+  s1/m2/U4/Z (CND2X2)                      0.10       2.35 r
+  s1/m2/cout (mux_carry_0)                 0.00       2.35 r
+  s1/cout_4 (CSA4_0)                       0.00       2.35 r
+  s2/cin_4 (CSA4_15)                       0.00       2.35 r
+  s2/m2/Cin (mux_carry_15)                 0.00       2.35 r
+  s2/m2/U4/Z (CIVX2)                       0.07       2.42 f
+  s2/m2/U3/Z (CND2X2)                      0.07       2.49 r
+  s2/m2/U2/Z (CND2X2)                      0.10       2.60 f
+  s2/m2/cout (mux_carry_15)                0.00       2.60 f
+  s2/cout_4 (CSA4_15)                      0.00       2.60 f
+  s3/cin_4 (CSA4_14)                       0.00       2.60 f
+  s3/m2/Cin (mux_carry_14)                 0.00       2.60 f
+  s3/m2/U4/Z (CIVX2)                       0.07       2.66 r
+  s3/m2/U1/Z (CND2X2)                      0.09       2.75 f
+  s3/m2/U3/Z (CND2X2)                      0.08       2.83 r
+  s3/m2/cout (mux_carry_14)                0.00       2.83 r
+  s3/cout_4 (CSA4_14)                      0.00       2.83 r
+  s4/cin_4 (CSA4_13)                       0.00       2.83 r
+  s4/m2/Cin (mux_carry_13)                 0.00       2.83 r
+  s4/m2/U3/Z (CIVX2)                       0.07       2.91 f
+  s4/m2/U1/Z (CND2X2)                      0.07       2.98 r
+  s4/m2/U4/Z (CND2X2)                      0.10       3.07 f
+  s4/m2/cout (mux_carry_13)                0.00       3.07 f
+  s4/cout_4 (CSA4_13)                      0.00       3.07 f
+  s5/cin_4 (CSA4_12)                       0.00       3.07 f
+  s5/m2/Cin (mux_carry_12)                 0.00       3.07 f
+  s5/m2/U4/Z (COND2X1)                     0.27       3.34 r
+  s5/m2/cout (mux_carry_12)                0.00       3.34 r
+  s5/cout_4 (CSA4_12)                      0.00       3.34 r
+  s6/cin_4 (CSA4_11)                       0.00       3.34 r
+  s6/m2/Cin (mux_carry_11)                 0.00       3.34 r
+  s6/m2/U1/Z (CND2X1)                      0.20       3.54 f
+  s6/m2/U3/Z (CND2X2)                      0.10       3.64 r
+  s6/m2/cout (mux_carry_11)                0.00       3.64 r
+  s6/cout_4 (CSA4_11)                      0.00       3.64 r
+  s7/cin_4 (CSA4_10)                       0.00       3.64 r
+  s7/m2/Cin (mux_carry_10)                 0.00       3.64 r
+  s7/m2/U2/Z (CIVX2)                       0.07       3.71 f
+  s7/m2/U1/Z (CND2X2)                      0.07       3.78 r
+  s7/m2/U4/Z (CND2X2)                      0.10       3.88 f
+  s7/m2/cout (mux_carry_10)                0.00       3.88 f
+  s7/cout_4 (CSA4_10)                      0.00       3.88 f
+  s8/cin_4 (CSA4_9)                        0.00       3.88 f
+  s8/m2/Cin (mux_carry_9)                  0.00       3.88 f
+  s8/m2/U2/Z (COND2X1)                     0.27       4.15 r
+  s8/m2/cout (mux_carry_9)                 0.00       4.15 r
+  s8/cout_4 (CSA4_9)                       0.00       4.15 r
+  s9/cin_4 (CSA4_8)                        0.00       4.15 r
+  s9/m2/Cin (mux_carry_8)                  0.00       4.15 r
+  s9/m2/U2/Z (CIVX1)                       0.14       4.29 f
+  s9/m2/U3/Z (CND2X2)                      0.07       4.36 r
+  s9/m2/U4/Z (CND2X2)                      0.10       4.46 f
+  s9/m2/cout (mux_carry_8)                 0.00       4.46 f
+  s9/cout_4 (CSA4_8)                       0.00       4.46 f
+  s10/cin_4 (CSA4_7)                       0.00       4.46 f
+  s10/m2/Cin (mux_carry_7)                 0.00       4.46 f
+  s10/m2/U2/Z (CIVX2)                      0.07       4.53 r
+  s10/m2/U1/Z (CND2X2)                     0.09       4.62 f
+  s10/m2/U4/Z (CND2X2)                     0.08       4.70 r
+  s10/m2/cout (mux_carry_7)                0.00       4.70 r
+  s10/cout_4 (CSA4_7)                      0.00       4.70 r
+  s11/cin_4 (CSA4_6)                       0.00       4.70 r
+  s11/m2/Cin (mux_carry_6)                 0.00       4.70 r
+  s11/m2/U3/Z (CND2X1)                     0.14       4.84 f
+  s11/m2/U2/Z (CND2X2)                     0.10       4.94 r
+  s11/m2/cout (mux_carry_6)                0.00       4.94 r
+  s11/cout_4 (CSA4_6)                      0.00       4.94 r
+  s12/cin_4 (CSA4_5)                       0.00       4.94 r
+  s12/m2/Cin (mux_carry_5)                 0.00       4.94 r
+  s12/m2/U4/Z (CIVX2)                      0.07       5.01 f
+  s12/m2/U3/Z (CND2X2)                     0.07       5.08 r
+  s12/m2/U1/Z (CND2X2)                     0.10       5.18 f
+  s12/m2/cout (mux_carry_5)                0.00       5.18 f
+  s12/cout_4 (CSA4_5)                      0.00       5.18 f
+  s13/cin_4 (CSA4_4)                       0.00       5.18 f
+  s13/m2/Cin (mux_carry_4)                 0.00       5.18 f
+  s13/m2/U2/Z (COND2X1)                    0.27       5.44 r
+  s13/m2/cout (mux_carry_4)                0.00       5.44 r
+  s13/cout_4 (CSA4_4)                      0.00       5.44 r
+  s14/cin_4 (CSA4_3)                       0.00       5.44 r
+  s14/m2/Cin (mux_carry_3)                 0.00       5.44 r
+  s14/m2/U2/Z (CIVX1)                      0.14       5.58 f
+  s14/m2/U3/Z (CND2X2)                     0.07       5.66 r
+  s14/m2/U4/Z (CND2X2)                     0.11       5.77 f
+  s14/m2/cout (mux_carry_3)                0.00       5.77 f
+  s14/cout_4 (CSA4_3)                      0.00       5.77 f
+  s15/cin_4 (CSA4_2)                       0.00       5.77 f
+  s15/m2/Cin (mux_carry_2)                 0.00       5.77 f
+  s15/m2/U1/Z (CND2X1)                     0.16       5.93 r
+  s15/m2/U3/Z (CND2X4)                     0.15       6.07 f
+  s15/m2/cout (mux_carry_2)                0.00       6.07 f
+  s15/cout_4 (CSA4_2)                      0.00       6.07 f
+  s16/cin_4 (CSA4_1)                       0.00       6.07 f
+  s16/m1/Cin (mux_sum_1)                   0.00       6.07 f
+  s16/m1/U2/Z (CAOR2X1)                    0.34       6.41 f
+  s16/m1/sum[2] (mux_sum_1)                0.00       6.41 f
+  s16/sum_4[2] (CSA4_1)                    0.00       6.41 f
+  sum_reg[62]/D (CFD2X2)                   0.00       6.41 f
+  data arrival time                                   6.41
+
+  clock clock (rise edge)                  7.00       7.00
+  clock network delay (propagated)         0.00       7.00
+  clock uncertainty                       -0.25       6.75
+  sum_reg[62]/CP (CFD2X2)                  0.00       6.75 r
+  library setup time                      -0.34       6.41
+  data required time                                  6.41
+  -----------------------------------------------------------
+  data required time                                  6.41
+  data arrival time                                  -6.41
+  -----------------------------------------------------------
+  slack (MET)                                         0.00
+
+
+  Startpoint: op1f_reg[0]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: sum_reg[63]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clock (rise edge)                  0.00       0.00
+  clock network delay (propagated)         0.00       0.00
+  op1f_reg[0]/CP (CFD2QX2)                 0.00       0.00 r
+  op1f_reg[0]/Q (CFD2QX2)                  0.47       0.47 r
+  s1/op1_4[0] (CSA4_0)                     0.00       0.47 r
+  s1/f5/op1_fa (FA_124)                    0.00       0.47 r
+  s1/f5/U3/Z (CENX1)                       0.27       0.74 r
+  s1/f5/U5/Z (CND2X2)                      0.13       0.87 f
+  s1/f5/U1/Z (CND2IX2)                     0.09       0.96 r
+  s1/f5/cout_fa (FA_124)                   0.00       0.96 r
+  s1/f6/cin (FA_123)                       0.00       0.96 r
+  s1/f6/U5/Z (CIVX2)                       0.08       1.03 f
+  s1/f6/U1/Z (CND2IX2)                     0.07       1.11 r
+  s1/f6/U4/Z (CND2X2)                      0.10       1.21 f
+  s1/f6/U6/Z (CND2IX2)                     0.07       1.28 r
+  s1/f6/U9/Z (CND2X2)                      0.10       1.37 f
+  s1/f6/cout_fa (FA_123)                   0.00       1.37 f
+  s1/f7/cin (FA_122)                       0.00       1.37 f
+  s1/f7/U2/Z (CANR5CX1)                    0.26       1.63 r
+  s1/f7/U3/Z (CIVX2)                       0.14       1.77 f
+  s1/f7/cout_fa (FA_122)                   0.00       1.77 f
+  s1/f8/cin (FA_121)                       0.00       1.77 f
+  s1/f8/U7/Z (CIVX2)                       0.06       1.83 r
+  s1/f8/U5/Z (CND2X2)                      0.09       1.93 f
+  s1/f8/U6/Z (CND2X2)                      0.07       2.00 r
+  s1/f8/U11/Z (CND2X2)                     0.09       2.09 f
+  s1/f8/U9/Z (CND2X2)                      0.07       2.16 r
+  s1/f8/cout_fa (FA_121)                   0.00       2.16 r
+  s1/m2/cout1 (mux_carry_0)                0.00       2.16 r
+  s1/m2/U2/Z (CND2IX2)                     0.09       2.25 f
+  s1/m2/U4/Z (CND2X2)                      0.10       2.35 r
+  s1/m2/cout (mux_carry_0)                 0.00       2.35 r
+  s1/cout_4 (CSA4_0)                       0.00       2.35 r
+  s2/cin_4 (CSA4_15)                       0.00       2.35 r
+  s2/m2/Cin (mux_carry_15)                 0.00       2.35 r
+  s2/m2/U4/Z (CIVX2)                       0.07       2.42 f
+  s2/m2/U3/Z (CND2X2)                      0.07       2.49 r
+  s2/m2/U2/Z (CND2X2)                      0.10       2.60 f
+  s2/m2/cout (mux_carry_15)                0.00       2.60 f
+  s2/cout_4 (CSA4_15)                      0.00       2.60 f
+  s3/cin_4 (CSA4_14)                       0.00       2.60 f
+  s3/m2/Cin (mux_carry_14)                 0.00       2.60 f
+  s3/m2/U4/Z (CIVX2)                       0.07       2.66 r
+  s3/m2/U1/Z (CND2X2)                      0.09       2.75 f
+  s3/m2/U3/Z (CND2X2)                      0.08       2.83 r
+  s3/m2/cout (mux_carry_14)                0.00       2.83 r
+  s3/cout_4 (CSA4_14)                      0.00       2.83 r
+  s4/cin_4 (CSA4_13)                       0.00       2.83 r
+  s4/m2/Cin (mux_carry_13)                 0.00       2.83 r
+  s4/m2/U3/Z (CIVX2)                       0.07       2.91 f
+  s4/m2/U1/Z (CND2X2)                      0.07       2.98 r
+  s4/m2/U4/Z (CND2X2)                      0.10       3.07 f
+  s4/m2/cout (mux_carry_13)                0.00       3.07 f
+  s4/cout_4 (CSA4_13)                      0.00       3.07 f
+  s5/cin_4 (CSA4_12)                       0.00       3.07 f
+  s5/m2/Cin (mux_carry_12)                 0.00       3.07 f
+  s5/m2/U4/Z (COND2X1)                     0.27       3.34 r
+  s5/m2/cout (mux_carry_12)                0.00       3.34 r
+  s5/cout_4 (CSA4_12)                      0.00       3.34 r
+  s6/cin_4 (CSA4_11)                       0.00       3.34 r
+  s6/m2/Cin (mux_carry_11)                 0.00       3.34 r
+  s6/m2/U1/Z (CND2X1)                      0.20       3.54 f
+  s6/m2/U3/Z (CND2X2)                      0.10       3.64 r
+  s6/m2/cout (mux_carry_11)                0.00       3.64 r
+  s6/cout_4 (CSA4_11)                      0.00       3.64 r
+  s7/cin_4 (CSA4_10)                       0.00       3.64 r
+  s7/m2/Cin (mux_carry_10)                 0.00       3.64 r
+  s7/m2/U2/Z (CIVX2)                       0.07       3.71 f
+  s7/m2/U1/Z (CND2X2)                      0.07       3.78 r
+  s7/m2/U4/Z (CND2X2)                      0.10       3.88 f
+  s7/m2/cout (mux_carry_10)                0.00       3.88 f
+  s7/cout_4 (CSA4_10)                      0.00       3.88 f
+  s8/cin_4 (CSA4_9)                        0.00       3.88 f
+  s8/m2/Cin (mux_carry_9)                  0.00       3.88 f
+  s8/m2/U2/Z (COND2X1)                     0.27       4.15 r
+  s8/m2/cout (mux_carry_9)                 0.00       4.15 r
+  s8/cout_4 (CSA4_9)                       0.00       4.15 r
+  s9/cin_4 (CSA4_8)                        0.00       4.15 r
+  s9/m2/Cin (mux_carry_8)                  0.00       4.15 r
+  s9/m2/U2/Z (CIVX1)                       0.14       4.29 f
+  s9/m2/U3/Z (CND2X2)                      0.07       4.36 r
+  s9/m2/U4/Z (CND2X2)                      0.10       4.46 f
+  s9/m2/cout (mux_carry_8)                 0.00       4.46 f
+  s9/cout_4 (CSA4_8)                       0.00       4.46 f
+  s10/cin_4 (CSA4_7)                       0.00       4.46 f
+  s10/m2/Cin (mux_carry_7)                 0.00       4.46 f
+  s10/m2/U2/Z (CIVX2)                      0.07       4.53 r
+  s10/m2/U1/Z (CND2X2)                     0.09       4.62 f
+  s10/m2/U4/Z (CND2X2)                     0.08       4.70 r
+  s10/m2/cout (mux_carry_7)                0.00       4.70 r
+  s10/cout_4 (CSA4_7)                      0.00       4.70 r
+  s11/cin_4 (CSA4_6)                       0.00       4.70 r
+  s11/m2/Cin (mux_carry_6)                 0.00       4.70 r
+  s11/m2/U3/Z (CND2X1)                     0.14       4.84 f
+  s11/m2/U2/Z (CND2X2)                     0.10       4.94 r
+  s11/m2/cout (mux_carry_6)                0.00       4.94 r
+  s11/cout_4 (CSA4_6)                      0.00       4.94 r
+  s12/cin_4 (CSA4_5)                       0.00       4.94 r
+  s12/m2/Cin (mux_carry_5)                 0.00       4.94 r
+  s12/m2/U4/Z (CIVX2)                      0.07       5.01 f
+  s12/m2/U3/Z (CND2X2)                     0.07       5.08 r
+  s12/m2/U1/Z (CND2X2)                     0.10       5.18 f
+  s12/m2/cout (mux_carry_5)                0.00       5.18 f
+  s12/cout_4 (CSA4_5)                      0.00       5.18 f
+  s13/cin_4 (CSA4_4)                       0.00       5.18 f
+  s13/m2/Cin (mux_carry_4)                 0.00       5.18 f
+  s13/m2/U2/Z (COND2X1)                    0.27       5.44 r
+  s13/m2/cout (mux_carry_4)                0.00       5.44 r
+  s13/cout_4 (CSA4_4)                      0.00       5.44 r
+  s14/cin_4 (CSA4_3)                       0.00       5.44 r
+  s14/m2/Cin (mux_carry_3)                 0.00       5.44 r
+  s14/m2/U2/Z (CIVX1)                      0.14       5.58 f
+  s14/m2/U3/Z (CND2X2)                     0.07       5.66 r
+  s14/m2/U4/Z (CND2X2)                     0.11       5.77 f
+  s14/m2/cout (mux_carry_3)                0.00       5.77 f
+  s14/cout_4 (CSA4_3)                      0.00       5.77 f
+  s15/cin_4 (CSA4_2)                       0.00       5.77 f
+  s15/m2/Cin (mux_carry_2)                 0.00       5.77 f
+  s15/m2/U1/Z (CND2X1)                     0.16       5.93 r
+  s15/m2/U3/Z (CND2X4)                     0.15       6.07 f
+  s15/m2/cout (mux_carry_2)                0.00       6.07 f
+  s15/cout_4 (CSA4_2)                      0.00       6.07 f
+  s16/cin_4 (CSA4_1)                       0.00       6.07 f
+  s16/m1/Cin (mux_sum_1)                   0.00       6.07 f
+  s16/m1/U1/Z (CAOR2X1)                    0.34       6.41 f
+  s16/m1/sum[3] (mux_sum_1)                0.00       6.41 f
+  s16/sum_4[3] (CSA4_1)                    0.00       6.41 f
+  sum_reg[63]/D (CFD2X2)                   0.00       6.41 f
+  data arrival time                                   6.41
+
+  clock clock (rise edge)                  7.00       7.00
+  clock network delay (propagated)         0.00       7.00
+  clock uncertainty                       -0.25       6.75
+  sum_reg[63]/CP (CFD2X2)                  0.00       6.75 r
+  library setup time                      -0.34       6.41
+  data required time                                  6.41
+  -----------------------------------------------------------
+  data required time                                  6.41
+  data arrival time                                  -6.41
+  -----------------------------------------------------------
+  slack (MET)                                         0.00
+
+
+  Startpoint: op1f_reg[0]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: sum_reg[56]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clock (rise edge)                  0.00       0.00
+  clock network delay (propagated)         0.00       0.00
+  op1f_reg[0]/CP (CFD2QX2)                 0.00       0.00 r
+  op1f_reg[0]/Q (CFD2QX2)                  0.47       0.47 r
+  s1/op1_4[0] (CSA4_0)                     0.00       0.47 r
+  s1/f5/op1_fa (FA_124)                    0.00       0.47 r
+  s1/f5/U3/Z (CENX1)                       0.27       0.74 r
+  s1/f5/U5/Z (CND2X2)                      0.13       0.87 f
+  s1/f5/U1/Z (CND2IX2)                     0.09       0.96 r
+  s1/f5/cout_fa (FA_124)                   0.00       0.96 r
+  s1/f6/cin (FA_123)                       0.00       0.96 r
+  s1/f6/U5/Z (CIVX2)                       0.08       1.03 f
+  s1/f6/U1/Z (CND2IX2)                     0.07       1.11 r
+  s1/f6/U4/Z (CND2X2)                      0.10       1.21 f
+  s1/f6/U6/Z (CND2IX2)                     0.07       1.28 r
+  s1/f6/U9/Z (CND2X2)                      0.10       1.37 f
+  s1/f6/cout_fa (FA_123)                   0.00       1.37 f
+  s1/f7/cin (FA_122)                       0.00       1.37 f
+  s1/f7/U2/Z (CANR5CX1)                    0.26       1.63 r
+  s1/f7/U3/Z (CIVX2)                       0.14       1.77 f
+  s1/f7/cout_fa (FA_122)                   0.00       1.77 f
+  s1/f8/cin (FA_121)                       0.00       1.77 f
+  s1/f8/U7/Z (CIVX2)                       0.06       1.83 r
+  s1/f8/U5/Z (CND2X2)                      0.09       1.93 f
+  s1/f8/U6/Z (CND2X2)                      0.07       2.00 r
+  s1/f8/U11/Z (CND2X2)                     0.09       2.09 f
+  s1/f8/U9/Z (CND2X2)                      0.07       2.16 r
+  s1/f8/cout_fa (FA_121)                   0.00       2.16 r
+  s1/m2/cout1 (mux_carry_0)                0.00       2.16 r
+  s1/m2/U2/Z (CND2IX2)                     0.09       2.25 f
+  s1/m2/U4/Z (CND2X2)                      0.10       2.35 r
+  s1/m2/cout (mux_carry_0)                 0.00       2.35 r
+  s1/cout_4 (CSA4_0)                       0.00       2.35 r
+  s2/cin_4 (CSA4_15)                       0.00       2.35 r
+  s2/m2/Cin (mux_carry_15)                 0.00       2.35 r
+  s2/m2/U4/Z (CIVX2)                       0.07       2.42 f
+  s2/m2/U3/Z (CND2X2)                      0.07       2.49 r
+  s2/m2/U2/Z (CND2X2)                      0.10       2.60 f
+  s2/m2/cout (mux_carry_15)                0.00       2.60 f
+  s2/cout_4 (CSA4_15)                      0.00       2.60 f
+  s3/cin_4 (CSA4_14)                       0.00       2.60 f
+  s3/m2/Cin (mux_carry_14)                 0.00       2.60 f
+  s3/m2/U4/Z (CIVX2)                       0.07       2.66 r
+  s3/m2/U1/Z (CND2X2)                      0.09       2.75 f
+  s3/m2/U3/Z (CND2X2)                      0.08       2.83 r
+  s3/m2/cout (mux_carry_14)                0.00       2.83 r
+  s3/cout_4 (CSA4_14)                      0.00       2.83 r
+  s4/cin_4 (CSA4_13)                       0.00       2.83 r
+  s4/m2/Cin (mux_carry_13)                 0.00       2.83 r
+  s4/m2/U3/Z (CIVX2)                       0.07       2.91 f
+  s4/m2/U1/Z (CND2X2)                      0.07       2.98 r
+  s4/m2/U4/Z (CND2X2)                      0.10       3.07 f
+  s4/m2/cout (mux_carry_13)                0.00       3.07 f
+  s4/cout_4 (CSA4_13)                      0.00       3.07 f
+  s5/cin_4 (CSA4_12)                       0.00       3.07 f
+  s5/m2/Cin (mux_carry_12)                 0.00       3.07 f
+  s5/m2/U4/Z (COND2X1)                     0.27       3.34 r
+  s5/m2/cout (mux_carry_12)                0.00       3.34 r
+  s5/cout_4 (CSA4_12)                      0.00       3.34 r
+  s6/cin_4 (CSA4_11)                       0.00       3.34 r
+  s6/m2/Cin (mux_carry_11)                 0.00       3.34 r
+  s6/m2/U1/Z (CND2X1)                      0.20       3.54 f
+  s6/m2/U3/Z (CND2X2)                      0.10       3.64 r
+  s6/m2/cout (mux_carry_11)                0.00       3.64 r
+  s6/cout_4 (CSA4_11)                      0.00       3.64 r
+  s7/cin_4 (CSA4_10)                       0.00       3.64 r
+  s7/m2/Cin (mux_carry_10)                 0.00       3.64 r
+  s7/m2/U2/Z (CIVX2)                       0.07       3.71 f
+  s7/m2/U1/Z (CND2X2)                      0.07       3.78 r
+  s7/m2/U4/Z (CND2X2)                      0.10       3.88 f
+  s7/m2/cout (mux_carry_10)                0.00       3.88 f
+  s7/cout_4 (CSA4_10)                      0.00       3.88 f
+  s8/cin_4 (CSA4_9)                        0.00       3.88 f
+  s8/m2/Cin (mux_carry_9)                  0.00       3.88 f
+  s8/m2/U2/Z (COND2X1)                     0.27       4.15 r
+  s8/m2/cout (mux_carry_9)                 0.00       4.15 r
+  s8/cout_4 (CSA4_9)                       0.00       4.15 r
+  s9/cin_4 (CSA4_8)                        0.00       4.15 r
+  s9/m2/Cin (mux_carry_8)                  0.00       4.15 r
+  s9/m2/U2/Z (CIVX1)                       0.14       4.29 f
+  s9/m2/U3/Z (CND2X2)                      0.07       4.36 r
+  s9/m2/U4/Z (CND2X2)                      0.10       4.46 f
+  s9/m2/cout (mux_carry_8)                 0.00       4.46 f
+  s9/cout_4 (CSA4_8)                       0.00       4.46 f
+  s10/cin_4 (CSA4_7)                       0.00       4.46 f
+  s10/m2/Cin (mux_carry_7)                 0.00       4.46 f
+  s10/m2/U2/Z (CIVX2)                      0.07       4.53 r
+  s10/m2/U1/Z (CND2X2)                     0.09       4.62 f
+  s10/m2/U4/Z (CND2X2)                     0.08       4.70 r
+  s10/m2/cout (mux_carry_7)                0.00       4.70 r
+  s10/cout_4 (CSA4_7)                      0.00       4.70 r
+  s11/cin_4 (CSA4_6)                       0.00       4.70 r
+  s11/m2/Cin (mux_carry_6)                 0.00       4.70 r
+  s11/m2/U3/Z (CND2X1)                     0.14       4.84 f
+  s11/m2/U2/Z (CND2X2)                     0.10       4.94 r
+  s11/m2/cout (mux_carry_6)                0.00       4.94 r
+  s11/cout_4 (CSA4_6)                      0.00       4.94 r
+  s12/cin_4 (CSA4_5)                       0.00       4.94 r
+  s12/m2/Cin (mux_carry_5)                 0.00       4.94 r
+  s12/m2/U4/Z (CIVX2)                      0.07       5.01 f
+  s12/m2/U3/Z (CND2X2)                     0.07       5.08 r
+  s12/m2/U1/Z (CND2X2)                     0.10       5.18 f
+  s12/m2/cout (mux_carry_5)                0.00       5.18 f
+  s12/cout_4 (CSA4_5)                      0.00       5.18 f
+  s13/cin_4 (CSA4_4)                       0.00       5.18 f
+  s13/m2/Cin (mux_carry_4)                 0.00       5.18 f
+  s13/m2/U2/Z (COND2X1)                    0.27       5.44 r
+  s13/m2/cout (mux_carry_4)                0.00       5.44 r
+  s13/cout_4 (CSA4_4)                      0.00       5.44 r
+  s14/cin_4 (CSA4_3)                       0.00       5.44 r
+  s14/m2/Cin (mux_carry_3)                 0.00       5.44 r
+  s14/m2/U1/Z (CND2X1)                     0.19       5.64 f
+  s14/m2/U4/Z (CND2X2)                     0.09       5.73 r
+  s14/m2/cout (mux_carry_3)                0.00       5.73 r
+  s14/cout_4 (CSA4_3)                      0.00       5.73 r
+  s15/cin_4 (CSA4_2)                       0.00       5.73 r
+  s15/U3/Z (CNIVX2)                        0.19       5.91 r
+  s15/m1/Cin (mux_sum_2)                   0.00       5.91 r
+  s15/m1/U1/Z (CIVX1)                      0.08       5.99 f
+  s15/m1/U2/Z (CAOR2XL)                    0.37       6.37 f
+  s15/m1/sum[0] (mux_sum_2)                0.00       6.37 f
+  s15/sum_4[0] (CSA4_2)                    0.00       6.37 f
+  sum_reg[56]/D (CFD2QXL)                  0.00       6.37 f
+  data arrival time                                   6.37
+
+  clock clock (rise edge)                  7.00       7.00
+  clock network delay (propagated)         0.00       7.00
+  clock uncertainty                       -0.25       6.75
+  sum_reg[56]/CP (CFD2QXL)                 0.00       6.75 r
+  library setup time                      -0.37       6.38
+  data required time                                  6.38
+  -----------------------------------------------------------
+  data required time                                  6.38
+  data arrival time                                  -6.37
+  -----------------------------------------------------------
+  slack (MET)                                         0.01
+
+
+  Startpoint: op1f_reg[0]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: sum_reg[57]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clock (rise edge)                  0.00       0.00
+  clock network delay (propagated)         0.00       0.00
+  op1f_reg[0]/CP (CFD2QX2)                 0.00       0.00 r
+  op1f_reg[0]/Q (CFD2QX2)                  0.47       0.47 r
+  s1/op1_4[0] (CSA4_0)                     0.00       0.47 r
+  s1/f5/op1_fa (FA_124)                    0.00       0.47 r
+  s1/f5/U3/Z (CENX1)                       0.27       0.74 r
+  s1/f5/U5/Z (CND2X2)                      0.13       0.87 f
+  s1/f5/U1/Z (CND2IX2)                     0.09       0.96 r
+  s1/f5/cout_fa (FA_124)                   0.00       0.96 r
+  s1/f6/cin (FA_123)                       0.00       0.96 r
+  s1/f6/U5/Z (CIVX2)                       0.08       1.03 f
+  s1/f6/U1/Z (CND2IX2)                     0.07       1.11 r
+  s1/f6/U4/Z (CND2X2)                      0.10       1.21 f
+  s1/f6/U6/Z (CND2IX2)                     0.07       1.28 r
+  s1/f6/U9/Z (CND2X2)                      0.10       1.37 f
+  s1/f6/cout_fa (FA_123)                   0.00       1.37 f
+  s1/f7/cin (FA_122)                       0.00       1.37 f
+  s1/f7/U2/Z (CANR5CX1)                    0.26       1.63 r
+  s1/f7/U3/Z (CIVX2)                       0.14       1.77 f
+  s1/f7/cout_fa (FA_122)                   0.00       1.77 f
+  s1/f8/cin (FA_121)                       0.00       1.77 f
+  s1/f8/U7/Z (CIVX2)                       0.06       1.83 r
+  s1/f8/U5/Z (CND2X2)                      0.09       1.93 f
+  s1/f8/U6/Z (CND2X2)                      0.07       2.00 r
+  s1/f8/U11/Z (CND2X2)                     0.09       2.09 f
+  s1/f8/U9/Z (CND2X2)                      0.07       2.16 r
+  s1/f8/cout_fa (FA_121)                   0.00       2.16 r
+  s1/m2/cout1 (mux_carry_0)                0.00       2.16 r
+  s1/m2/U2/Z (CND2IX2)                     0.09       2.25 f
+  s1/m2/U4/Z (CND2X2)                      0.10       2.35 r
+  s1/m2/cout (mux_carry_0)                 0.00       2.35 r
+  s1/cout_4 (CSA4_0)                       0.00       2.35 r
+  s2/cin_4 (CSA4_15)                       0.00       2.35 r
+  s2/m2/Cin (mux_carry_15)                 0.00       2.35 r
+  s2/m2/U4/Z (CIVX2)                       0.07       2.42 f
+  s2/m2/U3/Z (CND2X2)                      0.07       2.49 r
+  s2/m2/U2/Z (CND2X2)                      0.10       2.60 f
+  s2/m2/cout (mux_carry_15)                0.00       2.60 f
+  s2/cout_4 (CSA4_15)                      0.00       2.60 f
+  s3/cin_4 (CSA4_14)                       0.00       2.60 f
+  s3/m2/Cin (mux_carry_14)                 0.00       2.60 f
+  s3/m2/U4/Z (CIVX2)                       0.07       2.66 r
+  s3/m2/U1/Z (CND2X2)                      0.09       2.75 f
+  s3/m2/U3/Z (CND2X2)                      0.08       2.83 r
+  s3/m2/cout (mux_carry_14)                0.00       2.83 r
+  s3/cout_4 (CSA4_14)                      0.00       2.83 r
+  s4/cin_4 (CSA4_13)                       0.00       2.83 r
+  s4/m2/Cin (mux_carry_13)                 0.00       2.83 r
+  s4/m2/U3/Z (CIVX2)                       0.07       2.91 f
+  s4/m2/U1/Z (CND2X2)                      0.07       2.98 r
+  s4/m2/U4/Z (CND2X2)                      0.10       3.07 f
+  s4/m2/cout (mux_carry_13)                0.00       3.07 f
+  s4/cout_4 (CSA4_13)                      0.00       3.07 f
+  s5/cin_4 (CSA4_12)                       0.00       3.07 f
+  s5/m2/Cin (mux_carry_12)                 0.00       3.07 f
+  s5/m2/U4/Z (COND2X1)                     0.27       3.34 r
+  s5/m2/cout (mux_carry_12)                0.00       3.34 r
+  s5/cout_4 (CSA4_12)                      0.00       3.34 r
+  s6/cin_4 (CSA4_11)                       0.00       3.34 r
+  s6/m2/Cin (mux_carry_11)                 0.00       3.34 r
+  s6/m2/U1/Z (CND2X1)                      0.20       3.54 f
+  s6/m2/U3/Z (CND2X2)                      0.10       3.64 r
+  s6/m2/cout (mux_carry_11)                0.00       3.64 r
+  s6/cout_4 (CSA4_11)                      0.00       3.64 r
+  s7/cin_4 (CSA4_10)                       0.00       3.64 r
+  s7/m2/Cin (mux_carry_10)                 0.00       3.64 r
+  s7/m2/U2/Z (CIVX2)                       0.07       3.71 f
+  s7/m2/U1/Z (CND2X2)                      0.07       3.78 r
+  s7/m2/U4/Z (CND2X2)                      0.10       3.88 f
+  s7/m2/cout (mux_carry_10)                0.00       3.88 f
+  s7/cout_4 (CSA4_10)                      0.00       3.88 f
+  s8/cin_4 (CSA4_9)                        0.00       3.88 f
+  s8/m2/Cin (mux_carry_9)                  0.00       3.88 f
+  s8/m2/U2/Z (COND2X1)                     0.27       4.15 r
+  s8/m2/cout (mux_carry_9)                 0.00       4.15 r
+  s8/cout_4 (CSA4_9)                       0.00       4.15 r
+  s9/cin_4 (CSA4_8)                        0.00       4.15 r
+  s9/m2/Cin (mux_carry_8)                  0.00       4.15 r
+  s9/m2/U2/Z (CIVX1)                       0.14       4.29 f
+  s9/m2/U3/Z (CND2X2)                      0.07       4.36 r
+  s9/m2/U4/Z (CND2X2)                      0.10       4.46 f
+  s9/m2/cout (mux_carry_8)                 0.00       4.46 f
+  s9/cout_4 (CSA4_8)                       0.00       4.46 f
+  s10/cin_4 (CSA4_7)                       0.00       4.46 f
+  s10/m2/Cin (mux_carry_7)                 0.00       4.46 f
+  s10/m2/U2/Z (CIVX2)                      0.07       4.53 r
+  s10/m2/U1/Z (CND2X2)                     0.09       4.62 f
+  s10/m2/U4/Z (CND2X2)                     0.08       4.70 r
+  s10/m2/cout (mux_carry_7)                0.00       4.70 r
+  s10/cout_4 (CSA4_7)                      0.00       4.70 r
+  s11/cin_4 (CSA4_6)                       0.00       4.70 r
+  s11/m2/Cin (mux_carry_6)                 0.00       4.70 r
+  s11/m2/U3/Z (CND2X1)                     0.14       4.84 f
+  s11/m2/U2/Z (CND2X2)                     0.10       4.94 r
+  s11/m2/cout (mux_carry_6)                0.00       4.94 r
+  s11/cout_4 (CSA4_6)                      0.00       4.94 r
+  s12/cin_4 (CSA4_5)                       0.00       4.94 r
+  s12/m2/Cin (mux_carry_5)                 0.00       4.94 r
+  s12/m2/U4/Z (CIVX2)                      0.07       5.01 f
+  s12/m2/U3/Z (CND2X2)                     0.07       5.08 r
+  s12/m2/U1/Z (CND2X2)                     0.10       5.18 f
+  s12/m2/cout (mux_carry_5)                0.00       5.18 f
+  s12/cout_4 (CSA4_5)                      0.00       5.18 f
+  s13/cin_4 (CSA4_4)                       0.00       5.18 f
+  s13/m2/Cin (mux_carry_4)                 0.00       5.18 f
+  s13/m2/U2/Z (COND2X1)                    0.27       5.44 r
+  s13/m2/cout (mux_carry_4)                0.00       5.44 r
+  s13/cout_4 (CSA4_4)                      0.00       5.44 r
+  s14/cin_4 (CSA4_3)                       0.00       5.44 r
+  s14/m2/Cin (mux_carry_3)                 0.00       5.44 r
+  s14/m2/U1/Z (CND2X1)                     0.19       5.64 f
+  s14/m2/U4/Z (CND2X2)                     0.09       5.73 r
+  s14/m2/cout (mux_carry_3)                0.00       5.73 r
+  s14/cout_4 (CSA4_3)                      0.00       5.73 r
+  s15/cin_4 (CSA4_2)                       0.00       5.73 r
+  s15/U3/Z (CNIVX2)                        0.19       5.91 r
+  s15/m1/Cin (mux_sum_2)                   0.00       5.91 r
+  s15/m1/U1/Z (CIVX1)                      0.08       5.99 f
+  s15/m1/U3/Z (CAOR2XL)                    0.37       6.37 f
+  s15/m1/sum[1] (mux_sum_2)                0.00       6.37 f
+  s15/sum_4[1] (CSA4_2)                    0.00       6.37 f
+  sum_reg[57]/D (CFD2QXL)                  0.00       6.37 f
+  data arrival time                                   6.37
+
+  clock clock (rise edge)                  7.00       7.00
+  clock network delay (propagated)         0.00       7.00
+  clock uncertainty                       -0.25       6.75
+  sum_reg[57]/CP (CFD2QXL)                 0.00       6.75 r
+  library setup time                      -0.37       6.38
+  data required time                                  6.38
+  -----------------------------------------------------------
+  data required time                                  6.38
+  data arrival time                                  -6.37
+  -----------------------------------------------------------
+  slack (MET)                                         0.01
+
+
+  Startpoint: op1f_reg[0]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: sum_reg[58]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clock (rise edge)                  0.00       0.00
+  clock network delay (propagated)         0.00       0.00
+  op1f_reg[0]/CP (CFD2QX2)                 0.00       0.00 r
+  op1f_reg[0]/Q (CFD2QX2)                  0.47       0.47 r
+  s1/op1_4[0] (CSA4_0)                     0.00       0.47 r
+  s1/f5/op1_fa (FA_124)                    0.00       0.47 r
+  s1/f5/U3/Z (CENX1)                       0.27       0.74 r
+  s1/f5/U5/Z (CND2X2)                      0.13       0.87 f
+  s1/f5/U1/Z (CND2IX2)                     0.09       0.96 r
+  s1/f5/cout_fa (FA_124)                   0.00       0.96 r
+  s1/f6/cin (FA_123)                       0.00       0.96 r
+  s1/f6/U5/Z (CIVX2)                       0.08       1.03 f
+  s1/f6/U1/Z (CND2IX2)                     0.07       1.11 r
+  s1/f6/U4/Z (CND2X2)                      0.10       1.21 f
+  s1/f6/U6/Z (CND2IX2)                     0.07       1.28 r
+  s1/f6/U9/Z (CND2X2)                      0.10       1.37 f
+  s1/f6/cout_fa (FA_123)                   0.00       1.37 f
+  s1/f7/cin (FA_122)                       0.00       1.37 f
+  s1/f7/U2/Z (CANR5CX1)                    0.26       1.63 r
+  s1/f7/U3/Z (CIVX2)                       0.14       1.77 f
+  s1/f7/cout_fa (FA_122)                   0.00       1.77 f
+  s1/f8/cin (FA_121)                       0.00       1.77 f
+  s1/f8/U7/Z (CIVX2)                       0.06       1.83 r
+  s1/f8/U5/Z (CND2X2)                      0.09       1.93 f
+  s1/f8/U6/Z (CND2X2)                      0.07       2.00 r
+  s1/f8/U11/Z (CND2X2)                     0.09       2.09 f
+  s1/f8/U9/Z (CND2X2)                      0.07       2.16 r
+  s1/f8/cout_fa (FA_121)                   0.00       2.16 r
+  s1/m2/cout1 (mux_carry_0)                0.00       2.16 r
+  s1/m2/U2/Z (CND2IX2)                     0.09       2.25 f
+  s1/m2/U4/Z (CND2X2)                      0.10       2.35 r
+  s1/m2/cout (mux_carry_0)                 0.00       2.35 r
+  s1/cout_4 (CSA4_0)                       0.00       2.35 r
+  s2/cin_4 (CSA4_15)                       0.00       2.35 r
+  s2/m2/Cin (mux_carry_15)                 0.00       2.35 r
+  s2/m2/U4/Z (CIVX2)                       0.07       2.42 f
+  s2/m2/U3/Z (CND2X2)                      0.07       2.49 r
+  s2/m2/U2/Z (CND2X2)                      0.10       2.60 f
+  s2/m2/cout (mux_carry_15)                0.00       2.60 f
+  s2/cout_4 (CSA4_15)                      0.00       2.60 f
+  s3/cin_4 (CSA4_14)                       0.00       2.60 f
+  s3/m2/Cin (mux_carry_14)                 0.00       2.60 f
+  s3/m2/U4/Z (CIVX2)                       0.07       2.66 r
+  s3/m2/U1/Z (CND2X2)                      0.09       2.75 f
+  s3/m2/U3/Z (CND2X2)                      0.08       2.83 r
+  s3/m2/cout (mux_carry_14)                0.00       2.83 r
+  s3/cout_4 (CSA4_14)                      0.00       2.83 r
+  s4/cin_4 (CSA4_13)                       0.00       2.83 r
+  s4/m2/Cin (mux_carry_13)                 0.00       2.83 r
+  s4/m2/U3/Z (CIVX2)                       0.07       2.91 f
+  s4/m2/U1/Z (CND2X2)                      0.07       2.98 r
+  s4/m2/U4/Z (CND2X2)                      0.10       3.07 f
+  s4/m2/cout (mux_carry_13)                0.00       3.07 f
+  s4/cout_4 (CSA4_13)                      0.00       3.07 f
+  s5/cin_4 (CSA4_12)                       0.00       3.07 f
+  s5/m2/Cin (mux_carry_12)                 0.00       3.07 f
+  s5/m2/U4/Z (COND2X1)                     0.27       3.34 r
+  s5/m2/cout (mux_carry_12)                0.00       3.34 r
+  s5/cout_4 (CSA4_12)                      0.00       3.34 r
+  s6/cin_4 (CSA4_11)                       0.00       3.34 r
+  s6/m2/Cin (mux_carry_11)                 0.00       3.34 r
+  s6/m2/U1/Z (CND2X1)                      0.20       3.54 f
+  s6/m2/U3/Z (CND2X2)                      0.10       3.64 r
+  s6/m2/cout (mux_carry_11)                0.00       3.64 r
+  s6/cout_4 (CSA4_11)                      0.00       3.64 r
+  s7/cin_4 (CSA4_10)                       0.00       3.64 r
+  s7/m2/Cin (mux_carry_10)                 0.00       3.64 r
+  s7/m2/U2/Z (CIVX2)                       0.07       3.71 f
+  s7/m2/U1/Z (CND2X2)                      0.07       3.78 r
+  s7/m2/U4/Z (CND2X2)                      0.10       3.88 f
+  s7/m2/cout (mux_carry_10)                0.00       3.88 f
+  s7/cout_4 (CSA4_10)                      0.00       3.88 f
+  s8/cin_4 (CSA4_9)                        0.00       3.88 f
+  s8/m2/Cin (mux_carry_9)                  0.00       3.88 f
+  s8/m2/U2/Z (COND2X1)                     0.27       4.15 r
+  s8/m2/cout (mux_carry_9)                 0.00       4.15 r
+  s8/cout_4 (CSA4_9)                       0.00       4.15 r
+  s9/cin_4 (CSA4_8)                        0.00       4.15 r
+  s9/m2/Cin (mux_carry_8)                  0.00       4.15 r
+  s9/m2/U2/Z (CIVX1)                       0.14       4.29 f
+  s9/m2/U3/Z (CND2X2)                      0.07       4.36 r
+  s9/m2/U4/Z (CND2X2)                      0.10       4.46 f
+  s9/m2/cout (mux_carry_8)                 0.00       4.46 f
+  s9/cout_4 (CSA4_8)                       0.00       4.46 f
+  s10/cin_4 (CSA4_7)                       0.00       4.46 f
+  s10/m2/Cin (mux_carry_7)                 0.00       4.46 f
+  s10/m2/U2/Z (CIVX2)                      0.07       4.53 r
+  s10/m2/U1/Z (CND2X2)                     0.09       4.62 f
+  s10/m2/U4/Z (CND2X2)                     0.08       4.70 r
+  s10/m2/cout (mux_carry_7)                0.00       4.70 r
+  s10/cout_4 (CSA4_7)                      0.00       4.70 r
+  s11/cin_4 (CSA4_6)                       0.00       4.70 r
+  s11/m2/Cin (mux_carry_6)                 0.00       4.70 r
+  s11/m2/U3/Z (CND2X1)                     0.14       4.84 f
+  s11/m2/U2/Z (CND2X2)                     0.10       4.94 r
+  s11/m2/cout (mux_carry_6)                0.00       4.94 r
+  s11/cout_4 (CSA4_6)                      0.00       4.94 r
+  s12/cin_4 (CSA4_5)                       0.00       4.94 r
+  s12/m2/Cin (mux_carry_5)                 0.00       4.94 r
+  s12/m2/U4/Z (CIVX2)                      0.07       5.01 f
+  s12/m2/U3/Z (CND2X2)                     0.07       5.08 r
+  s12/m2/U1/Z (CND2X2)                     0.10       5.18 f
+  s12/m2/cout (mux_carry_5)                0.00       5.18 f
+  s12/cout_4 (CSA4_5)                      0.00       5.18 f
+  s13/cin_4 (CSA4_4)                       0.00       5.18 f
+  s13/m2/Cin (mux_carry_4)                 0.00       5.18 f
+  s13/m2/U2/Z (COND2X1)                    0.27       5.44 r
+  s13/m2/cout (mux_carry_4)                0.00       5.44 r
+  s13/cout_4 (CSA4_4)                      0.00       5.44 r
+  s14/cin_4 (CSA4_3)                       0.00       5.44 r
+  s14/m2/Cin (mux_carry_3)                 0.00       5.44 r
+  s14/m2/U1/Z (CND2X1)                     0.19       5.64 f
+  s14/m2/U4/Z (CND2X2)                     0.09       5.73 r
+  s14/m2/cout (mux_carry_3)                0.00       5.73 r
+  s14/cout_4 (CSA4_3)                      0.00       5.73 r
+  s15/cin_4 (CSA4_2)                       0.00       5.73 r
+  s15/U3/Z (CNIVX2)                        0.19       5.91 r
+  s15/m1/Cin (mux_sum_2)                   0.00       5.91 r
+  s15/m1/U1/Z (CIVX1)                      0.08       5.99 f
+  s15/m1/U4/Z (CAOR2XL)                    0.37       6.37 f
+  s15/m1/sum[2] (mux_sum_2)                0.00       6.37 f
+  s15/sum_4[2] (CSA4_2)                    0.00       6.37 f
+  sum_reg[58]/D (CFD2QXL)                  0.00       6.37 f
+  data arrival time                                   6.37
+
+  clock clock (rise edge)                  7.00       7.00
+  clock network delay (propagated)         0.00       7.00
+  clock uncertainty                       -0.25       6.75
+  sum_reg[58]/CP (CFD2QXL)                 0.00       6.75 r
+  library setup time                      -0.37       6.38
+  data required time                                  6.38
+  -----------------------------------------------------------
+  data required time                                  6.38
+  data arrival time                                  -6.37
+  -----------------------------------------------------------
+  slack (MET)                                         0.01
+
+
+  Startpoint: op1f_reg[0]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: sum_reg[59]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clock (rise edge)                  0.00       0.00
+  clock network delay (propagated)         0.00       0.00
+  op1f_reg[0]/CP (CFD2QX2)                 0.00       0.00 r
+  op1f_reg[0]/Q (CFD2QX2)                  0.47       0.47 r
+  s1/op1_4[0] (CSA4_0)                     0.00       0.47 r
+  s1/f5/op1_fa (FA_124)                    0.00       0.47 r
+  s1/f5/U3/Z (CENX1)                       0.27       0.74 r
+  s1/f5/U5/Z (CND2X2)                      0.13       0.87 f
+  s1/f5/U1/Z (CND2IX2)                     0.09       0.96 r
+  s1/f5/cout_fa (FA_124)                   0.00       0.96 r
+  s1/f6/cin (FA_123)                       0.00       0.96 r
+  s1/f6/U5/Z (CIVX2)                       0.08       1.03 f
+  s1/f6/U1/Z (CND2IX2)                     0.07       1.11 r
+  s1/f6/U4/Z (CND2X2)                      0.10       1.21 f
+  s1/f6/U6/Z (CND2IX2)                     0.07       1.28 r
+  s1/f6/U9/Z (CND2X2)                      0.10       1.37 f
+  s1/f6/cout_fa (FA_123)                   0.00       1.37 f
+  s1/f7/cin (FA_122)                       0.00       1.37 f
+  s1/f7/U2/Z (CANR5CX1)                    0.26       1.63 r
+  s1/f7/U3/Z (CIVX2)                       0.14       1.77 f
+  s1/f7/cout_fa (FA_122)                   0.00       1.77 f
+  s1/f8/cin (FA_121)                       0.00       1.77 f
+  s1/f8/U7/Z (CIVX2)                       0.06       1.83 r
+  s1/f8/U5/Z (CND2X2)                      0.09       1.93 f
+  s1/f8/U6/Z (CND2X2)                      0.07       2.00 r
+  s1/f8/U11/Z (CND2X2)                     0.09       2.09 f
+  s1/f8/U9/Z (CND2X2)                      0.07       2.16 r
+  s1/f8/cout_fa (FA_121)                   0.00       2.16 r
+  s1/m2/cout1 (mux_carry_0)                0.00       2.16 r
+  s1/m2/U2/Z (CND2IX2)                     0.09       2.25 f
+  s1/m2/U4/Z (CND2X2)                      0.10       2.35 r
+  s1/m2/cout (mux_carry_0)                 0.00       2.35 r
+  s1/cout_4 (CSA4_0)                       0.00       2.35 r
+  s2/cin_4 (CSA4_15)                       0.00       2.35 r
+  s2/m2/Cin (mux_carry_15)                 0.00       2.35 r
+  s2/m2/U4/Z (CIVX2)                       0.07       2.42 f
+  s2/m2/U3/Z (CND2X2)                      0.07       2.49 r
+  s2/m2/U2/Z (CND2X2)                      0.10       2.60 f
+  s2/m2/cout (mux_carry_15)                0.00       2.60 f
+  s2/cout_4 (CSA4_15)                      0.00       2.60 f
+  s3/cin_4 (CSA4_14)                       0.00       2.60 f
+  s3/m2/Cin (mux_carry_14)                 0.00       2.60 f
+  s3/m2/U4/Z (CIVX2)                       0.07       2.66 r
+  s3/m2/U1/Z (CND2X2)                      0.09       2.75 f
+  s3/m2/U3/Z (CND2X2)                      0.08       2.83 r
+  s3/m2/cout (mux_carry_14)                0.00       2.83 r
+  s3/cout_4 (CSA4_14)                      0.00       2.83 r
+  s4/cin_4 (CSA4_13)                       0.00       2.83 r
+  s4/m2/Cin (mux_carry_13)                 0.00       2.83 r
+  s4/m2/U3/Z (CIVX2)                       0.07       2.91 f
+  s4/m2/U1/Z (CND2X2)                      0.07       2.98 r
+  s4/m2/U4/Z (CND2X2)                      0.10       3.07 f
+  s4/m2/cout (mux_carry_13)                0.00       3.07 f
+  s4/cout_4 (CSA4_13)                      0.00       3.07 f
+  s5/cin_4 (CSA4_12)                       0.00       3.07 f
+  s5/m2/Cin (mux_carry_12)                 0.00       3.07 f
+  s5/m2/U4/Z (COND2X1)                     0.27       3.34 r
+  s5/m2/cout (mux_carry_12)                0.00       3.34 r
+  s5/cout_4 (CSA4_12)                      0.00       3.34 r
+  s6/cin_4 (CSA4_11)                       0.00       3.34 r
+  s6/m2/Cin (mux_carry_11)                 0.00       3.34 r
+  s6/m2/U1/Z (CND2X1)                      0.20       3.54 f
+  s6/m2/U3/Z (CND2X2)                      0.10       3.64 r
+  s6/m2/cout (mux_carry_11)                0.00       3.64 r
+  s6/cout_4 (CSA4_11)                      0.00       3.64 r
+  s7/cin_4 (CSA4_10)                       0.00       3.64 r
+  s7/m2/Cin (mux_carry_10)                 0.00       3.64 r
+  s7/m2/U2/Z (CIVX2)                       0.07       3.71 f
+  s7/m2/U1/Z (CND2X2)                      0.07       3.78 r
+  s7/m2/U4/Z (CND2X2)                      0.10       3.88 f
+  s7/m2/cout (mux_carry_10)                0.00       3.88 f
+  s7/cout_4 (CSA4_10)                      0.00       3.88 f
+  s8/cin_4 (CSA4_9)                        0.00       3.88 f
+  s8/m2/Cin (mux_carry_9)                  0.00       3.88 f
+  s8/m2/U2/Z (COND2X1)                     0.27       4.15 r
+  s8/m2/cout (mux_carry_9)                 0.00       4.15 r
+  s8/cout_4 (CSA4_9)                       0.00       4.15 r
+  s9/cin_4 (CSA4_8)                        0.00       4.15 r
+  s9/m2/Cin (mux_carry_8)                  0.00       4.15 r
+  s9/m2/U2/Z (CIVX1)                       0.14       4.29 f
+  s9/m2/U3/Z (CND2X2)                      0.07       4.36 r
+  s9/m2/U4/Z (CND2X2)                      0.10       4.46 f
+  s9/m2/cout (mux_carry_8)                 0.00       4.46 f
+  s9/cout_4 (CSA4_8)                       0.00       4.46 f
+  s10/cin_4 (CSA4_7)                       0.00       4.46 f
+  s10/m2/Cin (mux_carry_7)                 0.00       4.46 f
+  s10/m2/U2/Z (CIVX2)                      0.07       4.53 r
+  s10/m2/U1/Z (CND2X2)                     0.09       4.62 f
+  s10/m2/U4/Z (CND2X2)                     0.08       4.70 r
+  s10/m2/cout (mux_carry_7)                0.00       4.70 r
+  s10/cout_4 (CSA4_7)                      0.00       4.70 r
+  s11/cin_4 (CSA4_6)                       0.00       4.70 r
+  s11/m2/Cin (mux_carry_6)                 0.00       4.70 r
+  s11/m2/U3/Z (CND2X1)                     0.14       4.84 f
+  s11/m2/U2/Z (CND2X2)                     0.10       4.94 r
+  s11/m2/cout (mux_carry_6)                0.00       4.94 r
+  s11/cout_4 (CSA4_6)                      0.00       4.94 r
+  s12/cin_4 (CSA4_5)                       0.00       4.94 r
+  s12/m2/Cin (mux_carry_5)                 0.00       4.94 r
+  s12/m2/U4/Z (CIVX2)                      0.07       5.01 f
+  s12/m2/U3/Z (CND2X2)                     0.07       5.08 r
+  s12/m2/U1/Z (CND2X2)                     0.10       5.18 f
+  s12/m2/cout (mux_carry_5)                0.00       5.18 f
+  s12/cout_4 (CSA4_5)                      0.00       5.18 f
+  s13/cin_4 (CSA4_4)                       0.00       5.18 f
+  s13/m2/Cin (mux_carry_4)                 0.00       5.18 f
+  s13/m2/U2/Z (COND2X1)                    0.27       5.44 r
+  s13/m2/cout (mux_carry_4)                0.00       5.44 r
+  s13/cout_4 (CSA4_4)                      0.00       5.44 r
+  s14/cin_4 (CSA4_3)                       0.00       5.44 r
+  s14/m2/Cin (mux_carry_3)                 0.00       5.44 r
+  s14/m2/U1/Z (CND2X1)                     0.19       5.64 f
+  s14/m2/U4/Z (CND2X2)                     0.09       5.73 r
+  s14/m2/cout (mux_carry_3)                0.00       5.73 r
+  s14/cout_4 (CSA4_3)                      0.00       5.73 r
+  s15/cin_4 (CSA4_2)                       0.00       5.73 r
+  s15/U3/Z (CNIVX2)                        0.19       5.91 r
+  s15/m1/Cin (mux_sum_2)                   0.00       5.91 r
+  s15/m1/U1/Z (CIVX1)                      0.08       5.99 f
+  s15/m1/U5/Z (CAOR2XL)                    0.37       6.37 f
+  s15/m1/sum[3] (mux_sum_2)                0.00       6.37 f
+  s15/sum_4[3] (CSA4_2)                    0.00       6.37 f
+  sum_reg[59]/D (CFD2QXL)                  0.00       6.37 f
+  data arrival time                                   6.37
+
+  clock clock (rise edge)                  7.00       7.00
+  clock network delay (propagated)         0.00       7.00
+  clock uncertainty                       -0.25       6.75
+  sum_reg[59]/CP (CFD2QXL)                 0.00       6.75 r
+  library setup time                      -0.37       6.38
+  data required time                                  6.38
+  -----------------------------------------------------------
+  data required time                                  6.38
+  data arrival time                                  -6.37
+  -----------------------------------------------------------
+  slack (MET)                                         0.01
+
+
+  Startpoint: op1f_reg[0]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: crout_reg (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clock (rise edge)                  0.00       0.00
+  clock network delay (propagated)         0.00       0.00
+  op1f_reg[0]/CP (CFD2QX2)                 0.00       0.00 r
+  op1f_reg[0]/Q (CFD2QX2)                  0.47       0.47 r
+  s1/op1_4[0] (CSA4_0)                     0.00       0.47 r
+  s1/f5/op1_fa (FA_124)                    0.00       0.47 r
+  s1/f5/U3/Z (CENX1)                       0.27       0.74 r
+  s1/f5/U5/Z (CND2X2)                      0.13       0.87 f
+  s1/f5/U1/Z (CND2IX2)                     0.09       0.96 r
+  s1/f5/cout_fa (FA_124)                   0.00       0.96 r
+  s1/f6/cin (FA_123)                       0.00       0.96 r
+  s1/f6/U5/Z (CIVX2)                       0.08       1.03 f
+  s1/f6/U1/Z (CND2IX2)                     0.07       1.11 r
+  s1/f6/U4/Z (CND2X2)                      0.10       1.21 f
+  s1/f6/U6/Z (CND2IX2)                     0.07       1.28 r
+  s1/f6/U9/Z (CND2X2)                      0.10       1.37 f
+  s1/f6/cout_fa (FA_123)                   0.00       1.37 f
+  s1/f7/cin (FA_122)                       0.00       1.37 f
+  s1/f7/U2/Z (CANR5CX1)                    0.26       1.63 r
+  s1/f7/U3/Z (CIVX2)                       0.14       1.77 f
+  s1/f7/cout_fa (FA_122)                   0.00       1.77 f
+  s1/f8/cin (FA_121)                       0.00       1.77 f
+  s1/f8/U7/Z (CIVX2)                       0.06       1.83 r
+  s1/f8/U5/Z (CND2X2)                      0.09       1.93 f
+  s1/f8/U6/Z (CND2X2)                      0.07       2.00 r
+  s1/f8/U11/Z (CND2X2)                     0.09       2.09 f
+  s1/f8/U9/Z (CND2X2)                      0.07       2.16 r
+  s1/f8/cout_fa (FA_121)                   0.00       2.16 r
+  s1/m2/cout1 (mux_carry_0)                0.00       2.16 r
+  s1/m2/U2/Z (CND2IX2)                     0.09       2.25 f
+  s1/m2/U4/Z (CND2X2)                      0.10       2.35 r
+  s1/m2/cout (mux_carry_0)                 0.00       2.35 r
+  s1/cout_4 (CSA4_0)                       0.00       2.35 r
+  s2/cin_4 (CSA4_15)                       0.00       2.35 r
+  s2/m2/Cin (mux_carry_15)                 0.00       2.35 r
+  s2/m2/U4/Z (CIVX2)                       0.07       2.42 f
+  s2/m2/U3/Z (CND2X2)                      0.07       2.49 r
+  s2/m2/U2/Z (CND2X2)                      0.10       2.60 f
+  s2/m2/cout (mux_carry_15)                0.00       2.60 f
+  s2/cout_4 (CSA4_15)                      0.00       2.60 f
+  s3/cin_4 (CSA4_14)                       0.00       2.60 f
+  s3/m2/Cin (mux_carry_14)                 0.00       2.60 f
+  s3/m2/U4/Z (CIVX2)                       0.07       2.66 r
+  s3/m2/U1/Z (CND2X2)                      0.09       2.75 f
+  s3/m2/U3/Z (CND2X2)                      0.08       2.83 r
+  s3/m2/cout (mux_carry_14)                0.00       2.83 r
+  s3/cout_4 (CSA4_14)                      0.00       2.83 r
+  s4/cin_4 (CSA4_13)                       0.00       2.83 r
+  s4/m2/Cin (mux_carry_13)                 0.00       2.83 r
+  s4/m2/U3/Z (CIVX2)                       0.07       2.91 f
+  s4/m2/U1/Z (CND2X2)                      0.07       2.98 r
+  s4/m2/U4/Z (CND2X2)                      0.10       3.07 f
+  s4/m2/cout (mux_carry_13)                0.00       3.07 f
+  s4/cout_4 (CSA4_13)                      0.00       3.07 f
+  s5/cin_4 (CSA4_12)                       0.00       3.07 f
+  s5/m2/Cin (mux_carry_12)                 0.00       3.07 f
+  s5/m2/U4/Z (COND2X1)                     0.27       3.34 r
+  s5/m2/cout (mux_carry_12)                0.00       3.34 r
+  s5/cout_4 (CSA4_12)                      0.00       3.34 r
+  s6/cin_4 (CSA4_11)                       0.00       3.34 r
+  s6/m2/Cin (mux_carry_11)                 0.00       3.34 r
+  s6/m2/U1/Z (CND2X1)                      0.20       3.54 f
+  s6/m2/U3/Z (CND2X2)                      0.10       3.64 r
+  s6/m2/cout (mux_carry_11)                0.00       3.64 r
+  s6/cout_4 (CSA4_11)                      0.00       3.64 r
+  s7/cin_4 (CSA4_10)                       0.00       3.64 r
+  s7/m2/Cin (mux_carry_10)                 0.00       3.64 r
+  s7/m2/U2/Z (CIVX2)                       0.07       3.71 f
+  s7/m2/U1/Z (CND2X2)                      0.07       3.78 r
+  s7/m2/U4/Z (CND2X2)                      0.10       3.88 f
+  s7/m2/cout (mux_carry_10)                0.00       3.88 f
+  s7/cout_4 (CSA4_10)                      0.00       3.88 f
+  s8/cin_4 (CSA4_9)                        0.00       3.88 f
+  s8/m2/Cin (mux_carry_9)                  0.00       3.88 f
+  s8/m2/U2/Z (COND2X1)                     0.27       4.15 r
+  s8/m2/cout (mux_carry_9)                 0.00       4.15 r
+  s8/cout_4 (CSA4_9)                       0.00       4.15 r
+  s9/cin_4 (CSA4_8)                        0.00       4.15 r
+  s9/m2/Cin (mux_carry_8)                  0.00       4.15 r
+  s9/m2/U2/Z (CIVX1)                       0.14       4.29 f
+  s9/m2/U3/Z (CND2X2)                      0.07       4.36 r
+  s9/m2/U4/Z (CND2X2)                      0.10       4.46 f
+  s9/m2/cout (mux_carry_8)                 0.00       4.46 f
+  s9/cout_4 (CSA4_8)                       0.00       4.46 f
+  s10/cin_4 (CSA4_7)                       0.00       4.46 f
+  s10/m2/Cin (mux_carry_7)                 0.00       4.46 f
+  s10/m2/U2/Z (CIVX2)                      0.07       4.53 r
+  s10/m2/U1/Z (CND2X2)                     0.09       4.62 f
+  s10/m2/U4/Z (CND2X2)                     0.08       4.70 r
+  s10/m2/cout (mux_carry_7)                0.00       4.70 r
+  s10/cout_4 (CSA4_7)                      0.00       4.70 r
+  s11/cin_4 (CSA4_6)                       0.00       4.70 r
+  s11/m2/Cin (mux_carry_6)                 0.00       4.70 r
+  s11/m2/U3/Z (CND2X1)                     0.14       4.84 f
+  s11/m2/U2/Z (CND2X2)                     0.10       4.94 r
+  s11/m2/cout (mux_carry_6)                0.00       4.94 r
+  s11/cout_4 (CSA4_6)                      0.00       4.94 r
+  s12/cin_4 (CSA4_5)                       0.00       4.94 r
+  s12/m2/Cin (mux_carry_5)                 0.00       4.94 r
+  s12/m2/U4/Z (CIVX2)                      0.07       5.01 f
+  s12/m2/U3/Z (CND2X2)                     0.07       5.08 r
+  s12/m2/U1/Z (CND2X2)                     0.10       5.18 f
+  s12/m2/cout (mux_carry_5)                0.00       5.18 f
+  s12/cout_4 (CSA4_5)                      0.00       5.18 f
+  s13/cin_4 (CSA4_4)                       0.00       5.18 f
+  s13/m2/Cin (mux_carry_4)                 0.00       5.18 f
+  s13/m2/U2/Z (COND2X1)                    0.27       5.44 r
+  s13/m2/cout (mux_carry_4)                0.00       5.44 r
+  s13/cout_4 (CSA4_4)                      0.00       5.44 r
+  s14/cin_4 (CSA4_3)                       0.00       5.44 r
+  s14/m2/Cin (mux_carry_3)                 0.00       5.44 r
+  s14/m2/U1/Z (CND2X1)                     0.19       5.64 f
+  s14/m2/U4/Z (CND2X2)                     0.09       5.73 r
+  s14/m2/cout (mux_carry_3)                0.00       5.73 r
+  s14/cout_4 (CSA4_3)                      0.00       5.73 r
+  s15/cin_4 (CSA4_2)                       0.00       5.73 r
+  s15/m2/Cin (mux_carry_2)                 0.00       5.73 r
+  s15/m2/U1/Z (CND2X1)                     0.20       5.92 f
+  s15/m2/U3/Z (CND2X4)                     0.12       6.04 r
+  s15/m2/cout (mux_carry_2)                0.00       6.04 r
+  s15/cout_4 (CSA4_2)                      0.00       6.04 r
+  s16/cin_4 (CSA4_1)                       0.00       6.04 r
+  s16/m2/Cin (mux_carry_1)                 0.00       6.04 r
+  s16/m2/U1/Z (CMX2X1)                     0.35       6.39 f
+  s16/m2/cout (mux_carry_1)                0.00       6.39 f
+  s16/cout_4 (CSA4_1)                      0.00       6.39 f
+  crout_reg/D (CFD2X2)                     0.00       6.39 f
+  data arrival time                                   6.39
+
+  clock clock (rise edge)                  7.00       7.00
+  clock network delay (propagated)         0.00       7.00
+  clock uncertainty                       -0.25       6.75
+  crout_reg/CP (CFD2X2)                    0.00       6.75 r
+  library setup time                      -0.34       6.41
+  data required time                                  6.41
+  -----------------------------------------------------------
+  data required time                                  6.41
+  data arrival time                                  -6.39
+  -----------------------------------------------------------
+  slack (MET)                                         0.02
+
+
+  Startpoint: op1f_reg[0]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: sum_reg[48]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clock (rise edge)                  0.00       0.00
+  clock network delay (propagated)         0.00       0.00
+  op1f_reg[0]/CP (CFD2QX2)                 0.00       0.00 r
+  op1f_reg[0]/Q (CFD2QX2)                  0.47       0.47 r
+  s1/op1_4[0] (CSA4_0)                     0.00       0.47 r
+  s1/f5/op1_fa (FA_124)                    0.00       0.47 r
+  s1/f5/U3/Z (CENX1)                       0.27       0.74 r
+  s1/f5/U5/Z (CND2X2)                      0.13       0.87 f
+  s1/f5/U1/Z (CND2IX2)                     0.09       0.96 r
+  s1/f5/cout_fa (FA_124)                   0.00       0.96 r
+  s1/f6/cin (FA_123)                       0.00       0.96 r
+  s1/f6/U5/Z (CIVX2)                       0.08       1.03 f
+  s1/f6/U1/Z (CND2IX2)                     0.07       1.11 r
+  s1/f6/U4/Z (CND2X2)                      0.10       1.21 f
+  s1/f6/U6/Z (CND2IX2)                     0.07       1.28 r
+  s1/f6/U9/Z (CND2X2)                      0.10       1.37 f
+  s1/f6/cout_fa (FA_123)                   0.00       1.37 f
+  s1/f7/cin (FA_122)                       0.00       1.37 f
+  s1/f7/U2/Z (CANR5CX1)                    0.26       1.63 r
+  s1/f7/U3/Z (CIVX2)                       0.14       1.77 f
+  s1/f7/cout_fa (FA_122)                   0.00       1.77 f
+  s1/f8/cin (FA_121)                       0.00       1.77 f
+  s1/f8/U7/Z (CIVX2)                       0.06       1.83 r
+  s1/f8/U5/Z (CND2X2)                      0.09       1.93 f
+  s1/f8/U6/Z (CND2X2)                      0.07       2.00 r
+  s1/f8/U11/Z (CND2X2)                     0.09       2.09 f
+  s1/f8/U9/Z (CND2X2)                      0.07       2.16 r
+  s1/f8/cout_fa (FA_121)                   0.00       2.16 r
+  s1/m2/cout1 (mux_carry_0)                0.00       2.16 r
+  s1/m2/U2/Z (CND2IX2)                     0.09       2.25 f
+  s1/m2/U4/Z (CND2X2)                      0.10       2.35 r
+  s1/m2/cout (mux_carry_0)                 0.00       2.35 r
+  s1/cout_4 (CSA4_0)                       0.00       2.35 r
+  s2/cin_4 (CSA4_15)                       0.00       2.35 r
+  s2/m2/Cin (mux_carry_15)                 0.00       2.35 r
+  s2/m2/U4/Z (CIVX2)                       0.07       2.42 f
+  s2/m2/U3/Z (CND2X2)                      0.07       2.49 r
+  s2/m2/U2/Z (CND2X2)                      0.10       2.60 f
+  s2/m2/cout (mux_carry_15)                0.00       2.60 f
+  s2/cout_4 (CSA4_15)                      0.00       2.60 f
+  s3/cin_4 (CSA4_14)                       0.00       2.60 f
+  s3/m2/Cin (mux_carry_14)                 0.00       2.60 f
+  s3/m2/U4/Z (CIVX2)                       0.07       2.66 r
+  s3/m2/U1/Z (CND2X2)                      0.09       2.75 f
+  s3/m2/U3/Z (CND2X2)                      0.08       2.83 r
+  s3/m2/cout (mux_carry_14)                0.00       2.83 r
+  s3/cout_4 (CSA4_14)                      0.00       2.83 r
+  s4/cin_4 (CSA4_13)                       0.00       2.83 r
+  s4/m2/Cin (mux_carry_13)                 0.00       2.83 r
+  s4/m2/U3/Z (CIVX2)                       0.07       2.91 f
+  s4/m2/U1/Z (CND2X2)                      0.07       2.98 r
+  s4/m2/U4/Z (CND2X2)                      0.10       3.07 f
+  s4/m2/cout (mux_carry_13)                0.00       3.07 f
+  s4/cout_4 (CSA4_13)                      0.00       3.07 f
+  s5/cin_4 (CSA4_12)                       0.00       3.07 f
+  s5/m2/Cin (mux_carry_12)                 0.00       3.07 f
+  s5/m2/U4/Z (COND2X1)                     0.27       3.34 r
+  s5/m2/cout (mux_carry_12)                0.00       3.34 r
+  s5/cout_4 (CSA4_12)                      0.00       3.34 r
+  s6/cin_4 (CSA4_11)                       0.00       3.34 r
+  s6/m2/Cin (mux_carry_11)                 0.00       3.34 r
+  s6/m2/U1/Z (CND2X1)                      0.20       3.54 f
+  s6/m2/U3/Z (CND2X2)                      0.10       3.64 r
+  s6/m2/cout (mux_carry_11)                0.00       3.64 r
+  s6/cout_4 (CSA4_11)                      0.00       3.64 r
+  s7/cin_4 (CSA4_10)                       0.00       3.64 r
+  s7/m2/Cin (mux_carry_10)                 0.00       3.64 r
+  s7/m2/U2/Z (CIVX2)                       0.07       3.71 f
+  s7/m2/U1/Z (CND2X2)                      0.07       3.78 r
+  s7/m2/U4/Z (CND2X2)                      0.10       3.88 f
+  s7/m2/cout (mux_carry_10)                0.00       3.88 f
+  s7/cout_4 (CSA4_10)                      0.00       3.88 f
+  s8/cin_4 (CSA4_9)                        0.00       3.88 f
+  s8/m2/Cin (mux_carry_9)                  0.00       3.88 f
+  s8/m2/U2/Z (COND2X1)                     0.27       4.15 r
+  s8/m2/cout (mux_carry_9)                 0.00       4.15 r
+  s8/cout_4 (CSA4_9)                       0.00       4.15 r
+  s9/cin_4 (CSA4_8)                        0.00       4.15 r
+  s9/m2/Cin (mux_carry_8)                  0.00       4.15 r
+  s9/m2/U2/Z (CIVX1)                       0.14       4.29 f
+  s9/m2/U3/Z (CND2X2)                      0.07       4.36 r
+  s9/m2/U4/Z (CND2X2)                      0.10       4.46 f
+  s9/m2/cout (mux_carry_8)                 0.00       4.46 f
+  s9/cout_4 (CSA4_8)                       0.00       4.46 f
+  s10/cin_4 (CSA4_7)                       0.00       4.46 f
+  s10/m2/Cin (mux_carry_7)                 0.00       4.46 f
+  s10/m2/U2/Z (CIVX2)                      0.07       4.53 r
+  s10/m2/U1/Z (CND2X2)                     0.09       4.62 f
+  s10/m2/U4/Z (CND2X2)                     0.08       4.70 r
+  s10/m2/cout (mux_carry_7)                0.00       4.70 r
+  s10/cout_4 (CSA4_7)                      0.00       4.70 r
+  s11/cin_4 (CSA4_6)                       0.00       4.70 r
+  s11/m2/Cin (mux_carry_6)                 0.00       4.70 r
+  s11/m2/U3/Z (CND2X1)                     0.14       4.84 f
+  s11/m2/U2/Z (CND2X2)                     0.10       4.94 r
+  s11/m2/cout (mux_carry_6)                0.00       4.94 r
+  s11/cout_4 (CSA4_6)                      0.00       4.94 r
+  s12/cin_4 (CSA4_5)                       0.00       4.94 r
+  s12/m2/Cin (mux_carry_5)                 0.00       4.94 r
+  s12/m2/U4/Z (CIVX2)                      0.07       5.01 f
+  s12/m2/U3/Z (CND2X2)                     0.07       5.08 r
+  s12/m2/U1/Z (CND2X2)                     0.10       5.18 f
+  s12/m2/cout (mux_carry_5)                0.00       5.18 f
+  s12/cout_4 (CSA4_5)                      0.00       5.18 f
+  s13/cin_4 (CSA4_4)                       0.00       5.18 f
+  s13/U3/Z (CDLY1X2)                       0.69       5.87 f
+  s13/U5/Z (CIVX2)                         0.08       5.95 r
+  s13/U4/Z (CIVX3)                         0.09       6.04 f
+  s13/m1/Cin (mux_sum_4)                   0.00       6.04 f
+  s13/m1/U1/Z (CAOR2X1)                    0.32       6.36 f
+  s13/m1/sum[0] (mux_sum_4)                0.00       6.36 f
+  s13/sum_4[0] (CSA4_4)                    0.00       6.36 f
+  sum_reg[48]/D (CFD2QXL)                  0.00       6.36 f
+  data arrival time                                   6.36
+
+  clock clock (rise edge)                  7.00       7.00
+  clock network delay (propagated)         0.00       7.00
+  clock uncertainty                       -0.25       6.75
+  sum_reg[48]/CP (CFD2QXL)                 0.00       6.75 r
+  library setup time                      -0.37       6.38
+  data required time                                  6.38
+  -----------------------------------------------------------
+  data required time                                  6.38
+  data arrival time                                  -6.36
+  -----------------------------------------------------------
+  slack (MET)                                         0.02
+
+
+1
+write -hierarchy -format verilog -output CSA64EQG_netlist.v
+Writing verilog file '/home/pa/pand2610/Desktop/Project/CSA64EQG/CSA64EQG_netlist.v'.
+1
+1
+dc_shell> 
+Thank you...

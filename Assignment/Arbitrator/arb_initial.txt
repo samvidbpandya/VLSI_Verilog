@@ -1,0 +1,80 @@
+//......
+//... Bidding Arbitrator......
+//......
+
+module arb(bmif.mstrR bm0,bmif.mstrR bm1,bmif.mstrR bm2,bmif.mstrR bm3,svif.slvR sl0,svif.slvR sl1,svif.slvR sl2,svif.slvR sl3, input integer bid, input integer interval, input integer maxamount);
+
+logic [31:0] master_address_0, master_address_1, master_address_2,master_address_3;
+logic [31:0] DFS_0, DFS_1, DFS_2, DFS_3;
+logic [31:0] DTS_0, DTS_1, DTS_2, DTS_3;
+always @(posedge bm0.clk or posedge bm0.rst)
+begin
+    if (bm0.rst)
+        begin
+            //... Arbiter to Bus Masters
+            
+            bm0.DataFromSlave = 0;
+            bm1.DataFromSlave = 0;
+            bm2.DataFromSlave = 0;
+            bm3.DataFromSlave = 0;
+            
+            //.... Arbiter to slaves
+
+            sl0.DataToSlave = 0;
+            sl1.DataToSlave = 0;
+            sl2.DataToSlave= 0;
+            sl3.DataToSlave = 0;
+        end
+    else 
+        begin
+         
+         if(bm0.req > bm1.req && bm0.req > bm2.req && bm0.req > bm3.req) // Grant request to Bus Master 0
+         begin
+            bm0.grant = 1;
+            //sl0.sel = 1;
+            //master_address_0 = bm0.addr;
+            case(bm0.addr)
+            
+                    32'hFFEF_0200:begin
+                                        //DTS_0 = bm0.DataToSlave;
+                                        sl0.sel = 1;
+                                        sl0.addr = bm0.addr;
+            
+                                  end
+                    32'hFFEF_1200:begin
+                                        //DTS_0 = bm0.DataToSlave;
+                                        sl0.sel = 1;
+                                        sl0.addr = bm0.addr;
+                                  end
+                    32'hFFEF_2200:begin
+                                        //DTS_0 = bm0.DataToSlave;
+                                        sl0.sel = 1;
+                                        sl0.addr = bm0.addr;
+                                  end
+                    32'hFFEF_3200:begin
+                                        //DTS_0 = bm0.DataToSlave;
+                                        sl0.sel = 1;
+                                        sl0.addr = bm0.addr;
+                                  end
+            endcase
+         end
+         else if(bm1.req > bm0.req && bm1.req > bm2.req && bm1.req > bm3.req) // Grant request to Bus Master 1
+         begin
+            bm1.grant = 1;
+            master_address_1 = bm1.addr;
+         end
+         else if(bm2.req > bm0.req && bm2.req > bm1.req && bm2.req > bm3.req)// Grant request to Bus Master 2
+         begin
+            bm2.grant = 1;
+            master_address_2 = bm2.addr;
+         end
+         if(bm3.req > bm1.req && bm3.req > bm2.req && bm3.req > bm0.req)// Grant request to Bus Master 3
+         begin
+            bm3.grant = 1;
+            master_address_3 = bm3.addr;
+         end
+         //else
+        
+        end
+end
+endmodule: arb

@@ -1,0 +1,392 @@
+Verilog Code for CLA64
+
+4 bit block
+
+`timescale 1ns/10ps
+
+module CLA4(sum,crout,P1,G1,op1,op2);
+output [3:0]sum;
+output crout;
+output P1,G1;
+input  [3:0] op1,op2;
+wire [3:0]G,P,C;
+
+    assign G = op1 & op2; //Generate
+    assign P = op1 ^ op2; //Propagate
+    assign C[0] = 0;
+    assign C[1] = G[0] | (P[0] & C[0]);
+    assign C[2] = G[1] | (P[1] & G[0]) | (P[1] & P[0] & C[0]);
+    assign C[3] = G[2] | (P[2] & G[1]) | (P[2] & P[1] & G[0]) | (P[2] & P[1] & P[0] & C[0]);
+    assign crout = G[3] | (P[3] & G[2]) | (P[3] & P[2] & G[1]) | (P[3] & P[2] & P[1] & G[0]) |(P[3] & P[2] & P[1] & P[0] & C[0]);
+    assign sum = P ^ C;
+    
+    assign P1 = P[3] & P[2] & P[1] & P[0];
+    assign G1 = G[3] | (P[3] & G[2]) | (P[3] & P[2] & G[1]) | (P[3] & P[2] & P[1] & G[0]);
+endmodule
+
+2nd 4 bit block
+
+`timescale 1ns/10ps
+
+module CLA4_2(sum,crout,P2,G2,op1,op2,Cin);
+output [3:0] sum;
+output crout;
+output P2,G2;
+input  [3:0]op1,op2;
+input Cin;
+wire [3:0]G,P,C;
+
+    assign G = op1 & op2; //Generate
+    assign P = op1 ^ op2; //Propagate
+    assign C[0] = Cin;
+    assign C[1] = G[0] | (P[0] & C[0]);
+    assign C[2] = G[1] | (P[1] & G[0]) | (P[1] & P[0] & C[0]);
+    assign C[3] = G[2] | (P[2] & G[1]) | (P[2] & P[1] & G[0]) | (P[2] & P[1] & P[0] & C[0]);
+    assign crout = G[3] | (P[3] & G[2]) | (P[3] & P[2] & G[1]) | (P[3] & P[2] & P[1] & G[0]) |(P[3] & P[2] & P[1] & P[0] & C[0]);
+    assign sum = P ^ C;
+    
+    assign P2 = P[3] & P[2] & P[1] & P[0];
+    assign G2 = G[3] | (P[3] & G[2]) | (P[3] & P[2] & G[1]) | (P[3] & P[2] & P[1] & G[0]);
+endmodule
+
+1st 16 bit block
+
+`timescale 1ns/10ps
+
+module CLA16(sum_4,crout,op1_4,op2_4);
+output [15:0]sum_4;
+output crout;
+input  [15:0]op1_4,op2_4;
+wire [15:0]sum_4;
+wire p1,p2,p3;
+wire [3:0]G,P;
+
+CLA4 C1(.sum(sum_4[3:0]),.crout(p1),.P1(P[0]),.G1(G[0]),.op1(op1_4[3:0]),.op2(op2_4[3:0]));
+CLA4_2 C2(.sum(sum_4[7:4]),.crout(p2),.P2(P[1]),.G2(G[1]),.op1(op1_4[7:4]),.op2(op2_4[7:4]),.Cin(p1));
+CLA4_2 C3(.sum(sum_4[11:8]),.crout(p3),.P2(P[2]),.G2(G[2]),.op1(op1_4[11:8]),.op2(op2_4[11:8]),.Cin(p2));
+CLA4_2 C4(.sum(sum_4[15:12]),.crout(),.P2(P[3]),.G2(G[3]),.op1(op1_4[15:12]),.op2(op2_4[15:12]),.Cin(p3));
+
+assign crout = G[3] | (G[2] & P[3]) | (G[1] & P[2] & P[3]) | (G[0] & P[1] & P[2] & P[3]);
+endmodule
+
+2nd 16 bit block
+
+`timescale 1ns/10ps
+
+module CLA16_2(sum_16,crout_16,op1_16,op2_16,Cin);
+output [15:0]sum_16;
+output crout_16;
+input  [15:0]op1_16,op2_16;
+input Cin;
+wire p1,p2,p3;
+wire [3:0]G,P;
+
+CLA4_2 A1(.sum(sum_16[3:0]),.crout(p1), .P2(P[0]), .G2(G[0]), .op1(op1_16[3:0]),.op2(op2_16[3:0]), .Cin(Cin));
+CLA4_2 A2(.sum(sum_16[7:4]),.crout(p2), .P2(P[1]),.G2(G[1]), .op1(op1_16[7:4]), .op2(op2_16[7:4]),.Cin(p1));
+CLA4_2 A3(.sum(sum_16[11:8]),.crout(p3), .P2(P[2]),.G2(G[2]), .op1(op1_16[11:8]), .op2(op2_16[11:8]),.Cin(p2));
+CLA4_2 A4(.sum(sum_16[15:12]),.crout(), .P2(P[3]),.G2(G[3]), .op1(op1_16[15:12]), .op2(op2_16[15:12]),.Cin(p3));
+
+assign crout_16 = G[3] | (G[2] & P[3]) | (G[1] & P[2] & P[3]) | (G[0] & P[1] & P[2] & P[3]) | (Cin & P[0] & P[1] & P[2] & P[3]) ;
+
+endmodule
+
+64 bit CLA
+
+`timescale 1ns/10ps
+
+module CLA_64(sum, crout, op1, op2, clock, reset);
+output [63:0]sum;
+output crout;
+input [63:0]op1;
+input [63:0]op2;
+input clock, reset;
+reg [63:0]sum;
+reg crout;
+reg [63:0]op1_f;
+reg [63:0]op2_f;
+wire c1, c2, c3, croutf; 
+wire [63:0]sum_f;
+
+CLA16 A1(.sum_4(sum_f[15:0]), .crout(c1), .op1_4(op1_f[15:0]), .op2_4(op2_f[15:0]));
+CLA16_2 A2(.sum_16(sum_f[31:16]), .crout_16(c2), .op1_16(op1_f[31:16]), .op2_16(op2_f[31:16]), .Cin(c1));
+CLA16_2 A3(.sum_16(sum_f[47:32]), .crout_16(c3), .op1_16(op1_f[47:32]), .op2_16(op2_f[47:32]), .Cin(c2));
+CLA16_2 A4(.sum_16(sum_f[63:48]), .crout_16(croutf), .op1_16(op1_f[63:48]), .op2_16(op2_f[63:48]), .Cin(c3));
+
+always @(posedge clock or posedge reset)
+begin
+if(reset == 1)
+begin
+op1_f <= 64'b0;
+op2_f <= 64'b0;
+sum <= 64'b0;
+
+crout <= 64'b0;
+end
+
+else 
+begin 
+op1_f <= op1;
+op2_f <= op2;
+sum <= sum_f;
+crout <= croutf;
+end
+end
+
+
+endmodule
+
+Testbench for CLA64
+
+`timescale 1 ns/ 10 ps
+module CLA_64_tb();
+  
+  reg [63:0]op1;
+  reg [63:0]op2;
+  reg clock;
+  reg reset;
+  wire [63:0]sum;
+  wire crout;
+  CLA_64 A (sum,crout,op1,op2,clock,reset);
+  
+  initial begin
+    
+    op1= 64'b0;
+    op2= 64'b0;
+    clock= 1'b0;
+    
+    #5;
+    op1= 64'hf20f_ffff_ffff_ffff;
+    op2= 64'hffff_ffff_ffff_ff50;
+  end
+  initial begin
+    reset= 1'b1;
+    #6;
+    reset= 1'b0;
+    
+  end
+  
+  initial begin
+    forever #4 clock=~clock;
+  end
+  initial begin 
+    #30;
+    $finish;
+  end
+  initial begin
+   $dumpfile("CLA_64.vcd");
+   $dumpvars(0,CLA_64_tb);
+  end
+endmodule
+
+`timescale 1 ns/ 10 ps
+module CLA_64_tb_1();
+  
+  reg [63:0]op1;
+  reg [63:0]op2;
+  reg clock;
+  reg reset;
+  wire [63:0]sum;
+  wire crout;
+  CLA_64 A (sum,crout,op1,op2,clock,reset);
+  
+  initial begin
+    
+    op1= 64'b0;
+    op2= 64'b0;
+    clock= 1'b0;
+    
+    
+    #5;
+    op1= 64'h1010_1010_1199_ffff;
+    op2= 64'habcd_1100_1100_dddd;
+    
+  end
+  initial begin
+    reset= 1'b1;
+    #6;
+    reset= 1'b0;
+    
+  end
+  
+  initial begin
+    forever #4 clock=~clock;
+  end
+  initial begin 
+    #30;
+    $finish;
+  end
+  initial begin
+   $dumpfile("CLA_64_1.vcd");
+   $dumpvars(0,CLA_64_tb_1);
+  end
+endmodule
+
+`timescale 1 ns/ 10 ps
+module CLA_64_tb_2();
+  
+  reg [63:0]op1;
+  reg [63:0]op2;
+  reg clock;
+  reg reset;
+  wire [63:0]sum;
+  wire crout;
+  CLA_64 A (sum,crout,op1,op2,clock,reset);
+  
+  initial begin
+    
+    op1= 64'b0;
+    op2= 64'b0;
+    clock= 1'b0;
+    
+    #5;
+    op1= 64'hffff_ffff_ffff_ffff;
+    op2= 64'heeee_dddd_cccc_ffff;
+    
+    end
+  initial begin
+    reset= 1'b1;
+    #6;
+    reset= 1'b0;
+    
+  end
+  
+  initial begin
+    forever #4 clock=~clock;
+  end
+  initial begin 
+    #30;
+    $finish;
+  end
+  initial begin
+   $dumpfile("CLA_64_2.vcd");
+   $dumpvars(0,CLA_64_tb_2);
+  end
+endmodule
+
+`timescale 1 ns/ 10 ps
+module CLA_64_tb_3();
+  
+  reg [63:0]op1;
+  reg [63:0]op2;
+  reg clock;
+  reg reset;
+  wire [63:0]sum;
+  wire crout;
+  CLA_64 A (sum,crout,op1,op2,clock,reset);
+  
+  initial begin
+    
+    op1= 64'b0;
+    op2= 64'b0;
+    clock= 1'b0;
+    
+    #5;
+    op1= 64'hbbbb_cdcd_aaaa_1111;
+    op2= 64'hffff_ffff_ffff_dddd;
+    
+    end
+  initial begin
+    reset= 1'b1;
+    #6;
+    reset= 1'b0;
+    
+  end
+  
+  initial begin
+    forever #4 clock=~clock;
+  end
+  initial begin 
+    #30;
+    $finish;
+  end
+  initial begin
+   $dumpfile("CLA_64_3.vcd");
+   $dumpvars(0,CLA_64_tb_3);
+  end
+endmodule
+
+`timescale 1 ns/ 10 ps
+module CLA_64_tb_4();
+  
+  reg [63:0]op1;
+  reg [63:0]op2;
+  reg clock;
+  reg reset;
+  wire [63:0]sum;
+  wire crout;
+  CLA_64 A (sum,crout,op1,op2,clock,reset);
+  
+  initial begin
+    
+    op1= 64'b0;
+    op2= 64'b0;
+    clock= 1'b0;
+    
+    #5;
+    op1= 64'h1234_5678_90ab_cdef;
+    op2= 64'h5555_5555_5555_dddd;
+   
+  end
+  initial begin
+    reset= 1'b1;
+    #6;
+    reset= 1'b0;
+    
+  end
+  
+  initial begin
+    forever #4 clock=~clock;
+  end
+  initial begin 
+    #30;
+    $finish;
+  end
+  initial begin
+   $dumpfile("CLA_64_4.vcd");
+   $dumpvars(0,CLA_64_tb_4);
+  end
+endmodule
+
+`timescale 1 ns/ 10 ps
+module CLA_64_tb_5();
+  
+  reg [63:0]op1;
+  reg [63:0]op2;
+  reg clock;
+  reg reset;
+  wire [63:0]sum;
+  wire crout;
+  CLA_64 A (sum,crout,op1,op2,clock,reset);
+  
+  initial begin
+    
+    op1= 64'b0;
+    op2= 64'b0;
+    clock= 1'b0;
+    
+     #5;
+    op1= 64'h1234_ffff_dfff_eeee;
+    op2= 64'hdddd_dddd_dddd_dddd;
+
+  end
+  initial begin
+    reset= 1'b1;
+    #6;
+    reset= 1'b0;
+    
+  end
+  
+  initial begin
+    forever #4 clock=~clock;
+  end
+  initial begin 
+    #40;
+    $finish;
+  end
+  initial begin
+   $dumpfile("CLA_64_5.vcd");
+   $dumpvars(0,CLA_64_tb_5);
+  end
+endmodule
+
+

@@ -1,0 +1,248 @@
+/apps/synopsys/VCSMX_NEW/bin/vcs
+
+Warning-[LNX_OS_VERUN] Unsupported Linux version
+  Linux version 'Fedora release 24 (Twenty Four)' is not supported on 'x86_64'
+  officially, assuming linux compatibility by default. Set VCS_ARCH_OVERRIDE 
+  to linux or suse32 to override.
+  Please refer to release notes for information on supported platforms.
+
+
+Warning-[LINX_KRNL] Unsupported Linux kernel
+  Linux kernel '4.8.4-200.fc24.x86_64' is not supported.
+  Supported versions are 2.4* or 2.6*.
+
+
+Warning-[UNKWN_OPTVSIM] Unknown option passed
+  Ignoring unknown option '-' passed to 'vcs' and continuing compilation.
+
+                         Chronologic VCS (TM)
+           Version I-2014.03-2 -- Thu Nov 10 02:45:56 2016
+               Copyright (c) 1991-2014 by Synopsys Inc.
+                         ALL RIGHTS RESERVED
+
+This program is proprietary and confidential information of Synopsys Inc.
+and may be used and disclosed only as authorized in a license agreement
+controlling such use and disclosure.
+
+The design hasn't changed and need not be recompiled. 
+If you really want to, delete file simv.daidir/.vcs.timestamp and
+run VCS again.
+
+Chronologic VCS simulator copyright 1991-2014
+Contains Synopsys proprietary information.
+Compiler version I-2014.03-2; Runtime version I-2014.03-2;  Nov 10 02:45 2016
+
+
+-------  Ascending 
+                 105
+                 224
+                 285
+                 298
+                 426
+                 466
+                 537
+                 648
+                 656
+                 687
+                 874
+                1077
+                1093
+                1215
+                1236
+                1315
+                1418
+                1511
+                1535
+                1645
+                1776
+                1934
+                1997
+                2013
+                2165
+                2189
+                2237
+                2249
+                2270
+                2547
+                2592
+                2640
+                2686
+                2811
+                2843
+                2885
+                2917
+                2964
+                3032
+                3053
+                3060
+                3127
+                3259
+                3353
+                3472
+                3538
+                3846
+                3854
+                3990
+                4300
+                4351
+                4497
+                4575
+                4637
+                4756
+                5261
+                5505
+                5712
+                5926
+                6249
+                6386
+                6419
+                6472
+                6478
+                6483
+                6690
+                7267
+                7271
+                7474
+                7645
+                7834
+                8231
+                8362
+                8748
+                9106
+               12385
+               13810
+               15525
+               16269
+               17221
+               18250
+               19063
+               19239
+               19447
+               20034
+               20041
+               21474
+               25505
+               26987
+               31219
+               35473
+               41655
+               49967
+               62353
+               65731
+               67172
+               77195
+              100040
+              123884
+              723964
+             1416748
+
+
+-------  Descending
+             1416748
+              723964
+              123884
+              100040
+               77195
+               67172
+               65731
+               62353
+               49967
+               41655
+               35473
+               31219
+               26987
+               25505
+               21474
+               20041
+               20034
+               19447
+               19239
+               19063
+               18250
+               17221
+               16269
+               15525
+               13810
+               12385
+                9106
+                8748
+                8362
+                8231
+                7834
+                7645
+                7474
+                7271
+                7267
+                6690
+                6483
+                6478
+                6472
+                6419
+                6386
+                6249
+                5926
+                5712
+                5505
+                5261
+                4756
+                4637
+                4575
+                4497
+                4351
+                4300
+                3990
+                3854
+                3846
+                3538
+                3472
+                3353
+                3259
+                3127
+                3060
+                3053
+                3032
+                2964
+                2917
+                2885
+                2843
+                2811
+                2686
+                2640
+                2592
+                2547
+                2270
+                2249
+                2237
+                2189
+                2165
+                2013
+                1997
+                1934
+                1776
+                1645
+                1535
+                1511
+                1418
+                1315
+                1236
+                1215
+                1093
+                1077
+                 874
+                 687
+                 656
+                 648
+                 537
+                 466
+                 426
+                 298
+                 285
+                 224
+                 105
+All done
+$finish called from file "tbbt.sv", line 22.
+$finish at simulation time                    0
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 00 ps
+CPU Time:      0.130 seconds;       Data structure size:   0.0Mb
+Thu Nov 10 02:45:56 2016

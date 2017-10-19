@@ -1,0 +1,534 @@
+Verilog code of CSA 64 Unequal Group
+
+
+`timescale 1ns/10ps
+
+//64 bit Unequal Group CSA
+
+module CSA64UEQG(sum, crout, op1, op2, clock, reset);
+output [63:0]sum;
+output crout;
+input [63:0]op1;
+input [63:0]op2;
+input clock, reset;
+reg [63:0]sum;
+reg crout;
+reg [63:0]op1f;
+reg [63:0]op2f;
+wire [63:0]sumf;
+wire C1, C2, C3, C4, C5, C6, croutf; 
+
+assign Cin = 0;
+
+CSA4 P1(.sum_4(sumf[3:0]), .cout_4(C1), .op1_4(op1f[3:0]), .op2_4(op2f[3:0]), .cin_4(Cin));
+CSA4 P2(.sum_4(sumf[7:4]), .cout_4(C2), .op1_4(op1f[7:4]), .op2_4(op2f[7:4]), .cin_4(C1));
+
+CSA5 P3(.s(sumf[12:8]), .co(C3), .a(op1f[12:8]), .b(op2f[12:8]), .in(C2));
+
+CSA6 P4(.s6(sumf[18:13]), .co6(C4), .a6(op1f[18:13]), .b6(op2f[18:13]), .in6(C3));
+CSA7 P5(.s7(sumf[25:19]), .co7(C5), .a7(op1f[25:19]), .b7(op2f[25:19]), .in7(C4));
+
+
+CSA8 P6(.s8(sumf[33:26]), .co8(C6), .a8(op1f[33:26]), .b8(op2f[33:26]), .in8(C5));
+CSA9 P7(.s9(sumf[42:34]), .co9(C7), .a9(op1f[42:34]), .b9(op2f[42:34]), .in9(C6));
+
+CSA10 P8(.s10(sumf[52:43]), .co10(C8), .a10(op1f[52:43]), .b10(op2f[52:43]), .in10(C7));
+
+CSA11 P9(.s11(sumf[63:53]), .co11(croutf), .a11(op1f[63:53]), .b11(op2f[63:53]), .in11(C8));
+
+always @(posedge clock or posedge reset)
+begin
+if(reset == 1)
+begin
+op1f <= 64'b0;
+op2f <= 64'b0;
+sum <= 64'b0;
+crout <= 64'b0;
+end
+
+else 
+begin 
+op1f <= op1;
+op2f <= op2;
+sum <= sumf;
+crout <= croutf;
+end
+end
+endmodule
+
+Full Adder
+
+`timescale 1ns/10ps
+
+//1 bit fulladder
+module FA(sum_fa, cout_fa, op1_fa, op2_fa, cin);
+output sum_fa, cout_fa;
+input op1_fa, op2_fa, cin;
+
+assign sum_fa = op1_fa ^ op2_fa ^ cin;
+assign cout_fa = ((op1_fa ^ op2_fa) & cin) | (op1_fa & op2_fa);
+
+endmodule
+
+2 bit CLA
+
+`timescale 1ns/10ps
+
+
+//2 bit CSA
+module CSA2(sum_2, cout_2, op1_2, op2_2, cin_2);
+output [1:0]sum_2;
+output cout_2;
+input [1:0]op1_2,op2_2;
+input cin_2;
+wire [1:0]sum0,sum1;
+wire cout0, cout1;
+wire crout1, crout2;
+
+//sum for carry 0
+FA f1(.sum_fa(sum0[0]), .cout_fa(crout1), .op1_fa(op1_2[0]), .op2_fa(op2_2[0]), .cin(1'b0));
+FA f2(.sum_fa(sum0[1]), .cout_fa(cout0), .op1_fa(op1_2[1]), .op2_fa(op2_2[1]), .cin(crout1));
+
+//sum for carry 1
+FA f3(.sum_fa(sum1[0]), .cout_fa(crout2), .op1_fa(op1_2[0]), .op2_fa(op2_2[0]), .cin(1'b1));
+FA f4(.sum_fa(sum1[1]), .cout_fa(cout1), .op1_fa(op1_2[1]), .op2_fa(op2_2[1]), .cin(crout2));
+
+assign sum_2 = cin_2 ? sum1 : sum0;
+assign cout_2 = cin_2 ? cout1 : cout0;
+endmodule
+
+3 bit CLA
+
+`timescale 1ns/10ps
+
+//3 bit CSA
+
+module CSA3(sum_3, cout_3, op1_3, op2_3, cin_3);
+output [2:0]sum_3;
+output cout_3;
+input [2:0]op1_3,op2_3;
+input cin_3;
+wire [2:0]sum0,sum1;
+wire cout0, cout1;
+wire c1, c2, c3, c4;
+
+//sum for carry 0
+FA s1(.sum_fa(sum0[0]), .cout_fa(c1), .op1_fa(op1_3[0]), .op2_fa(op2_3[0]), .cin(1'b0));
+FA s2(.sum_fa(sum0[1]), .cout_fa(c2), .op1_fa(op1_3[1]), .op2_fa(op2_3[1]), .cin(c1));
+FA s3(.sum_fa(sum0[2]), .cout_fa(cout0), .op1_fa(op1_3[2]), .op2_fa(op2_3[2]), .cin(c2));
+
+//sum for carry 1
+FA s4(.sum_fa(sum1[0]), .cout_fa(c3), .op1_fa(op1_3[0]), .op2_fa(op2_3[0]), .cin(1'b1));
+FA s5(.sum_fa(sum1[1]), .cout_fa(c4), .op1_fa(op1_3[1]), .op2_fa(op2_3[1]), .cin(c3));
+FA s6(.sum_fa(sum1[2]), .cout_fa(cout1), .op1_fa(op1_3[2]), .op2_fa(op2_3[2]), .cin(c4));
+
+assign sum_3 = cin_3 ? sum1 : sum0;
+assign cout_3 = cin_3 ? cout1 : cout0;
+endmodule
+
+4 bit CLA
+
+`timescale 1ns/10ps
+//4 bit CSA
+
+module CSA4(sum_4, cout_4, op1_4, op2_4, cin_4);
+output [3:0]sum_4;
+output cout_4;
+input [3:0]op1_4,op2_4;
+input cin_4;
+wire [3:0]sum0,sum1;
+wire cout0, cout1;
+wire c1, c2, c3, c4, c5, c6;
+//sum for carry 0
+
+FA f1(.sum_fa(sum0[0]), .cout_fa(c1), .op1_fa(op1_4[0]), .op2_fa(op2_4[0]), .cin(1'b0));
+FA f2(.sum_fa(sum0[1]), .cout_fa(c2), .op1_fa(op1_4[1]), .op2_fa(op2_4[1]), .cin(c1));
+FA f3(.sum_fa(sum0[2]), .cout_fa(c3), .op1_fa(op1_4[2]), .op2_fa(op2_4[2]), .cin(c2));
+FA f4(.sum_fa(sum0[3]), .cout_fa(cout0), .op1_fa(op1_4[3]), .op2_fa(op2_4[3]), .cin(c3));
+
+//sum for carry 1
+
+FA f5(.sum_fa(sum1[0]), .cout_fa(c4), .op1_fa(op1_4[0]), .op2_fa(op2_4[0]), .cin(1'b1));
+FA f6(.sum_fa(sum1[1]), .cout_fa(c5), .op1_fa(op1_4[1]), .op2_fa(op2_4[1]), .cin(c4));
+FA f7(.sum_fa(sum1[2]), .cout_fa(c6), .op1_fa(op1_4[2]), .op2_fa(op2_4[2]), .cin(c5));
+FA f8(.sum_fa(sum1[3]), .cout_fa(cout1), .op1_fa(op1_4[3]), .op2_fa(op2_4[3]), .cin(c6));
+
+assign sum_4 = cin_4 ? sum1 : sum0;
+assign cout_4 = cin_4 ? cout1 : cout0;
+endmodule
+
+5 bit CLA
+
+`timescale 1ns/10ps
+
+//5bit CSA
+module CSA5(s,co,a,b,in);
+output [4:0]s;
+output co;
+input [4:0]a,b;
+input in;
+wire [4:0]s;
+wire c1;
+
+CSA2 D1(.sum_2(s[1:0]),.cout_2(c1),.op1_2(a[1:0]),.op2_2(b[1:0]),.cin_2(in));
+CSA3 D2(.sum_3(s[4:2]),.cout_3(co),.op1_3(a[4:2]),.op2_3(b[4:2]),.cin_3(c1));
+
+endmodule
+
+6 bit CLA
+
+`timescale 1ns/10ps
+
+//6bit CSA
+module CSA6(s6,co6,a6,b6,in6);
+output [5:0]s6;
+output co6;
+input [5:0]a6,b6;
+input in6;
+wire [5:0]s6;
+wire c1;
+
+CSA3 E1(.sum_3(s6[2:0]),.cout_3(c1),.op1_3(a6[2:0]),.op2_3(b6[2:0]),.cin_3(in6));
+CSA3 E2(.sum_3(s6[5:3]),.cout_3(co6),.op1_3(a6[5:3]),.op2_3(b6[5:3]),.cin_3(c1));
+endmodule
+
+7 bit CLA
+
+`timescale 1ns/10ps
+
+//7bit CSA
+module CSA7(s7,co7,a7,b7,in7);
+output [6:0]s7;
+output co7;
+input [6:0]a7,b7;
+input in7;
+wire [6:0]s6;
+wire c1;
+
+CSA3 J1(.sum_3(s7[2:0]),.cout_3(c1),.op1_3(a7[2:0]),.op2_3(b7[2:0]),.cin_3(in7));
+CSA4 J2(.sum_4(s7[6:3]),.cout_4(co7),.op1_4(a7[6:3]),.op2_4(b7[6:3]),.cin_4(c1));
+endmodule
+
+8 bit CLA
+
+`timescale 1ns/10ps
+
+//8bit CSA
+module CSA8(s8,co8,a8,b8,in8);
+output [7:0]s8;
+output co8;
+input [7:0]a8,b8;
+input in8;
+wire [7:0]s8;
+wire c1;
+
+CSA4 T1(.sum_4(s8[3:0]),.cout_4(c1),.op1_4(a8[3:0]),.op2_4(b8[3:0]),.cin_4(in8));
+CSA4 T2(.sum_4(s8[7:4]),.cout_4(co8),.op1_4(a8[7:4]),.op2_4(b8[7:4]),.cin_4(c1));
+endmodule
+
+9 bit CLA
+
+`timescale 1ns/10ps
+
+//9 bit CSA
+module CSA9(s9,co9,a9,b9,in9);
+output [8:0]s9;
+output co9;
+input [8:0]a9,b9;
+input in9;
+wire [8:0]s9;
+wire c1,c2;
+
+CSA3 V1(.sum_3(s9[2:0]),.cout_3(c1),.op1_3(a9[2:0]),.op2_3(b9[2:0]),.cin_3(in9));
+CSA3 V2(.sum_3(s9[5:3]),.cout_3(c2),.op1_3(a9[5:3]),.op2_3(b9[5:3]),.cin_3(c1));
+CSA3 V3(.sum_3(s9[8:6]),.cout_3(co9),.op1_3(a9[8:6]),.op2_3(b9[8:6]),.cin_3(c2));
+endmodule
+
+10 bit CLA
+
+`timescale 1ns/10ps
+
+//10bit CSA
+module CSA10(s10,co10,a10,b10,in10);
+output [9:0]s10;
+output co10;
+input [9:0]a10,b10;
+input in10;
+wire [9:0]s10;
+wire c1,c2;
+
+CSA2 J1(.sum_2(s10[1:0]),.cout_2(c1),.op1_2(a10[1:0]),.op2_2(b10[1:0]),.cin_2(in10));
+CSA4 J2(.sum_4(s10[5:2]),.cout_4(c2),.op1_4(a10[5:2]),.op2_4(b10[5:2]),.cin_4(c1));
+CSA4 J3(.sum_4(s10[9:6]),.cout_4(co10),.op1_4(a10[9:6]),.op2_4(b10[9:6]),.cin_4(c2));
+endmodule
+
+11 bit CLA
+
+`timescale 1ns/10ps
+
+//11bit CSA
+module CSA11(s11,co11,a11,b11,in11);
+output [10:0]s11;
+output co11;
+input [10:0]a11,b11;
+input in11;
+wire [10:0]s11;
+wire c1,c2;
+
+CSA3 R1(.sum_3(s11[2:0]),.cout_3(c1),.op1_3(a11[2:0]),.op2_3(b11[2:0]),.cin_3(in11));
+CSA4 R2(.sum_4(s11[6:3]),.cout_4(c2),.op1_4(a11[6:3]),.op2_4(b11[6:3]),.cin_4(c1));
+CSA4 R3(.sum_4(s11[10:7]),.cout_4(co11),.op1_4(a11[10:7]),.op2_4(b11[10:7]),.cin_4(c2));
+endmodule
+
+TESTBENCH of CSA Unequal Group
+
+`timescale 1 ns/ 10 ps
+module CSA64UEQG_tb();
+  
+  reg [63:0]op1;
+  reg [63:0]op2;
+  reg clock;
+  reg reset;
+  wire [63:0]sum;
+  wire crout;
+  CSA64UEQG A (sum,crout,op1,op2,clock,reset);
+  
+  initial begin
+    
+    op1= 64'b0;
+    op2= 64'b0;
+    clock= 1'b1;
+    
+    #4;
+    op1= 64'hf20f_ffff_ffff_ffff;
+    op2= 64'hffff_ffff_ffff_ff50;
+  end
+  initial begin
+    reset= 1'b1;
+    #4;
+    reset= 1'b0;
+    
+  end
+  
+  initial begin
+    forever #3 clock=~clock;
+  end
+  initial begin 
+    #30;
+    $finish;
+  end
+  initial begin
+   $dumpfile("CSA64UEQG.vcd");
+   $dumpvars(0,CSA64UEQG_tb);
+  end
+endmodule
+
+`timescale 1 ns/ 10 ps
+module CSA64UEQG_tb_1();
+  
+  reg [63:0]op1;
+  reg [63:0]op2;
+  reg clock;
+  reg reset;
+  wire [63:0]sum;
+  wire crout;
+  CSA64UEQG A (sum,crout,op1,op2,clock,reset);
+  
+  initial begin
+    
+    op1= 64'b0;
+    op2= 64'b0;
+    clock= 1'b1;
+    
+    
+    #4;
+    op1= 64'h1010_1010_1199_ffff;
+    op2= 64'habcd_1100_1100_dddd;
+    
+  end
+  initial begin
+    reset= 1'b1;
+    #4;
+    reset= 1'b0;
+   end
+  
+  initial begin
+    forever #3 clock=~clock;
+  end
+  initial begin 
+    #30;
+    $finish;
+  end
+  initial begin
+   $dumpfile("CSA64UEQG_1.vcd");
+   $dumpvars(0,CSA64UEQG_tb_1);
+  end
+endmodule
+
+`timescale 1 ns/ 10 ps
+module CSA64UEQG_tb_2();
+  
+  reg [63:0]op1;
+  reg [63:0]op2;
+  reg clock;
+  reg reset;
+  wire [63:0]sum;
+  wire crout;
+  CSA64UEQG A (sum,crout,op1,op2,clock,reset);
+  
+  initial begin
+    
+    op1= 64'b0;
+    op2= 64'b0;
+    clock= 1'b1;
+    
+    #2;
+    op1= 64'hffff_ffff_ffff_ffff;
+    op2= 64'heeee_dddd_cccc_ffff;
+    
+    end
+  initial begin
+    reset= 1'b1;
+    #4;
+    reset= 1'b0;
+    
+  end
+  
+  initial begin
+    forever #3 clock=~clock;
+  end
+  initial begin 
+    #30;
+    $finish;
+  end
+  initial begin
+   $dumpfile("CSA64UEQG_2.vcd");
+   $dumpvars(0,CSA64UEQG_tb_2);
+  end
+endmodule
+
+`timescale 1 ns/ 10 ps
+module CSA64UEQG_tb_3();
+  
+  reg [63:0]op1;
+  reg [63:0]op2;
+  reg clock;
+  reg reset;
+  wire [63:0]sum;
+  wire crout;
+  CSA64UEQG A (sum,crout,op1,op2,clock,reset);
+  
+  initial begin
+    
+    op1= 64'b0;
+    op2= 64'b0;
+    clock= 1'b1;
+    
+    #4;
+    op1= 64'hbbbb_cdcd_aaaa_1111;
+    op2= 64'hffff_ffff_ffff_dddd;
+    
+    end
+  initial begin
+    reset= 1'b1;
+    #4;
+    reset= 1'b0;
+  end
+  
+  initial begin
+    forever #3 clock=~clock;
+  end
+  initial begin 
+    #30;
+    $finish;
+  end
+  initial begin
+   $dumpfile("CSA64UEQG_3.vcd");
+   $dumpvars(0,CSA64UEQG_tb_3);
+  end
+endmodule
+
+`timescale 1 ns/ 10 ps
+module CSA64UEQG_tb_4();
+  
+  reg [63:0]op1;
+  reg [63:0]op2;
+  reg clock;
+  reg reset;
+  wire [63:0]sum;
+  wire crout;
+  CSA64UEQG A (sum,crout,op1,op2,clock,reset);
+  
+  initial begin
+    
+    op1= 64'b0;
+    op2= 64'b0;
+    clock= 1'b1;
+    
+    #2;
+    op1= 64'h1234_5678_90ab_cdef;
+    op2= 64'h5555_5555_5555_dddd;
+   
+  end
+  initial begin
+    reset= 1'b1;
+    #4;
+    reset= 1'b0;
+  end
+  
+  initial begin
+    forever #3 clock=~clock;
+  end
+  initial begin 
+    #30;
+    $finish;
+  end
+  initial begin
+   $dumpfile("CSA64UEQG_4.vcd");
+   $dumpvars(0,CSA64UEQG_tb_4);
+  end
+endmodule
+
+`timescale 1 ns/ 10 ps
+module CSA64UEQG_tb_5();
+  
+  reg [63:0]op1;
+  reg [63:0]op2;
+  reg clock;
+  reg reset;
+  wire [63:0]sum;
+  wire crout;
+  CSA64UEQG A (sum,crout,op1,op2,clock,reset);
+  
+  initial begin
+    
+    op1= 64'b0;
+    op2= 64'b0;
+    clock= 1'b1;
+    
+     #4;
+    op1= 64'h1234_ffff_dfff_eeee;
+    op2= 64'hdddd_dddd_dddd_dddd;
+
+  end
+  initial begin
+    reset= 1'b1;
+    #4;
+    reset= 1'b0;
+  end
+  
+  initial begin
+    forever #3 clock=~clock;
+  end
+  initial begin 
+    #30;
+    $finish;
+  end
+  initial begin
+   $dumpfile("CSA64UEQG_5.vcd");
+   $dumpvars(0,CSA64UEQG_tb_5);
+  end
+endmodule
+
+
+

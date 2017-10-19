@@ -1,0 +1,207 @@
+
+Warning-[LNX_OS_VERUN] Unsupported Linux version
+  Linux version 'Fedora release 22 (Twenty Two)' is not supported on 'x86_64' 
+  officially, assuming linux compatibility by default. Set VCS_ARCH_OVERRIDE 
+  to linux or suse32 to override.
+  Please refer to release notes for information on supported platforms.
+
+
+Warning-[LINX_KRNL] Unsupported Linux kernel
+  Linux kernel '4.2.6-200.fc22.x86_64' is not supported.
+  Supported versions are 2.4* or 2.6*.
+
+                         Chronologic VCS (TM)
+           Version I-2014.03-2 -- Sat Dec  5 20:24:38 2015
+               Copyright (c) 1991-2014 by Synopsys Inc.
+                         ALL RIGHTS RESERVED
+
+This program is proprietary and confidential information of Synopsys Inc.
+and may be used and disclosed only as authorized in a license agreement
+controlling such use and disclosure.
+
+Parsing design file 'CSA64EQG_tb.v'
+Parsing design file 'CSA64EQG_tb_1.v'
+Parsing design file 'CSA64EQG_tb_2.v'
+Parsing design file 'CSA64EQG_tb_3.v'
+Parsing design file 'CSA64EQG_tb_4.v'
+Parsing design file 'CSA64EQG_tb_5.v'
+Parsing design file 'CSA64EQG_1_nl.v'
+Parsing library directory file '/apps/toshiba/sjsu/verilog/tc240c/CAN2X1.tsbvlibp'
+Parsing library directory file '/apps/toshiba/sjsu/verilog/tc240c/CAN2X2.tsbvlibp'
+Parsing library directory file '/apps/toshiba/sjsu/verilog/tc240c/CAN2XL.tsbvlibp'
+Parsing library directory file '/apps/toshiba/sjsu/verilog/tc240c/CAOR2X1.tsbvlibp'
+Parsing library directory file '/apps/toshiba/sjsu/verilog/tc240c/CAOR2X2.tsbvlibp'
+Parsing library directory file '/apps/toshiba/sjsu/verilog/tc240c/CAOR2XL.tsbvlibp'
+Parsing library directory file '/apps/toshiba/sjsu/verilog/tc240c/CDLY1X2.tsbvlibp'
+Parsing library directory file '/apps/toshiba/sjsu/verilog/tc240c/CDLY1XL.tsbvlibp'
+Parsing library directory file '/apps/toshiba/sjsu/verilog/tc240c/CENX1.tsbvlibp'
+Parsing library directory file '/apps/toshiba/sjsu/verilog/tc240c/CENX2.tsbvlibp'
+Parsing library directory file '/apps/toshiba/sjsu/verilog/tc240c/CENXL.tsbvlibp'
+Parsing library directory file '/apps/toshiba/sjsu/verilog/tc240c/CEOX1.tsbvlibp'
+Parsing library directory file '/apps/toshiba/sjsu/verilog/tc240c/CEOX2.tsbvlibp'
+Parsing library directory file '/apps/toshiba/sjsu/verilog/tc240c/CEOXL.tsbvlibp'
+Parsing library directory file '/apps/toshiba/sjsu/verilog/tc240c/CFD2QX1.tsbvlibp'
+Parsing library directory file '/apps/toshiba/sjsu/verilog/tc240c/CFD2QX2.tsbvlibp'
+Parsing library directory file '/apps/toshiba/sjsu/verilog/tc240c/CFD2X2.tsbvlibp'
+Parsing library directory file '/apps/toshiba/sjsu/verilog/tc240c/CIVX1.tsbvlibp'
+Parsing library directory file '/apps/toshiba/sjsu/verilog/tc240c/CIVX2.tsbvlibp'
+Parsing library directory file '/apps/toshiba/sjsu/verilog/tc240c/CIVX20.tsbvlibp'
+Parsing library directory file '/apps/toshiba/sjsu/verilog/tc240c/CIVX3.tsbvlibp'
+Parsing library directory file '/apps/toshiba/sjsu/verilog/tc240c/CIVX8.tsbvlibp'
+Parsing library directory file '/apps/toshiba/sjsu/verilog/tc240c/CIVXL.tsbvlibp'
+Parsing library directory file '/apps/toshiba/sjsu/verilog/tc240c/CND2IX1.tsbvlibp'
+Parsing library directory file '/apps/toshiba/sjsu/verilog/tc240c/CND2IX2.tsbvlibp'
+Parsing library directory file '/apps/toshiba/sjsu/verilog/tc240c/CND2X1.tsbvlibp'
+Parsing library directory file '/apps/toshiba/sjsu/verilog/tc240c/CND2X2.tsbvlibp'
+Parsing library directory file '/apps/toshiba/sjsu/verilog/tc240c/CND2X4.tsbvlibp'
+Parsing library directory file '/apps/toshiba/sjsu/verilog/tc240c/CND2XL.tsbvlibp'
+Parsing library directory file '/apps/toshiba/sjsu/verilog/tc240c/CNIVX1.tsbvlibp'
+Parsing library directory file '/apps/toshiba/sjsu/verilog/tc240c/COND2X2.tsbvlibp'
+Parsing library directory file '/apps/toshiba/sjsu/verilog/tc240c/COND2XL.tsbvlibp'
+Parsing library directory file '/apps/toshiba/sjsu/verilog/tc240c/COR2X1.tsbvlibp'
+Parsing library directory file '/apps/toshiba/sjsu/verilog/tc240c/tsbCFD2QX1.tsbvlibp'
+Parsing library directory file '/apps/toshiba/sjsu/verilog/tc240c/tsbCFD2QX2.tsbvlibp'
+Parsing library directory file '/apps/toshiba/sjsu/verilog/tc240c/tsbCFD2X2.tsbvlibp'
+Parsing library directory file '/apps/toshiba/sjsu/verilog/tc240c/TFDPRBNOprim.tsbvlibp'
+Top Level Modules:
+       CSA64EQG_tb
+       CSA64EQG_tb_1
+       CSA64EQG_tb_2
+       CSA64EQG_tb_3
+       CSA64EQG_tb_4
+       CSA64EQG_tb_5
+TimeScale is 1 ns / 10 ps
+
+Warning-[TFIPC] Too few instance port connections
+CSA64EQG_1_nl.v, 2536
+"CFD2X2 \sum_reg[62] ( .D (sumf[62]),  .CP (clock),  .CD (n266),  .Q (sum[62]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+CSA64EQG_1_nl.v, 2537
+"CFD2X2 \sum_reg[61] ( .D (sumf[61]),  .CP (clock),  .CD (n266),  .Q (sum[61]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+CSA64EQG_1_nl.v, 2538
+"CFD2X2 \sum_reg[60] ( .D (sumf[60]),  .CP (clock),  .CD (n266),  .Q (sum[60]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+CSA64EQG_1_nl.v, 2539
+"CFD2X2 crout_reg( .D (croutf),  .CP (clock),  .CD (n266),  .Q (crout));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+Starting vcs inline pass...
+33 modules and 1 UDP read.
+recompiling module CSA64EQG_tb because:
+	Some compilation options have been changed.
+recompiling module CSA64EQG_tb_1 because:
+	Some compilation options have been changed.
+recompiling module CSA64EQG_tb_2 because:
+	Some compilation options have been changed.
+recompiling module CSA64EQG_tb_3 because:
+	Some compilation options have been changed.
+recompiling module CSA64EQG_tb_4 because:
+	Some compilation options have been changed.
+recompiling module CSA64EQG_tb_5 because:
+	Some compilation options have been changed.
+recompiling module CSA4_0 because:
+	Signal dependencies have changed
+	Some child instantiation or references (or ports) have been changed.
+recompiling module CSA4_15 because:
+	Signal dependencies have changed
+	Some child instantiation or references (or ports) have been changed.
+recompiling module CSA4_14 because:
+	Signal dependencies have changed
+	Some child instantiation or references (or ports) have been changed.
+recompiling module CSA4_13 because:
+	Signal dependencies have changed
+	Some child instantiation or references (or ports) have been changed.
+recompiling module CSA4_12 because:
+	Signal dependencies have changed
+	Some child instantiation or references (or ports) have been changed.
+recompiling module CSA4_11 because:
+	Signal dependencies have changed
+	Some child instantiation or references (or ports) have been changed.
+recompiling module CSA4_10 because:
+	Signal dependencies have changed
+	Some child instantiation or references (or ports) have been changed.
+recompiling module CSA4_9 because:
+	Signal dependencies have changed
+	Some child instantiation or references (or ports) have been changed.
+recompiling module CSA4_8 because:
+	Signal dependencies have changed
+	Some child instantiation or references (or ports) have been changed.
+recompiling module CSA4_7 because:
+	Signal dependencies have changed
+	Some child instantiation or references (or ports) have been changed.
+recompiling module CSA4_6 because:
+	Signal dependencies have changed
+	Some child instantiation or references (or ports) have been changed.
+recompiling module CSA4_5 because:
+	Signal dependencies have changed
+	Some child instantiation or references (or ports) have been changed.
+recompiling module CSA4_4 because:
+	Signal dependencies have changed
+	Some child instantiation or references (or ports) have been changed.
+recompiling module CSA4_3 because:
+	Signal dependencies have changed
+	Some child instantiation or references (or ports) have been changed.
+recompiling module CSA4_2 because:
+	Signal dependencies have changed
+	Some child instantiation or references (or ports) have been changed.
+recompiling module CSA4_1 because:
+	Signal dependencies have changed
+	Some child instantiation or references (or ports) have been changed.
+recompiling module CSA64EQG because:
+	Some compilation options have been changed.
+recompiling module CAOR2X1 because:
+	Signal dependencies have changed
+	Some child instantiation or references (or ports) have been changed.
+recompiling module CAOR2X2 because:
+	Signal dependencies have changed
+	Some child instantiation or references (or ports) have been changed.
+recompiling module CAOR2XL because:
+	Signal dependencies have changed
+	Some child instantiation or references (or ports) have been changed.
+recompiling module CDLY1X2 because:
+	Signal dependencies have changed
+	Some child instantiation or references (or ports) have been changed.
+recompiling module CDLY1XL because:
+	Signal dependencies have changed
+	Some child instantiation or references (or ports) have been changed.
+recompiling module CEOX1 because:
+	Signal dependencies have changed
+	Some child instantiation or references (or ports) have been changed.
+recompiling module CFD2QX2 because:
+	Signal dependencies have changed
+	Some child instantiation or references (or ports) have been changed.
+recompiling module CFD2X2 because:
+	Signal dependencies have changed
+	Some child instantiation or references (or ports) have been changed.
+recompiling module CIVX8 because:
+	Signal dependencies have changed
+	Some child instantiation or references (or ports) have been changed.
+recompiling module CNIVX1 because:
+	Signal dependencies have changed
+	Some child instantiation or references (or ports) have been changed.
+All of 33 modules done
+rm -f _csrc*.so linux_scvhdl_*.so pre_vcsobj_*.so share_vcsobj_*.so
+ld -m elf_i386 -shared -o .//../simv.daidir//_csrc1.so --whole-archive _vcsobj_1_1.a  --no-whole-archive
+ld -m elf_i386 -shared -o .//../simv.daidir//_csrc0.so 5NrI_d.o 5NrIB_d.o SIM_l.o  
+if [ -x ../simv ]; then chmod -x ../simv; fi
+g++  -o ../simv  -m32 -m32   -Wl,-rpath-link=./ -Wl,-rpath='$ORIGIN'/simv.daidir/ -Wl,-rpath='$ORIGIN'/simv.daidir//scsim.db.dir  _csrc1.so _csrc0.so     rmapats_mop.o rmapats.o rmar.o           /apps/synopsys/I-2014.03-2/linux/lib/libzerosoft_rt_stubs.so /apps/synopsys/I-2014.03-2/linux/lib/libvirsim.so /apps/synopsys/I-2014.03-2/linux/lib/librterrorinf.so /apps/synopsys/I-2014.03-2/linux/lib/libsnpsmalloc.so    /apps/synopsys/I-2014.03-2/linux/lib/libvcsnew.so /apps/synopsys/I-2014.03-2/linux/lib/libuclinative.so   -Wl,-whole-archive /apps/synopsys/I-2014.03-2/linux/lib/libvcsucli.so -Wl,-no-whole-archive          /apps/synopsys/I-2014.03-2/linux/lib/vcs_save_restore_new.o /apps/synopsys/I-2014.03-2/linux/lib/ctype-stubs_32.a -ldl -lm  -lc -lpthread -ldl 
+../simv up to date
+CPU time: 1.132 seconds to compile + .265 seconds to elab + .152 seconds to link

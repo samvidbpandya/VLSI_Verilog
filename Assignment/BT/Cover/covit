@@ -1,0 +1,6 @@
+#!/usr/bin/csh
+source /apps/design_environment.csh
+./sv_vcs tbsm.sv dut.sv
+urg -lca -metric line+cond+fsm -dir simv.vdb 
+firefox urgReport/dashboard.html
+

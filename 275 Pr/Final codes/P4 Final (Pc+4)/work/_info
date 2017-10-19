@@ -1,0 +1,222 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/code/P3
+vdecode
+Z0 !s110 1439002095
+!i10b 1
+!s100 9J`hoVIM95DYX=LYe9O>N3
+IM]NUIh_NnWH7VFQiMT@6H1
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dD:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/Final codes/P4 Final (Pc+4)
+w1438589512
+8D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/Final codes/P4 Final (Pc+4)/decode.v
+FD:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/Final codes/P4 Final (Pc+4)/decode.v
+L0 1
+Z3 OP;L;10.4a;61
+r1
+!s85 0
+31
+Z4 !s108 1439002095.000000
+!s107 D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/Final codes/P4 Final (Pc+4)/decode.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/Final codes/P4 Final (Pc+4)/decode.v|
+!s101 -O0
+!i113 1
+Z5 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0
+vexecute
+R0
+!i10b 1
+!s100 3zQJGWF]m4U:_[z2TbP3Q3
+I5<bLb3OlNkLR7DoQO2L^?1
+R1
+R2
+w1438474861
+8D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/Final codes/P4 Final (Pc+4)/execute.v
+FD:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/Final codes/P4 Final (Pc+4)/execute.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/Final codes/P4 Final (Pc+4)/execute.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/Final codes/P4 Final (Pc+4)/execute.v|
+!s101 -O0
+!i113 1
+R5
+vfetch
+Z6 !s110 1439002096
+!i10b 1
+!s100 WB^LU;`JoZk2@?JJF<n300
+ITdO0WagVhh_io0I@4LEF^0
+R1
+R2
+w1438724160
+8D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/Final codes/P4 Final (Pc+4)/fetch.v
+FD:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/Final codes/P4 Final (Pc+4)/fetch.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/Final codes/P4 Final (Pc+4)/fetch.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/Final codes/P4 Final (Pc+4)/fetch.v|
+!s101 -O0
+!i113 1
+R5
+vmemory
+R6
+!i10b 1
+!s100 C:f?`Ola:WbzjMTmgd`O>0
+Ij9Zen>Gf>Q;[=E0=YR`g70
+R1
+R2
+w1438720535
+8D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/Final codes/P4 Final (Pc+4)/memory.v
+FD:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/Final codes/P4 Final (Pc+4)/memory.v
+L0 1
+R3
+r1
+!s85 0
+31
+Z7 !s108 1439002096.000000
+!s107 D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/Final codes/P4 Final (Pc+4)/memory.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/Final codes/P4 Final (Pc+4)/memory.v|
+!s101 -O0
+!i113 1
+R5
+vmemory_stage
+!s110 1438641698
+!i10b 1
+!s100 W4LhCM:aoSHJGVW:YbeD_3
+IQ<Ua@GFJL`LL@dZmjXBhI3
+R1
+dD:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/code/P4 Final (Pc+4)
+w1438588511
+8D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/code/P4 Final (Pc+4)/memory_stage.v
+FD:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/code/P4 Final (Pc+4)/memory_stage.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1438641697.000000
+!s107 D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/code/P4 Final (Pc+4)/memory_stage.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/code/P4 Final (Pc+4)/memory_stage.v|
+!s101 -O0
+!i113 1
+R5
+vniosII
+R6
+!i10b 1
+!s100 3IGloAo4jYa<e^2TeiEUO3
+IXR?>9QRMG?=YDURK2=Po00
+R1
+R2
+w1438723325
+8D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/Final codes/P4 Final (Pc+4)/niosII.v
+FD:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/Final codes/P4 Final (Pc+4)/niosII.v
+L0 2
+R3
+r1
+!s85 0
+31
+R7
+!s107 D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/Final codes/P4 Final (Pc+4)/niosII.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/Final codes/P4 Final (Pc+4)/niosII.v|
+!s101 -O0
+!i113 1
+R5
+nnios@i@i
+vregister_file
+R6
+!i10b 1
+!s100 Z4_FOBfAeQe1_oe;?lEgO0
+IRUi=9VhG7d5KdMZ<N<mH93
+R1
+R2
+w1438416835
+8D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/Final codes/P4 Final (Pc+4)/register_file.v
+FD:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/Final codes/P4 Final (Pc+4)/register_file.v
+L0 1
+R3
+r1
+!s85 0
+31
+R7
+!s107 D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/Final codes/P4 Final (Pc+4)/register_file.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/Final codes/P4 Final (Pc+4)/register_file.v|
+!s101 -O0
+!i113 1
+R5
+vtb
+!s110 1438591792
+!i10b 1
+!s100 @d6DIJS^;HW173:e7[lXJ3
+Ina1;iL>1m7W1SO>i4gYC:0
+R1
+dD:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/code/P4
+w1438590448
+8D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/code/P4/tb.v
+FD:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/code/P4/tb.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1438591792.000000
+!s107 D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/code/P4/tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/code/P4/tb.v|
+!s101 -O0
+!i113 1
+R5
+vtb_niosII
+R0
+!i10b 1
+!s100 ?9aND1W=z`SW>6f0ojoH90
+IE9:0C]a9T2WV4DA^V<m1a2
+R1
+R2
+w1439001904
+8D:\SJSU DOCUMENTS\Study\Summer 2015\EE 275 Summer 2015\Project\Final codes\P4 Final (Pc+4)\tb_niosII.v
+FD:\SJSU DOCUMENTS\Study\Summer 2015\EE 275 Summer 2015\Project\Final codes\P4 Final (Pc+4)\tb_niosII.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:\SJSU DOCUMENTS\Study\Summer 2015\EE 275 Summer 2015\Project\Final codes\P4 Final (Pc+4)\tb_niosII.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:\SJSU DOCUMENTS\Study\Summer 2015\EE 275 Summer 2015\Project\Final codes\P4 Final (Pc+4)\tb_niosII.v|
+!s101 -O0
+!i113 1
+R5
+ntb_nios@i@i
+vwriteback
+R0
+!i10b 1
+!s100 aC0bh=`zTzoED71ObQQio0
+In0F:b:B[j[UfOYO0D;mHA0
+R1
+R2
+w1438720872
+8D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/Final codes/P4 Final (Pc+4)/writeback.v
+FD:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/Final codes/P4 Final (Pc+4)/writeback.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/Final codes/P4 Final (Pc+4)/writeback.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/SJSU DOCUMENTS/Study/Summer 2015/EE 275 Summer 2015/Project/Final codes/P4 Final (Pc+4)/writeback.v|
+!s101 -O0
+!i113 1
+R5

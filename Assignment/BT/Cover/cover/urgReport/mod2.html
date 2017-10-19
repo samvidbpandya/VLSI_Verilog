@@ -1,0 +1,230 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="Author" content="<username>"> <meta name="GENERATOR" content="urg/version [en] (platform name) [urg]">
+<title>Unified Coverage Report :: Module :: testbench</title>
+<link type="text/css" rel="stylesheet" href=".urg.css">
+<script type="text/javascript" src=".sortable.js"></script></head>
+<body><center><a href="dashboard.html" ><b>dashboard</b></a> | <a href="hierarchy.html" ><b>hierarchy</b></a> | <a href="modlist.html" ><b>modlist</b></a> | groups | <a href="tests.html" ><b>tests</b></a> | asserts</center>
+<br>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module : <a href="modlist.html#tag_testbench" >testbench</a></span>
+<br clear=all>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>FSM</td></tr><tr>
+<td class="s8 cl rt"> 81.25</td>
+<td class="s10 cl rt"><a href="mod2.html#Line" >100.00</a></td>
+<td class="s6 cl rt"><a href="mod2.html#Cond" > 62.50</a></td>
+<td class="wht cl rt"></td>
+</tr></table><br clear=all>
+<span class=repname>Source File(s) : </span>
+<br clear=all>
+<a href="file:///home/010152610@SJSUAD.SJSU.EDU/Desktop/BT/Cover/cover/tbsm.sv" >/home/010152610@SJSUAD.SJSU.EDU/Desktop/BT/Cover/cover/tbsm.sv</a><br clear=all>
+<br clear=all>
+<span class=repname>Module self-instances :</span>
+<br clear=all>
+<table align=left class="sml">
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>FSM</td><td class="alfsrt">NAME</td></tr><tr>
+<td class="s8 cl rt"> 81.25</td>
+<td class="s10 cl rt"><a href="mod2.html#Line" >100.00</a></td>
+<td class="s6 cl rt"><a href="mod2.html#Cond" > 62.50</a></td>
+<td class="wht cl rt"></td>
+<td><a href="mod2.html#inst_tag_2" >testbench</a></td>
+</tr></table></div>
+<br clear=all>
+<hr>
+<a name="Line"></a>
+Line Coverage for Module : <a href="mod2.html" >testbench</a><br clear=all>
+<table class="rt">
+<col width="122">
+<col span="4" width="82">
+<tr><th><th>Line No.<th>Total<th>Covered<th>Percent
+<tr class="s10"><td class="lf">TOTAL<td><td>36<td>36<td>100.00
+<tr class="s10"><td class="lf">INITIAL<td>46<td>13<td>13<td>100.00
+<tr class="s10"><td class="lf">INITIAL<td>63<td>7<td>7<td>100.00
+<tr class="s10"><td class="lf">ALWAYS<td>71<td>16<td>16<td>100.00
+</table>
+<pre class="code"><br clear=all>
+45                      initial begin
+46         1              ifx.state=0;
+47         1              ifx.clk=0;
+48         1              ifx.rst=1;
+49         1              ##10;
+50         1              cv.start();
+51         1              ifx.rst=0;
+52                      //  while(cv2.cp2.get_coverage()&lt;25) ##5;
+53         1              ##310;
+54         1              $display(&quot;\n\n\nAt the end of the run\n\n\n&quot;);
+55         1              cv.stop();
+56         1              $display(&quot;Coverage thing cp1 &quot;,cv.cp1.get_coverage());
+57         1              $display(&quot;Coverage thing cp2 &quot;,cv2.cp2.get_coverage());
+58         1              $display(&quot;Time is &quot;,$time);
+59         1              $finish;
+60                      end
+61                      
+62                      initial begin
+63         1              ifx.clk=0;
+64         1,639          forever #5 begin
+65         639              ifx.clk=~ifx.clk;
+66         639,320,319      if(ifx.clk==1) #1 -&gt; fun;
+           319          MISSING_ELSE
+67                        end
+68                      end
+69                      
+70                      always @(fun) begin
+71         319            ifx.old_state=ifx.state;
+72         319            if(ifx.rst || ifx.state==9) begin
+73         9                ifx.state=0;
+74                        end else begin
+75         310              case(ifx.state)
+76         23                 0: ifx.state=1;
+77         70                 1: randcase
+78         41                      2: ifx.state=2;
+79         29                      2: ifx.state=4;
+           0       <font color = "red">==>  MISSING_DEFAULT</font>
+80                               endcase //ifx.state=(($random%2)&gt;0)?2:4;
+81         41                 2: ifx.state=3;
+82         40                 3: ifx.state=(($random%10)&gt;8)?5:1;
+83         29                 4: ifx.state=5;
+84         41                 5: ifx.state=(($random%20)&gt;9)?1:6;
+85         33                 6: ifx.state=7;
+86         33                 7: randcase
+87         22                      5: ifx.state=0;
+88         11                      3: ifx.state=5;
+           0       <font color = "red">==>  MISSING_DEFAULT</font>
+           0       <font color = "red">==>  MISSING_DEFAULT</font>
+</pre>
+<br clear=all>
+Go to <a href="mod2.html" >top</a>
+<hr>
+<a name="Cond"></a>
+Cond Coverage for Module : <a href="mod2.html" >testbench</a><br clear=all>
+<table class="rt">
+<col width="122">
+<col span="3" width="82">
+<tr><th><th>Total<th>Covered<th>Percent
+<tr class="s6"><td class="lf">Conditions<td>8<td>5<td>62.50
+<tr class="s6"><td class="lf">Logical<td>8<td>5<td>62.50
+<tr class="wht"><td class="lf">Non-Logical<td>0<td>0<td>
+<tr class="wht"><td class="lf">Event<td>0<td>0<td>
+</table>
+<br clear=all>
+<pre class="code"> LINE       66
+ EXPRESSION (testbench.ifx.clk == 1'b1)
+            -------------1-------------
+</pre>
+<table class="ct">
+<col width="40">
+<tr><th>-1-<th>Hits
+<tr class="uGreen"><td>0<td class="rt">319
+<tr class="uGreen"><td>1<td class="rt">320
+</table>
+<br clear=all>
+<pre class="code"> LINE       72
+ EXPRESSION (testbench.ifx.rst || (testbench.ifx.state == 9))
+             --------1--------    -------------2------------
+</pre>
+<table class="ct">
+<col span="2" width="40">
+<tr><th>-1-<th>-2-<th>Hits
+<tr class="uGreen"><td>0<td>0<td class="rt">310
+<tr class="uRed"><td>0<td>1<td class="rt">0
+<tr class="uGreen"><td>1<td>0<td class="rt">9
+<tr class="uRed"><td>1<td>1<td class="rt">0
+</table>
+<br clear=all>
+<pre class="code"> LINE       72
+ SUB-EXPRESSION (testbench.ifx.state == 9)
+                -------------1------------
+</pre>
+<table class="ct">
+<col width="40">
+<tr><th>-1-<th>Hits
+<tr class="uGreen"><td>0<td class="rt">319
+<tr class="uRed"><td>1<td class="rt">0
+</table>
+<br clear=all>
+Go to <a href="mod2.html" >top</a>
+<hr>
+<a name="inst_tag_2"></a>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module Instance : <a href="hierarchy.html#tag_urg_inst_2" >testbench</a></span>
+<br clear=all>
+<br clear=all>
+<br clear=all>
+<span class=repname>Instance :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>FSM</td></tr><tr>
+<td class="s8 cl rt"> 81.25</td>
+<td class="s10 cl rt"><a href="mod2.html#Line" >100.00</a></td>
+<td class="s6 cl rt"><a href="mod2.html#Cond" > 62.50</a></td>
+<td class="wht cl rt"></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Instance's subtree :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>FSM</td></tr><tr>
+<td class="s8 cl rt"> 81.25</td>
+<td class="s10 cl rt">100.00</td>
+<td class="s6 cl rt"> 62.50</td>
+<td class="wht cl rt"></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Module : </span>
+<br clear=all>
+<table align=left class="sml">
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>FSM</td><td class="alfsrt">NAME</td></tr><tr>
+<td class="s8 cl rt"> 81.25</td>
+<td class="s10 cl rt">100.00</td>
+<td class="s6 cl rt"> 62.50</td>
+<td class="wht cl rt"></td>
+<td><a href="mod2.html" >testbench</a></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Parent : </span>
+<br clear=all>
+<span class=inst>none</span>
+<br clear=all>
+<br clear=all>
+<span class=repname>Subtrees :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>FSM</td><td class="alfsrt">NAME</td></tr><tr>
+<td class="s10 cl rt">100.00</td>
+<td class="s10 cl rt">100.00</td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td><a href="mod0.html#inst_tag_0" >d</a></td>
+</tr></table><br clear=all>
+</div>
+<hr>
+Since this is the module's only instance, the coverage report is the same as for the module.<br clear=all>
+<hr>
+<center><a href="dashboard.html" ><b>dashboard</b></a> | <a href="hierarchy.html" ><b>hierarchy</b></a> | <a href="modlist.html" ><b>modlist</b></a> | groups | <a href="tests.html" ><b>tests</b></a> | asserts</center>
+<br>
+<br clear=all>
+<br clear=all>
+<table align=center><tr><td class="s0 cl">0%
+<td class="s1 cl">10%
+<td class="s2 cl">20%
+<td class="s3 cl">30%
+<td class="s4 cl">40%
+<td class="s5 cl">50%
+<td class="s6 cl">60%
+<td class="s7 cl">70%
+<td class="s8 cl">80%
+<td class="s9 cl">90%
+<td class="s10 cl">100%</table></body>
+</html>

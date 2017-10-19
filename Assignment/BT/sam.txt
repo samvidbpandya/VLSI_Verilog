@@ -1,0 +1,42 @@
+`timescale 1ns/10ps
+
+class fifo #(size=8,depth=32);
+
+reg[size-1:0] q[$];
+
+function int width(int unused);
+begin
+  width=size;
+end
+endfunction
+task show(input reg clk);
+int ix;
+begin
+  for(ix=0; ix < q.size(); ix++) $display("q ",ix,q[ix]);
+end
+
+endtask;
+task fq(reg clk,reg push,output reg full, output reg half_full, input reg [size-1:0] datain,
+  reg pull, output reg empty, output reg [size-1:0] dataout);
+begin
+  full= q.size() >= depth;
+  if ((!full) && push) begin 
+    q.push_back(datain);
+  end
+  full= q.size() >= depth;
+  half_full= q.size() >= depth/2;
+  empty= q.size()==0;
+  if( (!empty) && pull) begin
+    dataout= q.pop_front();
+show(1);
+  end else begin
+    if(q.size > 0) begin
+    dataout=q[0];
+    end
+  end
+  empty= q.size()==0;
+end
+endtask
+
+endclass
+

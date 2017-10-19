@@ -1,0 +1,11 @@
+randist script run started on Fri Apr 29 18:07:41 2016
+run on machine eecad46.engr.sjsu.edu
+
+Run with a clock period of 4.54545454545
+student names
+  Samvid Pandya  2610
+options syn False gates False
+VCS simulation worked
+NCverilog simulation worked
+Synthesis finished OK
+Gates FAILED TO WORK

@@ -1,0 +1,164 @@
+                                        
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+                                        
+              Version K-2015.06-SP5-1 for linux64 - Feb 26, 2016 
+                                        
+                    Copyright (c) 1988 - 2016 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+set link_library {/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25 /apps/synopsys/I-2013.12-SP5/libraries/syn/dw_foundation.sldb}
+/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25 /apps/synopsys/I-2013.12-SP5/libraries/syn/dw_foundation.sldb
+set target_library {/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25}
+/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25
+read_sverilog crcif.sv,crc.sv,bm.sv
+Loading db file '/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25'
+Loading db file '/apps/synopsys/I-2013.12-SP5/libraries/syn/dw_foundation.sldb'
+Loading db file '/apps/synopsys/K-2015.06-SP5-1_power_compiler/libraries/syn/gtech.db'
+Loading db file '/apps/synopsys/K-2015.06-SP5-1_power_compiler/libraries/syn/standard.sldb'
+  Loading link library 'tc240c'
+  Loading link library 'gtech'
+Loading sverilog files: '/home/010152610@SJSUAD.SJSU.EDU/Desktop/Samvid/BM/crcif.sv' '/home/010152610@SJSUAD.SJSU.EDU/Desktop/Samvid/BM/crc.sv' '/home/010152610@SJSUAD.SJSU.EDU/Desktop/Samvid/BM/bm.sv' 
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/010152610@SJSUAD.SJSU.EDU/Desktop/Samvid/BM/crcif.sv
+Information:  /home/010152610@SJSUAD.SJSU.EDU/Desktop/Samvid/BM/crcif.sv:5: List () of one, unnamed, port is ignored. (VER-988)
+Warning:  /home/010152610@SJSUAD.SJSU.EDU/Desktop/Samvid/BM/crcif.sv:16: The construct 'clocking' is not supported in synthesis; it is ignored. (VER-708)
+Compiling source file /home/010152610@SJSUAD.SJSU.EDU/Desktop/Samvid/BM/crc.sv
+Compiling source file /home/010152610@SJSUAD.SJSU.EDU/Desktop/Samvid/BM/bm.sv
+Warning:  /home/010152610@SJSUAD.SJSU.EDU/Desktop/Samvid/BM/bm.sv:174: the undeclared symbol 'fifo_full' assumed to have the default net type, which is 'wire'. (VER-936)
+Warning:  /home/010152610@SJSUAD.SJSU.EDU/Desktop/Samvid/BM/bm.sv:174: the undeclared symbol 'fifo_empty' assumed to have the default net type, which is 'wire'. (VER-936)
+Warning:  /home/010152610@SJSUAD.SJSU.EDU/Desktop/Samvid/BM/bm.sv:1274: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /home/010152610@SJSUAD.SJSU.EDU/Desktop/Samvid/BM/bm.sv:1277: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /home/010152610@SJSUAD.SJSU.EDU/Desktop/Samvid/BM/bm.sv:1281: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /home/010152610@SJSUAD.SJSU.EDU/Desktop/Samvid/BM/bm.sv:1284: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /home/010152610@SJSUAD.SJSU.EDU/Desktop/Samvid/BM/bm.sv:1288: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /home/010152610@SJSUAD.SJSU.EDU/Desktop/Samvid/BM/bm.sv:1291: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /home/010152610@SJSUAD.SJSU.EDU/Desktop/Samvid/BM/bm.sv:1294: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /home/010152610@SJSUAD.SJSU.EDU/Desktop/Samvid/BM/bm.sv:1321: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  /home/010152610@SJSUAD.SJSU.EDU/Desktop/Samvid/BM/bm.sv:1326: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Information:  /home/010152610@SJSUAD.SJSU.EDU/Desktop/Samvid/BM/crc.sv:2: Variables crossing hierarchy: interface content 'm.clk' may become connected to an inout port. (VER-735)
+Information:  /home/010152610@SJSUAD.SJSU.EDU/Desktop/Samvid/BM/crc.sv:2: Variables crossing hierarchy: interface content 'm.rst' may become connected to an inout port. (VER-735)
+Information:  /home/010152610@SJSUAD.SJSU.EDU/Desktop/Samvid/BM/crc.sv:2: Variables crossing hierarchy: interface content 'm.addr' may become connected to an inout port. (VER-735)
+Information:  /home/010152610@SJSUAD.SJSU.EDU/Desktop/Samvid/BM/crc.sv:2: Variables crossing hierarchy: interface content 'm.data_wr' may become connected to an inout port. (VER-735)
+Information:  /home/010152610@SJSUAD.SJSU.EDU/Desktop/Samvid/BM/crc.sv:2: Variables crossing hierarchy: interface content 'm.RW' may become connected to an inout port. (VER-735)
+Information:  /home/010152610@SJSUAD.SJSU.EDU/Desktop/Samvid/BM/crc.sv:2: Variables crossing hierarchy: interface content 'm.Sel' may become connected to an inout port. (VER-735)
+Information:  /home/010152610@SJSUAD.SJSU.EDU/Desktop/Samvid/BM/crc.sv:2: Variables crossing hierarchy: interface content 'm.data_rd' may become connected to an inout port. (VER-735)
+
+Statistics for case statements in always block at line 12 in file
+	'/home/010152610@SJSUAD.SJSU.EDU/Desktop/Samvid/BM/crc.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            22            |     no/auto      |
+|            38            |    auto/auto     |
+|           133            |    auto/auto     |
+|           146            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine crc line 12 in file
+		'/home/010152610@SJSUAD.SJSU.EDU/Desktop/Samvid/BM/crc.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   trans_outr_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|     data_in_reg     | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|   polynomial_reg    | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|   control_reg_reg   | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|      seed_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Warning:  File /home/010152610@SJSUAD.SJSU.EDU/Desktop/Samvid/BM/nocif-verilog.pvl not found, or does not contain a usable description of nocif. (ELAB-320)
+Error:  /home/010152610@SJSUAD.SJSU.EDU/Desktop/Samvid/BM/bm.sv:1: A design template for 'nocif' cannot be found. (ELAB-385)
+*** Presto compilation terminated with 1 errors. ***
+Error: Can't read 'sverilog' files '/home/010152610@SJSUAD.SJSU.EDU/Desktop/Samvid/BM/crcif.sv', '/home/010152610@SJSUAD.SJSU.EDU/Desktop/Samvid/BM/crc.sv', '/home/010152610@SJSUAD.SJSU.EDU/Desktop/Samvid/BM/bm.sv'. (UID-9)
+No designs were read
+create_clock m.clk -name clk -period 10
+Error: Current design is not defined. (UID-4)
+Error: Can't find object 'm.clk'. (UID-109)
+Error: Value for list 'source_objects' must have 1 elements. (CMD-036)
+0
+set_propagated_clock clk
+Error: Current design is not defined. (UID-4)
+Error: Can't find object 'clk'. (UID-109)
+Error: Value for list 'object_list' must have 1 elements. (CMD-036)
+0
+set_clock_uncertainty 0.25 clk
+Error: Current design is not defined. (UID-4)
+Error: Can't find object 'clk'. (UID-109)
+Error: Value for list 'object_list' must have 1 elements. (CMD-036)
+0
+set_propagated_clock clk
+Error: Current design is not defined. (UID-4)
+Error: Can't find object 'clk'. (UID-109)
+Error: Value for list 'object_list' must have 1 elements. (CMD-036)
+0
+set_output_delay 0.5 -clock clk [all_outputs]
+Error: Current design is not defined. (UID-4)
+Error: Current design is not defined. (UID-4)
+Error: Can't find clock 'clk'. (UID-109)
+Error: Value for list '-clock' must have 1 elements. (CMD-036)
+Error: Value for list 'port_pin_list' must have 1 elements. (CMD-036)
+0
+set all_inputs_wo_rst_clk [remove_from_collection [remove_from_collection [all_inputs] [get_port m.clk]] [get_port m.rst]]
+Error: Current design is not defined. (UID-4)
+Error: Current design is not defined. (UID-4)
+Error: Can't find port 'm.clk'. (UID-109)
+Error: Current design is not defined. (UID-4)
+Error: Can't find port 'm.rst'. (UID-109)
+set_driving_cell -lib_cell CND2X1 $all_inputs_wo_rst_clk
+Error: Value for list 'port_list' must have 1 elements. (CMD-036)
+0
+set_input_delay 0.6 -clock clk $all_inputs_wo_rst_clk
+Error: Current design is not defined. (UID-4)
+Error: Can't find clock 'clk'. (UID-109)
+Error: Value for list '-clock' must have 1 elements. (CMD-036)
+Error: Value for list 'port_pin_list' must have 1 elements. (CMD-036)
+0
+set_output_delay 0.6 -clock clk [all_outputs]
+Error: Current design is not defined. (UID-4)
+Error: Current design is not defined. (UID-4)
+Error: Can't find clock 'clk'. (UID-109)
+Error: Value for list '-clock' must have 1 elements. (CMD-036)
+Error: Value for list 'port_pin_list' must have 1 elements. (CMD-036)
+0
+set_fix_hold [ get_clocks clk ]
+Error: Current design is not defined. (UID-4)
+Error: Can't find clock 'clk'. (UID-109)
+Error: Value for list '<clock_list>' must have 1 elements. (CMD-036)
+0
+set_output_delay 0.3 -clock clk [all_outputs]
+Error: Current design is not defined. (UID-4)
+Error: Current design is not defined. (UID-4)
+Error: Can't find clock 'clk'. (UID-109)
+Error: Value for list '-clock' must have 1 elements. (CMD-036)
+Error: Value for list 'port_pin_list' must have 1 elements. (CMD-036)
+0
+compile_ultra
+Error: Current design is not defined. (UID-4)
+0
+update_timing
+Error: Current design is not defined. (UID-4)
+0
+report_timing -max_paths 5
+Error: Current design is not defined. (UID-4)
+0
+write -hierarchy -format verilog -output crc_gates.v
+Error: No files or designs were specified. (UID-22)
+0
+quit
+
+Thank you...
